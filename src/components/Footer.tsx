@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { slidesConfig } from "@/config/slidesContent";
 
 export const Footer = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -33,11 +34,11 @@ export const Footer = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-8">
           <p className="text-5xl font-display">
-            © AJR {currentTime.getFullYear()}
+            © {slidesConfig.footer.companyName} {currentTime.getFullYear()}
           </p>
           <span className="text-4xl text-white/60">•</span>
           <p className="text-4xl text-white/80 italic">
-            Excellence & Engagement
+            {slidesConfig.footer.tagline}
           </p>
         </div>
         

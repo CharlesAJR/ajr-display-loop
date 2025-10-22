@@ -1,8 +1,8 @@
 import { Award } from "lucide-react";
+import { slidesConfig } from "@/config/slidesContent";
 
 export const SafetyCounterSlide = () => {
-  // Calculate days since a fixed start date (example: January 1, 2024)
-  const startDate = new Date("2024-01-01");
+  const startDate = new Date(slidesConfig.safetyCounter.startDate);
   const today = new Date();
   const daysSince = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
 
@@ -21,7 +21,7 @@ export const SafetyCounterSlide = () => {
         </div>
         
         <p className="text-7xl font-display text-ajr-green mt-16 uppercase">
-          Continuons ainsi ! 🎯
+          {slidesConfig.safetyCounter.message}
         </p>
       </div>
     </div>

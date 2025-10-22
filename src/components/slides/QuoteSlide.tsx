@@ -1,24 +1,7 @@
-export const QuoteSlide = () => {
-  const quotes = [
-    {
-      text: "Le seul moyen de faire du bon travail est d'aimer ce que vous faites.",
-      author: "Steve Jobs"
-    },
-    {
-      text: "L'excellence n'est pas une compétence, c'est une attitude.",
-      author: "Ralph Marston"
-    },
-    {
-      text: "Ensemble, nous sommes plus forts.",
-      author: "Proverbe"
-    },
-    {
-      text: "La qualité n'est jamais un accident, c'est toujours le résultat d'un effort intelligent.",
-      author: "John Ruskin"
-    }
-  ];
+import { slidesConfig } from "@/config/slidesContent";
 
-  const currentQuote = quotes[Math.floor(Date.now() / 86400000) % quotes.length];
+export const QuoteSlide = () => {
+  const currentQuote = slidesConfig.quotes[Math.floor(Date.now() / 86400000) % slidesConfig.quotes.length];
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-center bg-ajr-beige px-32 animate-fade-in">

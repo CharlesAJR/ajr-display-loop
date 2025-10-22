@@ -1,15 +1,8 @@
 import { Calendar, Cake } from "lucide-react";
+import { slidesConfig } from "@/config/slidesContent";
 
 export const BirthdaysSlide = () => {
-  const birthdays = [
-    { name: "Marie Dupont", date: "Lundi 27/10" },
-    { name: "Jean Martin", date: "Jeudi 30/10" },
-  ];
-
-  const events = [
-    { name: "Formation Sécurité", date: "Mercredi 29/10", time: "14h00" },
-    { name: "Réunion d'équipe", date: "Vendredi 31/10", time: "10h30" },
-  ];
+  const { birthdays, events } = slidesConfig;
 
   return (
     <div className="h-full w-full flex flex-col bg-background animate-fade-in px-32 py-24">
