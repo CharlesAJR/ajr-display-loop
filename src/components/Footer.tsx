@@ -1,0 +1,55 @@
+import { useEffect, useState } from "react";
+
+export const Footer = () => {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString("fr-FR", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+  };
+
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString("fr-FR", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
+  return (
+    <footer className="fixed bottom-0 left-0 right-0 bg-ajr-violet text-white py-8 px-16 z-50">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-8">
+          <p className="text-5xl font-display">
+            © AJR {currentTime.getFullYear()}
+          </p>
+          <span className="text-4xl text-white/60">•</span>
+          <p className="text-4xl text-white/80 italic">
+            Excellence & Engagement
+          </p>
+        </div>
+        
+        <div className="flex flex-col items-end">
+          <p className="text-7xl font-display font-bold tabular-nums mb-2">
+            {formatTime(currentTime)}
+          </p>
+          <p className="text-4xl text-white/80 capitalize">
+            {formatDate(currentTime)}
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
