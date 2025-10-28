@@ -1,7 +1,28 @@
-import { slidesConfig } from "@/config/slidesContent";
+import { useEffect, useRef } from "react";
 
 export const QuoteSlide = () => {
-  const currentQuote = slidesConfig.quotes[Math.floor(Date.now() / 86400000) % slidesConfig.quotes.length];
+  const widgetRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Clean up any existing widget content
+    if (widgetRef.current) {
+      widgetRef.current.innerHTML = '<div id="QuoteOFDay"></div>';
+    }
+
+    // Set the widget type
+    (window as any).type = "day";
+
+    // Load the widget script
+    const script = document.createElement('script');
+    script.src = 'https://citations.ouest-france.fr/js/web/export.js?v3';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-ajr-violet to-ajr-fuchsia px-16 animate-fade-in relative overflow-hidden">
@@ -22,18 +43,12 @@ export const QuoteSlide = () => {
       </svg>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto relative z-10 bg-white/10 backdrop-blur-sm rounded-3xl p-16 border border-white/20 shadow-2xl">
-        <div className="text-center space-y-8">
-          <p className="text-7xl font-display text-white leading-tight italic font-light">
-            {currentQuote.text}
-          </p>
-          <div className="flex items-center justify-center gap-4">
-            <div className="h-px w-16 bg-ajr-green-light"></div>
-            <p className="text-5xl font-display text-ajr-green-light font-medium">
-              {currentQuote.author}
-            </p>
-            <div className="h-px w-16 bg-ajr-green-light"></div>
-          </div>
+      <div className="max-w-6xl mx-auto relative z-10 bg-white/15 backdrop-blur-md rounded-3xl p-16 border border-white/30 shadow-2xl">
+        <div 
+          ref={widgetRef}
+          className="text-center [&_#QuoteOFDay]:text-white [&_#QuoteOFDay_p]:text-6xl [&_#QuoteOFDay_p]:font-display [&_#QuoteOFDay_p]:leading-tight [&_#QuoteOFDay_p]:italic [&_#QuoteOFDay_p]:font-light [&_#QuoteOFDay_p]:mb-8 [&_#QuoteOFDay_cite]:text-4xl [&_#QuoteOFDay_cite]:font-display [&_#QuoteOFDay_cite]:text-ajr-green-light [&_#QuoteOFDay_cite]:font-medium [&_#QuoteOFDay_a]:hidden"
+        >
+          <div id="QuoteOFDay"></div>
         </div>
       </div>
     </div>
