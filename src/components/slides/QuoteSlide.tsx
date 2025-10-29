@@ -1,21 +1,18 @@
-import { useEffect } from "react";
+import { slidesConfig } from "@/config/slidesContent";
 
 export const QuoteSlide = () => {
-  useEffect(() => {
-    // Load the dicocitations widget script
-    const script = document.createElement('script');
-    script.src = 'https://www.dicocitations.com/citationblog.js';
-    script.charset = 'utf-8';
-    script.async = true;
-    document.body.appendChild(script);
+  // Get day of year to select a different quote each day
+  const getDayOfYear = () => {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff = now.getTime() - start.getTime();
+    const oneDay = 1000 * 60 * 60 * 24;
+    return Math.floor(diff / oneDay);
+  };
 
-    return () => {
-      // Cleanup script on unmount
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, []);
+  const dayOfYear = getDayOfYear();
+  const quoteIndex = dayOfYear % slidesConfig.quotes.length;
+  const quote = slidesConfig.quotes[quoteIndex];
 
   return (
     <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-ajr-violet to-ajr-fuchsia px-16 animate-fade-in relative overflow-hidden">
@@ -37,8 +34,13 @@ export const QuoteSlide = () => {
 
       {/* Content */}
       <div className="max-w-6xl mx-auto relative z-10 bg-white/15 backdrop-blur-md rounded-3xl p-16 border border-white/30 shadow-2xl">
-        <div className="text-center [&_.citation]:!text-white [&_.citation]:!text-6xl [&_.citation]:!font-display [&_.citation]:!leading-tight [&_.citation]:!italic [&_.citation]:!font-light [&_.citation]:!mb-8 [&_.auteur]:!text-4xl [&_.auteur]:!font-display [&_.auteur]:!text-ajr-green-light [&_.auteur]:!font-medium [&_a]:!hidden">
-          <div id="citation-blog"></div>
+        <div className="text-center">
+          <p className="text-white text-6xl font-display leading-tight italic font-light mb-8">
+            "{quote.text}"
+          </p>
+          <cite className="not-italic text-4xl font-display text-ajr-green-light font-medium">
+            — {quote.author}
+          </cite>
         </div>
       </div>
     </div>
