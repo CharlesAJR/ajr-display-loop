@@ -19,16 +19,76 @@ export const slidesConfig = {
       author: "Ralph Marston"
     },
     {
-      text: "Ensemble, nous sommes plus forts.",
-      author: "Proverbe"
+      text: "Choisissez un travail que vous aimez et vous n'aurez pas à travailler un seul jour de votre vie.",
+      author: "Confucius"
     },
     {
-      text: "La qualité n'est jamais un accident, c'est toujours le résultat d'un effort intelligent.",
-      author: "John Ruskin"
+      text: "Avoir un but trace la voie.",
+      author: "Lao-Tseu"
     },
     {
-      text: "Le succès n'est pas la clé du bonheur. Le bonheur est la clé du succès.",
-      author: "Albert Schweitzer"
+      text: "Le talent est un jardin et le travail est son jardinier.",
+      author: "Vincent Thomas Rey"
+    },
+    {
+      text: "Le travail paie dans le futur, la paresse elle paie comptant.",
+      author: "Jacques Dutronc"
+    },
+    {
+      text: "La persévérance fait de nous ce que nous rêvons d'être.",
+      author: "Euvrard Tristan"
+    },
+    {
+      text: "Confronté à la roche, le ruisseau l'emporte toujours, non pas par la force, mais par la persévérance.",
+      author: "Confucius"
+    },
+    {
+      text: "Un objectif est un rêve doté d'une échéance.",
+      author: "Napoleon Hill"
+    },
+    {
+      text: "Le pessimisme est d'humeur, l'optimisme est de volonté.",
+      author: "Emile Coué"
+    },
+    {
+      text: "La meilleure façon d'échouer, c'est d'abandonner.",
+      author: "Gena Showalter"
+    },
+    {
+      text: "La différence entre gagner et perdre, c'est souvent de ne pas abandonner.",
+      author: "Walt Disney"
+    },
+    {
+      text: "La persévérance, c'est ce qui rend l'impossible possible.",
+      author: "Léon Trotsky"
+    },
+    {
+      text: "L'obstination est le chemin de la réussite.",
+      author: "Charlie Chaplin"
+    },
+    {
+      text: "Notre plus grande gloire n'est pas de ne jamais tomber, mais de nous relever à chaque chute.",
+      author: "Confucius"
+    },
+    {
+      text: "Le génie, c'est 1% d'inspiration et 99% de transpiration.",
+      author: "Thomas Edison"
+    },
+    {
+      text: "Rien de grand n'a jamais été accompli sans enthousiasme.",
+      author: "Ralph Waldo Emerson"
+    },
+    {
+      text: "Pour être créatif, il faut surmonter la peur de se tromper.",
+      author: "Joseph Chilton Pearce"
+    },
+    {
+      text: "Je crois beaucoup en la chance. Plus je travaille, plus la chance me sourit.",
+      author: "Thomas Jefferson"
+    },
+    {
+      text: "La vie n'est pas d'attendre que les orages passent, c'est d'apprendre à danser sous la pluie.",
+      author: "Sénèque"
     }
   ],
 
