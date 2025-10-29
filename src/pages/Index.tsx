@@ -49,7 +49,6 @@ const Index = () => {
     <SafetySlide key="safety" />,
     <SafetyCounterSlide key="counter" />,
     <GallerySlide key="gallery2" images={gallery2} title={slidesConfig.galleryTitles.gallery2} />,
-    <GallerySlide key="gallery3" images={gallery3} title={slidesConfig.galleryTitles.gallery3} />,
   ];
 
   // Auto-rotation des slides
