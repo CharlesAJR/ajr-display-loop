@@ -1,15 +1,8 @@
 import { useEffect, useRef } from "react";
 
 export const QuoteSlide = () => {
-  const widgetRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    // Clean up any existing widget content
-    if (widgetRef.current) {
-      widgetRef.current.innerHTML = '<div id="QuoteOFDay"></div>';
-    }
-
-    // Set the widget type
+    // Set the widget type BEFORE loading the script
     (window as any).type = "day";
 
     // Load the widget script
@@ -20,7 +13,9 @@ export const QuoteSlide = () => {
 
     return () => {
       // Cleanup script on unmount
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
 
@@ -44,10 +39,7 @@ export const QuoteSlide = () => {
 
       {/* Content */}
       <div className="max-w-6xl mx-auto relative z-10 bg-white/15 backdrop-blur-md rounded-3xl p-16 border border-white/30 shadow-2xl">
-        <div 
-          ref={widgetRef}
-          className="text-center [&_#QuoteOFDay]:text-white [&_#QuoteOFDay_p]:text-6xl [&_#QuoteOFDay_p]:font-display [&_#QuoteOFDay_p]:leading-tight [&_#QuoteOFDay_p]:italic [&_#QuoteOFDay_p]:font-light [&_#QuoteOFDay_p]:mb-8 [&_#QuoteOFDay_cite]:text-4xl [&_#QuoteOFDay_cite]:font-display [&_#QuoteOFDay_cite]:text-ajr-green-light [&_#QuoteOFDay_cite]:font-medium [&_#QuoteOFDay_a]:hidden"
-        >
+        <div className="text-center [&_#QuoteOFDay]:text-white [&_#QuoteOFDay_p]:!text-6xl [&_#QuoteOFDay_p]:!font-display [&_#QuoteOFDay_p]:!leading-tight [&_#QuoteOFDay_p]:!italic [&_#QuoteOFDay_p]:!font-light [&_#QuoteOFDay_p]:!mb-8 [&_#QuoteOFDay_cite]:!text-4xl [&_#QuoteOFDay_cite]:!font-display [&_#QuoteOFDay_cite]:!text-ajr-green-light [&_#QuoteOFDay_cite]:!font-medium [&_#QuoteOFDay_a]:!hidden">
           <div id="QuoteOFDay"></div>
         </div>
       </div>
