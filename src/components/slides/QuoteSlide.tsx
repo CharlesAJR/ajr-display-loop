@@ -1,13 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export const QuoteSlide = () => {
   useEffect(() => {
-    // Set the widget type BEFORE loading the script
-    (window as any).type = "day";
-
-    // Load the widget script
+    // Load the dicocitations widget script
     const script = document.createElement('script');
-    script.src = 'https://citations.ouest-france.fr/js/web/export.js?v3';
+    script.src = 'https://www.dicocitations.com/citationblog.js';
+    script.charset = 'utf-8';
     script.async = true;
     document.body.appendChild(script);
 
@@ -39,8 +37,8 @@ export const QuoteSlide = () => {
 
       {/* Content */}
       <div className="max-w-6xl mx-auto relative z-10 bg-white/15 backdrop-blur-md rounded-3xl p-16 border border-white/30 shadow-2xl">
-        <div className="text-center [&_#QuoteOFDay]:text-white [&_#QuoteOFDay_p]:!text-6xl [&_#QuoteOFDay_p]:!font-display [&_#QuoteOFDay_p]:!leading-tight [&_#QuoteOFDay_p]:!italic [&_#QuoteOFDay_p]:!font-light [&_#QuoteOFDay_p]:!mb-8 [&_#QuoteOFDay_cite]:!text-4xl [&_#QuoteOFDay_cite]:!font-display [&_#QuoteOFDay_cite]:!text-ajr-green-light [&_#QuoteOFDay_cite]:!font-medium [&_#QuoteOFDay_a]:!hidden">
-          <div id="QuoteOFDay"></div>
+        <div className="text-center [&_.citation]:!text-white [&_.citation]:!text-6xl [&_.citation]:!font-display [&_.citation]:!leading-tight [&_.citation]:!italic [&_.citation]:!font-light [&_.citation]:!mb-8 [&_.auteur]:!text-4xl [&_.auteur]:!font-display [&_.auteur]:!text-ajr-green-light [&_.auteur]:!font-medium [&_a]:!hidden">
+          <div id="citation-blog"></div>
         </div>
       </div>
     </div>
