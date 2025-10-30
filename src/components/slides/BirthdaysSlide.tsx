@@ -47,7 +47,7 @@ export const BirthdaysSlide = () => {
       
       <div className="grid grid-cols-2 gap-12 flex-1">
         {/* Anniversaires */}
-        <div className="bg-muted/30 rounded-xl p-8 border border-border/50">
+        <div className="bg-muted/30 backdrop-blur-md rounded-3xl p-12 border border-border/50 shadow-2xl">
           <div className="flex items-center gap-4 mb-8 pb-4 border-b border-border/50">
             <Cake className="w-8 h-8 text-ajr-green" strokeWidth={2} />
             <h3 className="text-3xl font-semibold text-foreground">Anniversaires</h3>
@@ -79,7 +79,7 @@ export const BirthdaysSlide = () => {
         </div>
 
         {/* Événements */}
-        <div className="bg-muted/30 rounded-xl p-8 border border-border/50">
+        <div className="bg-muted/30 backdrop-blur-md rounded-3xl p-12 border border-border/50 shadow-2xl">
           <div className="flex items-center gap-4 mb-8 pb-4 border-b border-border/50">
             <Calendar className="w-8 h-8 text-ajr-orange" strokeWidth={2} />
             <h3 className="text-3xl font-semibold text-foreground">Événements</h3>
