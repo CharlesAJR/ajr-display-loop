@@ -15,32 +15,25 @@ export const QuoteSlide = () => {
   const quote = slidesConfig.quotes[quoteIndex];
 
   return (
-    <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-ajr-violet to-ajr-fuchsia px-16 animate-fade-in relative overflow-hidden">
-      {/* Decorative quote marks background */}
-      <svg 
-        className="absolute top-20 left-20 w-96 h-96 text-white opacity-5" 
-        fill="currentColor" 
-        viewBox="0 0 24 24"
-      >
-        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
-      </svg>
-      <svg 
-        className="absolute bottom-20 right-20 w-96 h-96 text-white opacity-5 rotate-180" 
-        fill="currentColor" 
-        viewBox="0 0 24 24"
-      >
-        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
-      </svg>
-
+    <div className="h-full w-full flex items-center justify-center bg-background px-32 py-16 animate-fade-in">
       {/* Content */}
-      <div className="max-w-6xl mx-auto relative z-10 bg-white/15 backdrop-blur-md rounded-3xl p-16 border border-white/30 shadow-2xl">
-        <div className="text-center">
-          <p className="text-white text-6xl font-display leading-tight italic font-light mb-8">
-            "{quote.text}"
-          </p>
-          <cite className="not-italic text-4xl font-display text-ajr-green-light font-medium">
-            — {quote.author}
-          </cite>
+      <div className="max-w-5xl mx-auto">
+        <div className="bg-muted/30 rounded-xl p-16 border border-border/50">
+          <div className="text-center">
+            <svg 
+              className="w-16 h-16 text-ajr-violet mx-auto mb-8 opacity-40" 
+              fill="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+            </svg>
+            <p className="text-foreground text-4xl font-display leading-relaxed italic font-light mb-8">
+              "{quote.text}"
+            </p>
+            <cite className="not-italic text-2xl font-display text-ajr-violet font-semibold">
+              — {quote.author}
+            </cite>
+          </div>
         </div>
       </div>
     </div>
