@@ -36,7 +36,7 @@ export const Footer = () => {
         <div className="flex items-center gap-6">
           <img src={ajrLogo} alt="AJR Logo" className="h-16 w-auto" />
           <p className="text-4xl font-display">
-            © {slidesConfig.footer.companyName} {currentTime.getFullYear()}
+            {slidesConfig.footer.companyName}
           </p>
           <span className="text-3xl text-white/60">•</span>
           <p className="text-3xl text-white/80 italic">
