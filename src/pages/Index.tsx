@@ -102,16 +102,10 @@ const Index = () => {
       {/* Slides */}
       <div className="absolute inset-0 pb-32">
         {slides.map((slide, index) => (
-          <DisplaySlide key={index} isActive={currentSlide === index}>
+          <DisplaySlide key={index} isActive={currentSlide === index} duration={SLIDE_DURATION}>
             {slide}
           </DisplaySlide>
         ))}
-      </div>
-
-      {/* Indicateur de navigation (discret) */}
-      <div className="absolute top-8 right-8 bg-black/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-3xl font-mono z-40">
-        {currentSlide + 1} / {slides.length}
-        {isPaused && <span className="ml-3 text-ajr-orange">⏸</span>}
       </div>
 
       {/* Footer */}
