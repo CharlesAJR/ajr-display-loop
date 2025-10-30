@@ -10,7 +10,7 @@ export const SafetySlide = () => {
     
     keywords.forEach(keyword => {
       const regex = new RegExp(`(${keyword})`, 'gi');
-      result = result.replace(regex, '<span class="font-bold text-ajr-green">$1</span>');
+      result = result.replace(regex, '<span class="font-extrabold text-foreground">$1</span>');
     });
     
     return result;
