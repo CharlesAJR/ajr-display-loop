@@ -18,18 +18,21 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* AJR Brand Colors */
-    --ajr-green: 84 100% 58%;
-    --ajr-green-light: 84 100% 70%;
-    --ajr-green-pale: 84 60% 95%;
-    --ajr-violet: 270 40% 30%;
-    --ajr-orange: 25 100% 60%;
-    --ajr-fuchsia: 320 85% 55%;
-    --ajr-lime: 84 80% 65%;
-    --ajr-beige: 40 35% 92%;
-    --ajr-yellow-pale: 50 60% 95%;
+    --ajr-green: 84 85% 55%;
+    --ajr-green-light: 84 90% 65%;
+    --ajr-green-pale: 84 55% 96%;
+    --ajr-green-soft: 84 60% 92%;
+    --ajr-violet: 270 45% 28%;
+    --ajr-violet-soft: 270 30% 94%;
+    --ajr-orange: 25 95% 58%;
+    --ajr-orange-soft: 25 60% 94%;
+    --ajr-fuchsia: 320 75% 52%;
+    --ajr-lime: 84 75% 62%;
+    --ajr-beige: 40 30% 94%;
+    --ajr-yellow-pale: 50 55% 96%;
     
     /* Base colors */
-    --background: 0 0% 100%;
+    --background: 40 25% 98%;
     --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
@@ -44,8 +47,8 @@ All colors MUST be HSL.
     --secondary: 40 35% 92%;
     --secondary-foreground: 0 0% 10%;
 
-    --muted: 40 35% 92%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 40 30% 94%;
+    --muted-foreground: 0 0% 45%;
 
     --accent: 270 40% 30%;
     --accent-foreground: 0 0% 100%;
@@ -60,8 +63,13 @@ All colors MUST be HSL.
     --radius: 0.75rem;
     
     /* Animation & Transitions */
-    --transition-smooth: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-fade: opacity 0.8s ease-in-out;
+    --transition-smooth: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fade: opacity 0.6s ease-in-out;
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 20px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 30px rgba(0, 0, 0, 0.08);
+    --shadow-large: 0 8px 40px rgba(0, 0, 0, 0.1);
   }
 }
 

@@ -8,17 +8,23 @@ export const SafetyCounterSlide = () => {
   return (
     <div className="h-full w-full flex flex-col items-center justify-center bg-background animate-fade-in px-24 py-12">
       {/* Titre principal */}
-      <h1 className="text-7xl font-display text-foreground font-normal uppercase tracking-wider mb-16">
+      <h1 className="text-6xl font-display text-foreground font-medium uppercase tracking-wider mb-16">
         Ensemble, restons prudents
       </h1>
       
-      {/* Compteur géant */}
+      {/* Compteur géant avec cercle décoratif */}
       <div className="relative mb-12">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-[32rem] h-[32rem] rounded-full border-8 border-destructive/10 animate-pulse-soft" />
+        </div>
         <p 
-          className="text-[24rem] font-display font-bold tabular-nums leading-none"
+          className="relative text-[20rem] font-display font-bold tabular-nums leading-none"
           style={{
-            color: 'hsl(0, 84%, 60%)',
-            textShadow: '0 8px 16px rgba(239, 68, 68, 0.3)',
+            background: 'linear-gradient(135deg, hsl(0, 84%, 60%) 0%, hsl(0, 70%, 50%) 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            filter: 'drop-shadow(0 6px 20px rgba(239, 68, 68, 0.2))',
             letterSpacing: '-0.02em'
           }}
         >
@@ -27,7 +33,7 @@ export const SafetyCounterSlide = () => {
       </div>
       
       {/* Sous-titre */}
-      <p className="text-6xl font-display text-foreground uppercase tracking-wide">
+      <p className="text-5xl font-display text-foreground uppercase tracking-wide font-medium">
         Jours sans accident de travail
       </p>
     </div>

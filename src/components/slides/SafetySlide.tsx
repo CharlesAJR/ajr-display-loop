@@ -8,9 +8,9 @@ export const SafetySlide = () => {
     <div className="h-full w-full flex flex-col bg-background animate-fade-in px-24 py-16">
       {/* Header avec badge rouge */}
       <div className="flex justify-center mb-10">
-        <div className="bg-destructive rounded-full px-12 py-6 shadow-2xl flex items-center gap-4">
-          <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center">
-            <AlertCircle className="w-10 h-10 text-destructive" strokeWidth={3} />
+        <div className="bg-destructive rounded-full px-12 py-6 shadow-[0_6px_30px_rgba(239,68,68,0.25)] flex items-center gap-4">
+          <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+            <AlertCircle className="w-10 h-10 text-destructive" strokeWidth={2.5} />
           </div>
           <h2 className="text-6xl font-display text-white font-bold uppercase tracking-wide">
             {title}
@@ -21,17 +21,17 @@ export const SafetySlide = () => {
       {/* Contenu principal */}
       <div className="flex-1 flex items-center justify-center max-w-[85%] mx-auto pb-16">
         {/* Liste des consignes */}
-        <div className="space-y-6 w-full">
+        <div className="space-y-5 w-full">
           {items.map((item, index) => (
             <div 
               key={index}
-              className="flex items-start gap-5 bg-white/50 rounded-2xl p-6 shadow-lg border-2 border-ajr-green/20 hover:border-ajr-green/40 transition-all animate-fade-in"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="flex items-start gap-5 bg-gradient-to-br from-white to-ajr-green-soft rounded-2xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-ajr-green/15 hover:border-ajr-green/30 hover:shadow-[0_6px_30px_rgba(0,0,0,0.08)] transition-all duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="flex-shrink-0 w-16 h-16 bg-ajr-green rounded-full flex items-center justify-center shadow-md">
-                <CheckCircle className="w-10 h-10 text-white" strokeWidth={4} />
+              <div className="flex-shrink-0 w-16 h-16 bg-ajr-green rounded-full flex items-center justify-center shadow-sm">
+                <CheckCircle className="w-9 h-9 text-white" strokeWidth={2.5} />
               </div>
-              <p className="text-4xl font-display text-foreground leading-relaxed pt-1 font-semibold">
+              <p className="text-4xl font-display text-foreground leading-relaxed pt-1 font-medium">
                 {item}
               </p>
             </div>
