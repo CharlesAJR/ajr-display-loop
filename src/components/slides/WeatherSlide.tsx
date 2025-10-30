@@ -29,34 +29,25 @@ export const WeatherSlide = () => {
   }, []);
 
   return (
-    <div className="h-full w-full flex items-center justify-center bg-background px-8 py-16 animate-fade-in relative overflow-hidden">
+    <div className="h-full w-full flex items-center justify-center bg-background animate-fade-in relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-ajr-green/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-[32rem] h-[32rem] bg-ajr-lime/10 rounded-full blur-3xl"></div>
-      <svg 
-        className="absolute top-32 right-32 w-96 h-96 text-ajr-green opacity-5" 
-        fill="currentColor" 
-        viewBox="0 0 24 24"
-      >
-        <path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/>
-      </svg>
 
       {/* Content */}
-      <div className="w-full max-w-7xl mx-auto relative z-10 pb-20">
-        <div className="bg-muted/30 backdrop-blur-md rounded-3xl p-16 border border-border/50 shadow-2xl">
-          <h2 className="text-9xl font-display text-foreground mb-16 text-center font-bold tracking-tight">
-            Météo du jour
-          </h2>
-          <div className="bg-background rounded-2xl p-12 border border-border/30">
-            <div 
-              ref={widgetRef}
-              id="ww_4428319a2904e" 
-              className="w-full"
-              dangerouslySetInnerHTML={{
-                __html: `<a href="https://weatherwidget.org/" id="ww_4428319a2904e_u" target="_blank">Free weather widget</a>`
-              }}
-            />
-          </div>
+      <div className="w-full px-12 pb-32 relative z-10">
+        <h2 className="text-8xl font-display text-foreground mb-12 text-center font-bold tracking-tight">
+          Météo du jour
+        </h2>
+        <div className="max-w-[95%] mx-auto">
+          <div 
+            ref={widgetRef}
+            id="ww_4428319a2904e" 
+            className="w-full"
+            dangerouslySetInnerHTML={{
+              __html: `<a href="https://weatherwidget.org/" id="ww_4428319a2904e_u" target="_blank">Free weather widget</a>`
+            }}
+          />
         </div>
       </div>
     </div>
