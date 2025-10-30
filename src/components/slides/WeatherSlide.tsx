@@ -35,7 +35,7 @@ export const WeatherSlide = () => {
       <div className="absolute bottom-20 right-20 w-[32rem] h-[32rem] bg-ajr-lime/10 rounded-full blur-3xl"></div>
 
       {/* Content */}
-      <div className="flex flex-col items-center justify-center relative z-10 space-y-12">
+      <div className="flex flex-col items-center justify-center relative z-10 space-y-16 -mt-20">
         <h2 className="text-9xl font-display text-foreground text-center font-bold tracking-tight">
           Météo du jour
         </h2>
