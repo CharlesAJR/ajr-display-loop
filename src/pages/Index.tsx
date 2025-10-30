@@ -109,10 +109,10 @@ const Index = () => {
       </div>
 
       {/* Barre de progression - juste au-dessus du footer */}
-      <div className="fixed bottom-[104px] left-0 right-0 h-3 bg-black/30 z-[60]">
+      <div className="fixed bottom-[104px] left-0 right-0 h-3 bg-white/10 backdrop-blur-sm z-[60]">
         <div 
           key={currentSlide}
-          className="h-full bg-white origin-left"
+          className="h-full bg-white/60 backdrop-blur-md origin-left shadow-lg"
           style={{
             animation: isPaused ? 'none' : `progress-bar ${SLIDE_DURATION}ms linear`
           }}
