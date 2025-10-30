@@ -1,6 +1,5 @@
 import { AlertCircle, CheckCircle } from "lucide-react";
 import { slidesConfig } from "@/config/slidesContent";
-import safetyWorkers from "@/assets/safety-workers.png";
 
 export const SafetySlide = () => {
   const { title, items } = slidesConfig.safetyMessages;
@@ -20,9 +19,9 @@ export const SafetySlide = () => {
       </div>
       
       {/* Contenu principal */}
-      <div className="flex-1 flex items-center justify-between gap-16 max-w-[90%] mx-auto">
+      <div className="flex-1 flex items-center justify-center max-w-[90%] mx-auto">
         {/* Liste des consignes */}
-        <div className="flex-1 space-y-8">
+        <div className="space-y-8">
           {items.map((item, index) => (
             <div 
               key={index}
@@ -37,15 +36,6 @@ export const SafetySlide = () => {
               </p>
             </div>
           ))}
-        </div>
-        
-        {/* Image des ouvriers */}
-        <div className="flex-shrink-0">
-          <img 
-            src={safetyWorkers} 
-            alt="Ouvriers en sécurité" 
-            className="w-[500px] h-auto object-contain"
-          />
         </div>
       </div>
     </div>
