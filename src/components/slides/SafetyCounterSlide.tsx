@@ -7,7 +7,7 @@ export const SafetyCounterSlide = () => {
   const daysSince = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
 
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center bg-ajr-green-pale animate-fade-in px-32">
+    <div className="h-full w-full flex flex-col items-center justify-center bg-background animate-fade-in px-32">
       <div className="text-center">
         <Award className="w-56 h-56 mx-auto mb-16 text-ajr-green animate-pulse-soft" />
         

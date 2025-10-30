@@ -5,7 +5,7 @@ export const SafetySlide = () => {
   const { title, items, footer } = slidesConfig.safetyMessages;
   
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center bg-ajr-yellow-pale animate-fade-in px-32">
+    <div className="h-full w-full flex flex-col items-center justify-center bg-background animate-fade-in px-32">
       <div className="bg-background rounded-3xl p-20 shadow-2xl max-w-6xl">
         <div className="flex items-center justify-center gap-8 mb-16">
           <ShieldCheck className="w-40 h-40 text-ajr-orange" />

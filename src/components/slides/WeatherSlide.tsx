@@ -26,7 +26,7 @@ export const WeatherSlide = () => {
   }, []);
 
   return (
-    <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-ajr-green to-ajr-lime px-16 animate-fade-in relative overflow-hidden">
+    <div className="h-full w-full flex items-center justify-center bg-background px-16 animate-fade-in relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-20 left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
