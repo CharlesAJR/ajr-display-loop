@@ -40,79 +40,74 @@ export const BirthdaysSlide = () => {
   }, [events.length]);
 
   return (
-    <div className="relative h-full w-full flex flex-col bg-background animate-fade-in px-32 py-20 overflow-hidden">
-      {/* Motif festif en arrière-plan */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute top-10 left-20 text-8xl">🎉</div>
-        <div className="absolute top-32 right-32 text-7xl">✨</div>
-        <div className="absolute bottom-40 left-40 text-6xl">🎊</div>
-        <div className="absolute top-1/3 right-20 text-7xl">⭐</div>
-        <div className="absolute bottom-1/4 right-1/3 text-8xl">🎈</div>
-      </div>
-
-      <h2 className="text-[7rem] font-display font-bold text-foreground mb-20 text-center leading-none">
+    <div className="relative h-full w-full flex flex-col bg-background animate-fade-in px-32 py-16 overflow-hidden">
+      <h2 className="text-6xl font-display font-bold text-foreground mb-12 text-center">
         Cette semaine
       </h2>
       
-      <div className="grid grid-cols-2 gap-20 flex-1 relative z-10">
+      <div className="grid grid-cols-2 gap-12 flex-1">
         {/* Anniversaires */}
-        <div className="bg-[#eff7ea] rounded-[2.5rem] p-16 shadow-lg">
-          <div className="flex items-center gap-6 mb-14">
-            <Cake className="w-28 h-28 text-ajr-green flex-shrink-0" strokeWidth={2.5} />
-            <h3 className="text-[5rem] font-display font-bold text-foreground leading-none">Anniversaires</h3>
+        <div className="bg-muted/30 rounded-xl p-8 border border-border/50">
+          <div className="flex items-center gap-4 mb-8 pb-4 border-b border-border/50">
+            <Cake className="w-8 h-8 text-ajr-green" strokeWidth={2} />
+            <h3 className="text-3xl font-semibold text-foreground">Anniversaires</h3>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-4">
             {birthdaysToShow.map((birthday, index) => (
               <div 
                 key={`${birthday.name}-${index}`}
-                className="bg-background rounded-2xl p-10 shadow-[0_6px_20px_rgba(0,0,0,0.12)] animate-fade-in hover:shadow-[0_8px_30px_rgba(0,0,0,0.16)] transition-all duration-300"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="bg-background rounded-lg p-6 border border-border/30 animate-fade-in hover:border-ajr-green/50 transition-all duration-300"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="flex items-center gap-6">
-                  <span className="text-6xl">🎂</span>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-ajr-green/10 flex items-center justify-center flex-shrink-0">
+                    <Cake className="w-5 h-5 text-ajr-green" strokeWidth={2} />
+                  </div>
                   <div className="flex-1">
-                    <p className="text-[4rem] font-bold text-foreground mb-2 leading-tight">{birthday.name}</p>
-                    <p className="text-[3rem] text-muted-foreground leading-tight">{birthday.date}</p>
+                    <p className="text-xl font-semibold text-foreground">{birthday.name}</p>
+                    <p className="text-base text-muted-foreground mt-1">{birthday.date}</p>
                   </div>
                 </div>
               </div>
             ))}
             {birthdaysToShow.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-5xl text-muted-foreground">Aucun anniversaire cette semaine</p>
+              <div className="text-center py-8">
+                <p className="text-lg text-muted-foreground">Aucun anniversaire cette semaine</p>
               </div>
             )}
           </div>
         </div>
 
         {/* Événements */}
-        <div className="bg-[#fffcee] rounded-[2.5rem] p-16 shadow-lg">
-          <div className="flex items-center gap-6 mb-14">
-            <Calendar className="w-28 h-28 text-ajr-orange flex-shrink-0" strokeWidth={2.5} />
-            <h3 className="text-[5rem] font-display font-bold text-foreground leading-none">Événements</h3>
+        <div className="bg-muted/30 rounded-xl p-8 border border-border/50">
+          <div className="flex items-center gap-4 mb-8 pb-4 border-b border-border/50">
+            <Calendar className="w-8 h-8 text-ajr-orange" strokeWidth={2} />
+            <h3 className="text-3xl font-semibold text-foreground">Événements</h3>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-4">
             {eventsToShow.map((event, index) => (
               <div 
                 key={`${event.name}-${index}`}
-                className="bg-background rounded-2xl p-10 shadow-[0_6px_20px_rgba(0,0,0,0.12)] animate-fade-in hover:shadow-[0_8px_30px_rgba(0,0,0,0.16)] transition-all duration-300"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="bg-background rounded-lg p-6 border border-border/30 animate-fade-in hover:border-ajr-orange/50 transition-all duration-300"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="flex items-center gap-6">
-                  <span className="text-6xl">📅</span>
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-ajr-orange/10 flex items-center justify-center flex-shrink-0">
+                    <Calendar className="w-5 h-5 text-ajr-orange" strokeWidth={2} />
+                  </div>
                   <div className="flex-1">
-                    <p className="text-[4rem] font-bold text-foreground mb-2 leading-tight">{event.name}</p>
-                    <p className="text-[3rem] text-muted-foreground leading-tight">{event.date}</p>
+                    <p className="text-xl font-semibold text-foreground">{event.name}</p>
+                    <p className="text-base text-muted-foreground mt-1">{event.date}</p>
                     {event.time && (
-                      <p className="text-[2.5rem] text-ajr-orange font-semibold mt-2 leading-tight">{event.time}</p>
+                      <p className="text-sm text-ajr-orange font-medium mt-1">{event.time}</p>
                     )}
                   </div>
                 </div>
               </div>
             ))}
             {eventsToShow.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-5xl text-muted-foreground">Aucun événement cette semaine</p>
+              <div className="text-center py-8">
+                <p className="text-lg text-muted-foreground">Aucun événement cette semaine</p>
               </div>
             )}
           </div>
