@@ -29,12 +29,12 @@ export const WeatherSlide = () => {
   }, []);
 
   return (
-    <div className="h-full w-full flex items-center justify-center bg-background px-16 animate-fade-in relative overflow-hidden">
+    <div className="h-full w-full flex items-center justify-center bg-background px-8 py-16 animate-fade-in relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-20 left-20 w-64 h-64 bg-ajr-green/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-ajr-lime/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 left-20 w-96 h-96 bg-ajr-green/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-20 w-[32rem] h-[32rem] bg-ajr-lime/10 rounded-full blur-3xl"></div>
       <svg 
-        className="absolute top-32 right-32 w-72 h-72 text-ajr-green opacity-5" 
+        className="absolute top-32 right-32 w-96 h-96 text-ajr-green opacity-5" 
         fill="currentColor" 
         viewBox="0 0 24 24"
       >
@@ -42,16 +42,16 @@ export const WeatherSlide = () => {
       </svg>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="bg-muted/30 backdrop-blur-md rounded-3xl p-12 border border-border/50 shadow-2xl">
-          <h2 className="text-8xl font-display text-foreground mb-12 text-center font-bold tracking-tight">
+      <div className="w-full max-w-7xl mx-auto relative z-10 pb-20">
+        <div className="bg-muted/30 backdrop-blur-md rounded-3xl p-16 border border-border/50 shadow-2xl">
+          <h2 className="text-9xl font-display text-foreground mb-16 text-center font-bold tracking-tight">
             Météo du jour
           </h2>
-          <div className="bg-background rounded-2xl p-8 border border-border/30">
+          <div className="bg-background rounded-2xl p-12 border border-border/30">
             <div 
               ref={widgetRef}
               id="ww_60349a19f1af6" 
-              className="w-full scale-110 transform"
+              className="w-full scale-125 transform origin-center"
               dangerouslySetInnerHTML={{
                 __html: `<a href="https://weatherwidget.org/" id="ww_60349a19f1af6_u" target="_blank">Html weather widget</a>`
               }}
