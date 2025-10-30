@@ -17,7 +17,7 @@ export const DisplaySlide = ({ children, isActive, duration }: DisplaySlideProps
       
       {/* Barre de progression */}
       {isActive && (
-        <div className="absolute bottom-0 left-0 right-0 h-2 bg-white/20 z-50">
+        <div className="absolute bottom-[104px] left-0 right-0 h-2 bg-white/20 z-50">
           <div 
             className="h-full bg-white/80 origin-left shadow-lg"
             style={{
