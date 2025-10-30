@@ -20,18 +20,18 @@ export const SafetySlide = () => {
       
       {/* Contenu principal - liste des consignes */}
       <div className="flex-1 flex items-center justify-center">
-        <div className="max-w-6xl w-full space-y-10">
+        <div className="max-w-7xl w-full space-y-8">
           {items.map((item, index) => (
             <div 
               key={index}
-              className="group bg-muted/30 backdrop-blur-md rounded-3xl p-10 border border-border/50 shadow-xl hover:shadow-2xl hover:border-ajr-green/50 transition-all duration-300 animate-fade-in"
+              className="group bg-background border-4 border-ajr-green/30 rounded-3xl p-12 shadow-2xl hover:border-ajr-green transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="flex items-start gap-8">
-                <div className="flex-shrink-0 w-20 h-20 bg-ajr-green rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <CheckCircle className="w-12 h-12 text-white" strokeWidth={3} fill="currentColor" />
+              <div className="flex items-center gap-8">
+                <div className="flex-shrink-0 w-24 h-24 bg-ajr-green rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <CheckCircle className="w-14 h-14 text-white" strokeWidth={3} fill="currentColor" />
                 </div>
-                <p className="text-5xl font-display text-foreground leading-tight pt-3 font-medium">
+                <p className="text-6xl font-display text-foreground leading-tight font-semibold">
                   {item}
                 </p>
               </div>
