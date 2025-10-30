@@ -35,20 +35,15 @@ export const WeatherSlide = () => {
       <div className="absolute bottom-20 right-20 w-[32rem] h-[32rem] bg-ajr-lime/10 rounded-full blur-3xl"></div>
 
       {/* Content */}
-      <div className="flex flex-col items-center justify-center relative z-10 pb-24">
-        <h2 className="text-9xl font-display text-foreground text-center font-bold tracking-tight mb-20">
-          Météo du jour
-        </h2>
-        <div className="flex items-center justify-center pt-8">
-          <div 
-            ref={widgetRef}
-            id="ww_4428319a2904e" 
-            className="scale-[2.0] transform origin-center"
-            dangerouslySetInnerHTML={{
-              __html: `<a href="https://weatherwidget.org/" id="ww_4428319a2904e_u" target="_blank">Free weather widget</a>`
-            }}
-          />
-        </div>
+      <div className="flex items-center justify-center relative z-10 h-full">
+        <div 
+          ref={widgetRef}
+          id="ww_4428319a2904e" 
+          className="scale-[2.25] transform origin-center"
+          dangerouslySetInnerHTML={{
+            __html: `<a href="https://weatherwidget.org/" id="ww_4428319a2904e_u" target="_blank">Free weather widget</a>`
+          }}
+        />
       </div>
     </div>
   );
