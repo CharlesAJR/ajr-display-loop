@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { slidesConfig } from "@/config/slidesContent";
+import ajrLogo from "@/assets/ajr-logo.png";
 
 export const Footer = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -33,6 +34,7 @@ export const Footer = () => {
     <footer className="fixed bottom-0 left-0 right-0 bg-ajr-violet text-white py-6 px-16 z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.3)]">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-6">
+          <img src={ajrLogo} alt="AJR Logo" className="h-16 w-auto" />
           <p className="text-4xl font-display">
             © {slidesConfig.footer.companyName} {currentTime.getFullYear()}
           </p>

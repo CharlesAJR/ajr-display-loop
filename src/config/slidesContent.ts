@@ -142,7 +142,7 @@ export const slidesConfig = {
   // ====================================================================
   footer: {
     companyName: "AJR",
-    tagline: "Excellence & Engagement"
+    tagline: "Le choix de la qualité et du sens"
   }
 };
 
