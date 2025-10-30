@@ -5,9 +5,9 @@ export const SafetySlide = () => {
   const { title, items } = slidesConfig.safetyMessages;
   
   return (
-    <div className="h-full w-full flex flex-col bg-background animate-fade-in px-24 py-12">
+    <div className="h-full w-full flex flex-col bg-background animate-fade-in px-24 py-16">
       {/* Header avec badge rouge */}
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center mb-10">
         <div className="bg-destructive rounded-full px-12 py-6 shadow-2xl flex items-center gap-4">
           <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
             <AlertCircle className="w-7 h-7 text-destructive" strokeWidth={3} />
@@ -19,7 +19,7 @@ export const SafetySlide = () => {
       </div>
       
       {/* Contenu principal */}
-      <div className="flex-1 flex items-center justify-center max-w-[85%] mx-auto">
+      <div className="flex-1 flex items-center justify-center max-w-[85%] mx-auto pb-16">
         {/* Liste des consignes */}
         <div className="space-y-6 w-full">
           {items.map((item, index) => (
