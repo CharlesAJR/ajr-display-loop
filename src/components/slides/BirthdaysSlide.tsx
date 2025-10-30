@@ -59,7 +59,7 @@ export const BirthdaysSlide = () => {
   };
 
   return (
-    <div className="relative h-full w-full flex flex-col bg-gradient-to-br from-amber-50 to-orange-50 animate-fade-in px-20 py-12 overflow-hidden">
+    <div className="relative h-full w-full flex flex-col bg-white animate-fade-in px-20 py-12 overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div className="flex-1">
@@ -82,9 +82,7 @@ export const BirthdaysSlide = () => {
           return (
             <div
               key={day}
-              className={`bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-md border-2 transition-all ${
-                hasAnyEvent ? 'border-ajr-orange/30' : 'border-gray-200'
-              }`}
+              className="bg-[hsl(var(--ajr-beige))] rounded-2xl p-6"
             >
               <h3 className="text-3xl font-semibold text-foreground mb-6 pb-3 border-b-2 border-gray-200 italic">
                 {day}
