@@ -8,16 +8,16 @@ export const WeatherSlide = () => {
     if (widgetRef.current) {
       widgetRef.current.setAttribute('v', '1.3');
       widgetRef.current.setAttribute('loc', 'id');
-      widgetRef.current.setAttribute('a', '{"t":"responsive","lang":"en","sl_lpl":1,"ids":["wl8308"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}');
+      widgetRef.current.setAttribute('a', '{"t":"horizontal","lang":"fr","sl_lpl":1,"ids":["wl8308"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"rgba(255,255,255,1)","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722","el_nme":3}');
     }
 
     // Check if script already exists
-    const existingScript = document.querySelector('script[src="https://app3.weatherwidget.org/js/?id=ww_60349a19f1af6"]');
+    const existingScript = document.querySelector('script[src="https://app3.weatherwidget.org/js/?id=ww_4428319a2904e"]');
     
     if (!existingScript) {
       // Load the weather widget script only if it doesn't exist
       const script = document.createElement('script');
-      script.src = 'https://app3.weatherwidget.org/js/?id=ww_60349a19f1af6';
+      script.src = 'https://app3.weatherwidget.org/js/?id=ww_4428319a2904e';
       script.async = true;
       document.body.appendChild(script);
     } else {
@@ -50,10 +50,10 @@ export const WeatherSlide = () => {
           <div className="bg-background rounded-2xl p-12 border border-border/30">
             <div 
               ref={widgetRef}
-              id="ww_60349a19f1af6" 
-              className="w-full scale-125 transform origin-center"
+              id="ww_4428319a2904e" 
+              className="w-full"
               dangerouslySetInnerHTML={{
-                __html: `<a href="https://weatherwidget.org/" id="ww_60349a19f1af6_u" target="_blank">Html weather widget</a>`
+                __html: `<a href="https://weatherwidget.org/" id="ww_4428319a2904e_u" target="_blank">Free weather widget</a>`
               }}
             />
           </div>
