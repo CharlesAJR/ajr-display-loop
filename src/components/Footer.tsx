@@ -30,23 +30,23 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-ajr-violet text-white py-4 px-16 z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.3)]">
+    <footer className="fixed bottom-0 left-0 right-0 bg-ajr-violet text-white py-3 px-16 z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.3)]">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <p className="text-3xl font-display">
+          <p className="text-2xl font-display">
             © {slidesConfig.footer.companyName} {currentTime.getFullYear()}
           </p>
-          <span className="text-2xl text-white/60">•</span>
-          <p className="text-2xl text-white/80 italic">
+          <span className="text-xl text-white/60">•</span>
+          <p className="text-xl text-white/80 italic">
             {slidesConfig.footer.tagline}
           </p>
         </div>
         
         <div className="flex flex-col items-end">
-          <p className="text-5xl font-display font-bold tabular-nums mb-1">
+          <p className="text-4xl font-display font-bold tabular-nums mb-1">
             {formatTime(currentTime)}
           </p>
-          <p className="text-2xl text-white/80 capitalize">
+          <p className="text-xl text-white/80 capitalize">
             {formatDate(currentTime)}
           </p>
         </div>
