@@ -4,6 +4,18 @@ import { slidesConfig } from "@/config/slidesContent";
 export const SafetySlide = () => {
   const { title, items } = slidesConfig.safetyMessages;
   
+  const highlightKeywords = (text: string) => {
+    const keywords = ['EPI', 'badger', 'route fermée', 'atelier cosmétique'];
+    let result = text;
+    
+    keywords.forEach(keyword => {
+      const regex = new RegExp(`(${keyword})`, 'gi');
+      result = result.replace(regex, '<span class="font-bold text-ajr-green">$1</span>');
+    });
+    
+    return result;
+  };
+  
   return (
     <div className="h-full w-full flex flex-col bg-background animate-fade-in px-24 py-16">
       {/* Header avec badge rouge */}
@@ -31,9 +43,10 @@ export const SafetySlide = () => {
               <div className="flex-shrink-0 w-16 h-16 bg-ajr-green rounded-full flex items-center justify-center shadow-sm">
                 <CheckCircle className="w-9 h-9 text-white" strokeWidth={2.5} />
               </div>
-              <p className="text-4xl font-display text-foreground leading-relaxed pt-1 font-medium">
-                {item}
-              </p>
+              <p 
+                className="text-4xl font-display text-foreground leading-relaxed pt-1 font-medium"
+                dangerouslySetInnerHTML={{ __html: highlightKeywords(item) }}
+              />
             </div>
           ))}
         </div>
