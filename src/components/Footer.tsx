@@ -31,24 +31,24 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 bg-[hsl(var(--ajr-violet))] text-white py-4 px-8 z-50">
+    <footer className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[hsl(265,50%,35%)] to-[hsl(270,55%,25%)] text-white py-6 px-12 z-50">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <img src={ajrLogo} alt="AJR Logo" className="h-12 w-auto" />
-          <p className="text-2xl font-display font-semibold">
+        <div className="flex items-center gap-6">
+          <img src={ajrLogo} alt="AJR Logo" className="h-16 w-auto" />
+          <p className="text-5xl font-display font-bold tracking-tight">
             {slidesConfig.footer.companyName}
           </p>
-          <span className="text-xl text-white/60">•</span>
-          <p className="text-xl text-white/80 italic">
+          <span className="text-4xl text-white/70 mx-2">•</span>
+          <p className="text-4xl text-white/95 italic font-light tracking-wide">
             {slidesConfig.footer.tagline}
           </p>
         </div>
         
-        <div className="flex flex-col items-end">
-          <p className="text-4xl font-display font-bold tabular-nums">
+        <div className="flex flex-col items-end gap-1">
+          <p className="text-[5.5rem] font-display font-bold tabular-nums leading-none">
             {formatTime(currentTime)}
           </p>
-          <p className="text-lg text-white/90 capitalize">
+          <p className="text-3xl text-white/95 capitalize font-light tracking-wide">
             {formatDate(currentTime)}
           </p>
         </div>
