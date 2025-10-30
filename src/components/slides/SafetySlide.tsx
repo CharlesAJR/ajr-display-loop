@@ -29,7 +29,7 @@ export const SafetySlide = () => {
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="flex-shrink-0 w-12 h-12 bg-ajr-green rounded-full flex items-center justify-center shadow-md">
-                <CheckCircle className="w-7 h-7 text-white" strokeWidth={3} fill="currentColor" />
+                <CheckCircle className="w-8 h-8 text-white" strokeWidth={4} />
               </div>
               <p className="text-3xl font-display text-foreground leading-relaxed pt-1 font-semibold">
                 {item}
