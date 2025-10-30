@@ -102,10 +102,21 @@ const Index = () => {
       {/* Slides */}
       <div className="absolute inset-0 pb-32">
         {slides.map((slide, index) => (
-          <DisplaySlide key={index} isActive={currentSlide === index} duration={SLIDE_DURATION}>
+          <DisplaySlide key={index} isActive={currentSlide === index}>
             {slide}
           </DisplaySlide>
         ))}
+      </div>
+
+      {/* Barre de progression - juste au-dessus du footer */}
+      <div className="fixed bottom-[104px] left-0 right-0 h-3 bg-black/30 z-[60]">
+        <div 
+          key={currentSlide}
+          className="h-full bg-white origin-left"
+          style={{
+            animation: isPaused ? 'none' : `progress-bar ${SLIDE_DURATION}ms linear`
+          }}
+        />
       </div>
 
       {/* Footer */}
