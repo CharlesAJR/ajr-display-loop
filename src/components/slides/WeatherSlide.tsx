@@ -29,26 +29,24 @@ export const WeatherSlide = () => {
   }, []);
 
   return (
-    <div className="h-full w-full flex items-center justify-center bg-background animate-fade-in relative overflow-hidden">
+    <div className="h-full w-full flex flex-col items-center justify-center bg-background animate-fade-in relative overflow-hidden px-12 pb-32">
       {/* Decorative elements */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-ajr-green/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-[32rem] h-[32rem] bg-ajr-lime/10 rounded-full blur-3xl"></div>
 
       {/* Content */}
-      <div className="w-full px-12 pb-32 relative z-10">
-        <h2 className="text-8xl font-display text-foreground mb-12 text-center font-bold tracking-tight">
+      <div className="w-full max-w-[90%] mx-auto relative z-10 space-y-12">
+        <h2 className="text-8xl font-display text-foreground text-center font-bold tracking-tight">
           Météo du jour
         </h2>
-        <div className="max-w-[95%] mx-auto">
-          <div 
-            ref={widgetRef}
-            id="ww_4428319a2904e" 
-            className="w-full"
-            dangerouslySetInnerHTML={{
-              __html: `<a href="https://weatherwidget.org/" id="ww_4428319a2904e_u" target="_blank">Free weather widget</a>`
-            }}
-          />
-        </div>
+        <div 
+          ref={widgetRef}
+          id="ww_4428319a2904e" 
+          className="w-full"
+          dangerouslySetInnerHTML={{
+            __html: `<a href="https://weatherwidget.org/" id="ww_4428319a2904e_u" target="_blank">Free weather widget</a>`
+          }}
+        />
       </div>
     </div>
   );
