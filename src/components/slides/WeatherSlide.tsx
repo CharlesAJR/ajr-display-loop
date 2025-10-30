@@ -29,13 +29,13 @@ export const WeatherSlide = () => {
   }, []);
 
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center bg-background animate-fade-in relative overflow-hidden px-16">
+    <div className="h-full w-full flex flex-col items-center justify-center bg-background animate-fade-in relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-20 left-20 w-96 h-96 bg-ajr-green/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-20 w-[32rem] h-[32rem] bg-ajr-lime/10 rounded-full blur-3xl"></div>
 
       {/* Content */}
-      <div className="w-full max-w-6xl mx-auto relative z-10 space-y-16 pb-20">
+      <div className="flex flex-col items-center justify-center relative z-10 space-y-12">
         <h2 className="text-9xl font-display text-foreground text-center font-bold tracking-tight">
           Météo du jour
         </h2>
@@ -43,7 +43,7 @@ export const WeatherSlide = () => {
           <div 
             ref={widgetRef}
             id="ww_4428319a2904e" 
-            className="w-full max-w-5xl scale-125 transform origin-center"
+            className="scale-[1.75] transform origin-center"
             dangerouslySetInnerHTML={{
               __html: `<a href="https://weatherwidget.org/" id="ww_4428319a2904e_u" target="_blank">Free weather widget</a>`
             }}
