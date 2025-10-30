@@ -8,21 +8,24 @@ export const WeatherSlide = () => {
     if (widgetRef.current) {
       widgetRef.current.setAttribute('v', '1.3');
       widgetRef.current.setAttribute('loc', 'id');
-      widgetRef.current.setAttribute('a', '{"t":"responsive","lang":"en","sl_lpl":1,"ids":["wl8308"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#FFFFFF","cl_cloud":"#FFFFFF","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}');
+      widgetRef.current.setAttribute('a', '{"t":"responsive","lang":"en","sl_lpl":1,"ids":["wl8308"],"font":"Arial","sl_ics":"one_a","sl_sot":"celsius","cl_bkg":"image","cl_font":"#000000","cl_cloud":"#d4d4d4","cl_persp":"#81D4FA","cl_sun":"#FFC107","cl_moon":"#FFC107","cl_thund":"#FF5722"}');
     }
 
-    // Load the weather widget script
-    const script = document.createElement('script');
-    script.src = 'https://app3.weatherwidget.org/js/?id=ww_60349a19f1af6';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup: remove script when component unmounts
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
+    // Check if script already exists
+    const existingScript = document.querySelector('script[src="https://app3.weatherwidget.org/js/?id=ww_60349a19f1af6"]');
+    
+    if (!existingScript) {
+      // Load the weather widget script only if it doesn't exist
+      const script = document.createElement('script');
+      script.src = 'https://app3.weatherwidget.org/js/?id=ww_60349a19f1af6';
+      script.async = true;
+      document.body.appendChild(script);
+    } else {
+      // Trigger widget reinitialisation if script already exists
+      if ((window as any).__weatherwidget_init) {
+        (window as any).__weatherwidget_init[0].display.show();
       }
-    };
+    }
   }, []);
 
   return (
