@@ -61,7 +61,7 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Poppins", "Inter", "sans-serif"],
+        display: ["Montserrat", "Inter", "sans-serif"],
         serif: ["Playfair Display", "Georgia", "serif"],
       },
       fontSize: {
