@@ -6,7 +6,7 @@ interface GallerySlideProps {
 export const GallerySlide = ({ images }: GallerySlideProps) => {
   return (
     <div className="h-full w-full flex items-center justify-center bg-background animate-fade-in p-8 pb-40">
-      <div className="grid grid-cols-3 grid-rows-2 gap-4 w-full h-full max-h-[80vh]">
+      <div className="grid grid-cols-3 grid-rows-2 gap-6 w-full h-full max-h-[80vh]">
         {images.map((image, index) => (
           <div 
             key={index} 

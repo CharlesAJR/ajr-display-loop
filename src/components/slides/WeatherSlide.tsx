@@ -39,7 +39,7 @@ export const WeatherSlide = () => {
         <div 
           ref={widgetRef}
           id="ww_4428319a2904e" 
-          className="scale-[2.25] transform origin-center"
+          className="scale-[3] transform origin-center"
           dangerouslySetInnerHTML={{
             __html: `<a href="https://weatherwidget.org/" id="ww_4428319a2904e_u" target="_blank">Free weather widget</a>`
           }}
