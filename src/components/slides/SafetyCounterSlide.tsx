@@ -11,7 +11,7 @@ export const SafetyCounterSlide = () => {
       <div className="text-center">
         <Award className="w-56 h-56 mx-auto mb-16 text-ajr-green animate-pulse-soft" />
         
-        <div className="bg-background rounded-3xl p-20 shadow-2xl inline-block">
+        <div className="bg-muted/30 backdrop-blur-md rounded-3xl p-20 border border-border/50 shadow-2xl inline-block">
           <p className="text-display-1 font-display text-ajr-green mb-8 tabular-nums">
             {daysSince}
           </p>

@@ -40,7 +40,7 @@ export const WeatherSlide = () => {
 
       {/* Content */}
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="bg-white/15 backdrop-blur-md rounded-3xl p-12 border border-white/30 shadow-2xl">
+        <div className="bg-muted/30 backdrop-blur-md rounded-3xl p-12 border border-border/50 shadow-2xl">
           <h2 className="text-8xl font-display text-white mb-12 text-center font-bold tracking-tight">
             Météo du jour
           </h2>

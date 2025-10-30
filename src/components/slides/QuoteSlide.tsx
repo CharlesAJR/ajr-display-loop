@@ -33,7 +33,7 @@ export const QuoteSlide = () => {
       </svg>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto relative z-10 bg-white/15 backdrop-blur-md rounded-3xl p-16 border border-white/30 shadow-2xl">
+      <div className="max-w-6xl mx-auto relative z-10 bg-muted/30 backdrop-blur-md rounded-3xl p-16 border border-border/50 shadow-2xl">
         <div className="text-center">
           <p className="text-white text-6xl font-display leading-tight italic font-light mb-8">
             "{quote.text}"
