@@ -42,12 +42,12 @@ const Index = () => {
 
   const slides = [
     <WelcomeSlide key="welcome" />,
-    <QuoteSlide key="quote" />,
-    <WeatherSlide key="weather" />,
     <BirthdaysSlide key="birthdays" />,
+    <QuoteSlide key="quote" />,
     <GallerySlide key="gallery1" images={gallery1} title={slidesConfig.galleryTitles.gallery1} />,
     <SafetySlide key="safety" />,
     <SafetyCounterSlide key="counter" />,
+    <WeatherSlide key="weather" />,
     <GallerySlide key="gallery2" images={gallery2} title={slidesConfig.galleryTitles.gallery2} />,
   ];
 
