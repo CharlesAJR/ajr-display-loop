@@ -62,7 +62,7 @@ export default {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
         display: ["Montserrat", "Inter", "sans-serif"],
-        serif: ["Playfair Display", "Georgia", "serif"],
+        industrial: ["Bebas Neue", "Arial Black", "sans-serif"],
       },
       fontSize: {
         "display-1": ["9rem", { lineHeight: "1", fontWeight: "800", letterSpacing: "-0.02em" }],

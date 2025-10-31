@@ -14,7 +14,7 @@ export const WelcomeSlide = () => {
         }}>
             BIENVENUE À L'ATELIER
           </p>
-          <h1 className="text-[12rem] font-serif font-bold leading-none tracking-tight" style={{
+          <h1 className="text-[12rem] font-industrial leading-none tracking-wider" style={{
           textShadow: '0 4px 12px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.2)'
         }}>JEAN
 REGNIERS</h1>
