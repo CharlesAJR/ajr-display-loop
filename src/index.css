@@ -2,6 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Fonts */
+@font-face {
+  font-family: 'Campton';
+  src: url('/src/assets/fonts/campton-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Campton';
+  src: url('/src/assets/fonts/campton-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Soleil';
+  src: url('/src/assets/fonts/soleil-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Soleil';
+  src: url('/src/assets/fonts/soleil-book.otf') format('opentype');
+  font-weight: 450;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Soleil';
+  src: url('/src/assets/fonts/soleil-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Soleil';
+  src: url('/src/assets/fonts/soleil-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
 @keyframes progress-bar {
   from {
     transform: scaleX(0);

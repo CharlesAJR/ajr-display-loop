@@ -60,9 +60,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Montserrat", "Inter", "sans-serif"],
-        industrial: ["Bebas Neue", "Arial Black", "sans-serif"],
+        sans: ["Soleil", "Inter", "system-ui", "sans-serif"],
+        display: ["Soleil", "Montserrat", "sans-serif"],
+        campton: ["Campton", "Arial Black", "sans-serif"],
       },
       fontSize: {
         "display-1": ["9rem", { lineHeight: "1", fontWeight: "800", letterSpacing: "-0.02em" }],

@@ -9,12 +9,12 @@ export const WelcomeSlide = () => {
       
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-16 -mt-4">
         <div className="text-center">
-          <p className="text-5xl font-sans font-normal tracking-[0.3em] mb-6" style={{
+          <p className="text-5xl font-display font-bold tracking-[0.3em] mb-6" style={{
           textShadow: '0 2px 8px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)'
         }}>
             BIENVENUE À L'ATELIER
           </p>
-          <h1 className="text-[12rem] font-industrial leading-none tracking-wider" style={{
+          <h1 className="text-[12rem] font-campton font-bold leading-none tracking-wider" style={{
           textShadow: '0 4px 12px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.2)'
         }}>JEAN
 REGNIERS</h1>
