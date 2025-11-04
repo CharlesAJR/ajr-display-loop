@@ -1,46 +1,86 @@
 import { Cake } from "lucide-react";
 import { slidesConfig } from "@/config/slidesContent";
+import { startOfWeek, endOfWeek, format, parse, isWithinInterval, getDay } from "date-fns";
+import { fr } from "date-fns/locale";
+
 export const BirthdaysSlide = () => {
   const {
     birthdays,
     events
   } = slidesConfig;
 
-  // Organiser les événements par jour de la semaine
+  // Organiser les événements par jour de la semaine EN FILTRANT POUR LA SEMAINE ACTUELLE
   const weekDays = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
+  
   const getEventsByDay = () => {
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    
+    // Calculer le lundi et vendredi de la semaine actuelle
+    const monday = startOfWeek(today, { weekStartsOn: 1 });
+    const friday = endOfWeek(today, { weekStartsOn: 1 });
+    friday.setDate(monday.getDate() + 4); // Limiter au vendredi
+    
     const eventsByDay: {
       [key: string]: {
         birthdays: typeof birthdays;
         events: typeof events;
       };
     } = {};
+    
     weekDays.forEach(day => {
       eventsByDay[day] = {
         birthdays: [],
         events: []
       };
     });
+    
+    // Filtrer les anniversaires de la semaine actuelle
     birthdays.forEach(birthday => {
-      const dayMatch = birthday.date.match(/^(Lundi|Mardi|Mercredi|Jeudi|Vendredi)/i);
-      if (dayMatch) {
-        const day = dayMatch[1].charAt(0).toUpperCase() + dayMatch[1].slice(1).toLowerCase();
-        if (eventsByDay[day]) {
-          eventsByDay[day].birthdays.push(birthday);
+      // Parser la date au format JJ/MM
+      const dateMatch = birthday.date.match(/(\d{2})\/(\d{2})/);
+      if (dateMatch) {
+        const day = parseInt(dateMatch[1]);
+        const month = parseInt(dateMatch[2]);
+        
+        // Créer une date pour cette année
+        const birthdayDate = new Date(currentYear, month - 1, day);
+        
+        // Vérifier si l'anniversaire tombe dans la semaine actuelle
+        if (isWithinInterval(birthdayDate, { start: monday, end: friday })) {
+          const dayOfWeek = getDay(birthdayDate);
+          const dayName = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"][dayOfWeek];
+          
+          if (eventsByDay[dayName]) {
+            eventsByDay[dayName].birthdays.push(birthday);
+          }
         }
       }
     });
+    
+    // Filtrer les événements de la semaine actuelle (même logique)
     events.forEach(event => {
-      const dayMatch = event.date.match(/^(Lundi|Mardi|Mercredi|Jeudi|Vendredi)/i);
-      if (dayMatch) {
-        const day = dayMatch[1].charAt(0).toUpperCase() + dayMatch[1].slice(1).toLowerCase();
-        if (eventsByDay[day]) {
-          eventsByDay[day].events.push(event);
+      const dateMatch = event.date.match(/(\d{2})\/(\d{2})/);
+      if (dateMatch) {
+        const day = parseInt(dateMatch[1]);
+        const month = parseInt(dateMatch[2]);
+        
+        const eventDate = new Date(currentYear, month - 1, day);
+        
+        if (isWithinInterval(eventDate, { start: monday, end: friday })) {
+          const dayOfWeek = getDay(eventDate);
+          const dayName = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"][dayOfWeek];
+          
+          if (eventsByDay[dayName]) {
+            eventsByDay[dayName].events.push(event);
+          }
         }
       }
     });
+    
     return eventsByDay;
   };
+  
   const eventsByDay = getEventsByDay();
 
   // Calculer la période de la semaine actuelle
