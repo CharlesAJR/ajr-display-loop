@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { slidesConfig } from "@/config/slidesContent";
-import ajrLogo from "@/assets/ajr-logo.png";
+import ajrLogo from "@/assets/ajr-logo-new.jpg";
 
 export const Footer = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
