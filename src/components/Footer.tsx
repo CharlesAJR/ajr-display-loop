@@ -34,7 +34,7 @@ export const Footer = () => {
     <footer className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[hsl(265,50%,35%)] to-[hsl(270,55%,25%)] text-white py-5 px-10 z-50">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-5">
-          <img src={ajrLogo} alt="Atelier Jean Regniers" className="h-14 w-auto" />
+          <img src={ajrLogo} alt="Atelier Jean Regniers" className="h-20 w-auto" />
           <p className="text-3xl text-white/95 italic font-light tracking-wide">
             {slidesConfig.footer.tagline}
           </p>
