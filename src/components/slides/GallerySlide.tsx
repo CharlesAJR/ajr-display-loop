@@ -7,8 +7,8 @@ interface GallerySlideProps {
 }
 
 type Position = {
-  x: "left" | "center" | "right";
-  y: "top" | "center" | "bottom";
+  x: number; // pourcentage de 0 à 100
+  y: number; // pourcentage de 0 à 100
 };
 
 export const GallerySlide = ({
@@ -16,44 +16,28 @@ export const GallerySlide = ({
   title
 }: GallerySlideProps) => {
   const [imagePositions, setImagePositions] = useState<Position[]>(
-    images.map(() => ({ x: "center", y: "center" }))
+    images.map(() => ({ x: 50, y: 50 })) // 50% = centre
   );
 
   const getObjectPosition = (position: Position) => {
-    const xMap = { left: "0%", center: "50%", right: "100%" };
-    const yMap = { top: "0%", center: "50%", bottom: "100%" };
-    return `${xMap[position.x]} ${yMap[position.y]}`;
+    return `${position.x}% ${position.y}%`;
   };
 
   const movePosition = (index: number, direction: "up" | "down" | "left" | "right") => {
+    const step = 5; // déplacement de 5% à chaque clic
+    
     setImagePositions(prev => {
       const updated = [...prev];
       const current = updated[index];
       
       if (direction === "up") {
-        const yOptions: ("top" | "center" | "bottom")[] = ["bottom", "center", "top"];
-        const currentIndex = yOptions.indexOf(current.y);
-        if (currentIndex < yOptions.length - 1) {
-          updated[index] = { ...current, y: yOptions[currentIndex + 1] };
-        }
+        updated[index] = { ...current, y: Math.max(0, current.y - step) };
       } else if (direction === "down") {
-        const yOptions: ("top" | "center" | "bottom")[] = ["top", "center", "bottom"];
-        const currentIndex = yOptions.indexOf(current.y);
-        if (currentIndex < yOptions.length - 1) {
-          updated[index] = { ...current, y: yOptions[currentIndex + 1] };
-        }
+        updated[index] = { ...current, y: Math.min(100, current.y + step) };
       } else if (direction === "left") {
-        const xOptions: ("left" | "center" | "right")[] = ["right", "center", "left"];
-        const currentIndex = xOptions.indexOf(current.x);
-        if (currentIndex < xOptions.length - 1) {
-          updated[index] = { ...current, x: xOptions[currentIndex + 1] };
-        }
+        updated[index] = { ...current, x: Math.max(0, current.x - step) };
       } else if (direction === "right") {
-        const xOptions: ("left" | "center" | "right")[] = ["left", "center", "right"];
-        const currentIndex = xOptions.indexOf(current.x);
-        if (currentIndex < xOptions.length - 1) {
-          updated[index] = { ...current, x: xOptions[currentIndex + 1] };
-        }
+        updated[index] = { ...current, x: Math.min(100, current.x + step) };
       }
       
       return updated;
