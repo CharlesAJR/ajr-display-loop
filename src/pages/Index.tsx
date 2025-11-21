@@ -29,36 +29,21 @@ import workshop15 from "@/assets/workshop-15.jpg";
 import workshop16 from "@/assets/workshop-16.jpg";
 import workshop17 from "@/assets/workshop-17.jpg";
 import workshop18 from "@/assets/workshop-18.jpg";
-
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  
   const SLIDE_DURATION = slidesConfig.slideDuration * 1000;
-
   const gallery1 = [workshop1, workshop2, workshop3, workshop4, workshop5, workshop6];
   const gallery2 = [workshop7, workshop8, workshop9, workshop10, workshop11, workshop12];
   const gallery3 = [workshop13, workshop14, workshop15, workshop16, workshop17, workshop18];
-
-  const slides = [
-    <WelcomeSlide key="welcome" />,
-    <BirthdaysSlide key="birthdays" />,
-    <QuoteSlide key="quote" />,
-    <GallerySlide key="gallery1" images={gallery1} />,
-    <SafetySlide key="safety" />,
-    <SafetyCounterSlide key="counter" />,
-    <WeatherSlide key="weather" />,
-    <GallerySlide key="gallery2" images={gallery2} />,
-  ];
+  const slides = [<WelcomeSlide key="welcome" />, <BirthdaysSlide key="birthdays" />, <QuoteSlide key="quote" />, <GallerySlide key="gallery1" images={gallery1} />, <SafetySlide key="safety" />, <SafetyCounterSlide key="counter" />, <WeatherSlide key="weather" />, <GallerySlide key="gallery2" images={gallery2} />];
 
   // Auto-rotation des slides
   useEffect(() => {
     if (isPaused) return;
-    
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlide(prev => (prev + 1) % slides.length);
     }, SLIDE_DURATION);
-
     return () => clearInterval(interval);
   }, [slides.length, isPaused, SLIDE_DURATION]);
 
@@ -69,18 +54,18 @@ const Index = () => {
         case "ArrowRight":
         case "ArrowDown":
           // Slide suivante
-          setCurrentSlide((prev) => (prev + 1) % slides.length);
+          setCurrentSlide(prev => (prev + 1) % slides.length);
           break;
         case "ArrowLeft":
         case "ArrowUp":
           // Slide précédente
-          setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+          setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
           break;
         case " ":
         case "p":
           // Pause/Play (Barre espace ou P)
           e.preventDefault();
-          setIsPaused((prev) => !prev);
+          setIsPaused(prev => !prev);
           break;
         case "Home":
           // Retour au début
@@ -92,40 +77,31 @@ const Index = () => {
           break;
       }
     };
-
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
   }, [slides.length]);
-
-  return (
-    <div className="relative w-screen h-screen overflow-hidden bg-background">
+  return <div className="relative w-screen h-screen overflow-hidden bg-background">
       {/* Conteneur pour centrer et réduire le contenu (protection TV overscan) */}
       <div className="absolute inset-0 pb-32 flex items-center justify-center">
-        <div className="w-full h-full relative" style={{ transform: 'scale(0.94)' }}>
+        <div className="w-full h-full relative" style={{
+        transform: 'scale(0.94)'
+      }}>
           {/* Slides */}
-          {slides.map((slide, index) => (
-            <DisplaySlide key={index} isActive={currentSlide === index}>
+          {slides.map((slide, index) => <DisplaySlide key={index} isActive={currentSlide === index}>
               {slide}
-            </DisplaySlide>
-          ))}
+            </DisplaySlide>)}
 
           {/* Barre de progression */}
           <div className="absolute bottom-0 left-0 right-0 h-2 bg-white/10 backdrop-blur-sm z-[60]">
-            <div 
-              key={currentSlide}
-              className="h-full bg-ajr-violet-soft backdrop-blur-md origin-left shadow-lg"
-              style={{
-                animation: isPaused ? 'none' : `progress-bar ${SLIDE_DURATION}ms linear`
-              }}
-            />
+            <div key={currentSlide} style={{
+            animation: isPaused ? 'none' : `progress-bar ${SLIDE_DURATION}ms linear`
+          }} className="h-full bg-ajr-violet-soft backdrop-blur-md origin-left shadow-lg bg-[#8a62ba]" />
           </div>
         </div>
       </div>
 
       {/* Footer - non affecté par le scale */}
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
