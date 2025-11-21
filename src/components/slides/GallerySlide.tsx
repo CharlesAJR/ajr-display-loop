@@ -6,7 +6,7 @@ interface GallerySlideProps {
 export const GallerySlide = ({ images, title }: GallerySlideProps) => {
   return (
     <div className="h-full w-full flex items-center justify-center bg-background animate-fade-in">
-      <div className="max-w-6xl max-h-[75vh] flex flex-col items-center px-12 py-8">
+      <div className="max-w-7xl max-h-[80vh] flex flex-col items-center px-12 py-8">
         {title && (
           <h2 className="text-5xl font-display font-bold text-foreground mb-6">
             {title}

@@ -28,9 +28,6 @@ export const Footer = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-10">
           <img src={ajrLogo} alt="Atelier Jean Regniers" className="h-20 w-auto" />
-          <p className="text-3xl text-white/95 italic font-light tracking-wide self-center mt-2">
-            {slidesConfig.footer.tagline}
-          </p>
         </div>
         
         <div className="flex flex-col items-end gap-1">
