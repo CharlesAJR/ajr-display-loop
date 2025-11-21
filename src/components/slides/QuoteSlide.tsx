@@ -36,10 +36,10 @@ export const QuoteSlide = () => {
       <div className="max-w-6xl max-h-[75vh] mx-auto relative z-10 px-16">
         <div className="bg-gradient-to-br from-white to-ajr-violet-soft rounded-3xl p-16 shadow-[0_8px_40px_rgba(0,0,0,0.1)]">
           <div className="text-center">
-            <p className="text-foreground text-5xl font-serif leading-tight italic font-normal mb-8">
+            <p className="text-foreground font-serif leading-tight italic font-normal mb-8" style={{ fontSize: '3.3rem' }}>
               "{quote.text}"
             </p>
-            <cite className="not-italic text-3xl font-display text-ajr-violet font-semibold">
+            <cite className="not-italic font-display text-ajr-violet font-semibold" style={{ fontSize: '2.0625rem' }}>
               — {quote.author}
             </cite>
           </div>
