@@ -24,7 +24,7 @@ export const Footer = () => {
       day: "numeric"
     });
   };
-  return <footer className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[hsl(265,50%,35%)] to-[hsl(270,55%,25%)] text-white py-5 px-10 z-50">
+  return <footer className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[hsl(265,50%,35%)] to-[hsl(270,55%,25%)] text-white py-5 px-6 z-50">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-10">
           <img src={ajrLogo} alt="Atelier Jean Regniers" className="h-20 w-auto" />
