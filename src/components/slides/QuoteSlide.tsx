@@ -15,7 +15,7 @@ export const QuoteSlide = () => {
   const quote = slidesConfig.quotes[quoteIndex];
 
   return (
-    <div className="h-full w-full flex items-center justify-center bg-background px-16 animate-fade-in relative overflow-hidden">
+    <div className="h-full w-full flex items-center justify-center bg-background animate-fade-in relative overflow-hidden">
       {/* Decorative quote marks background */}
       <svg 
         className="absolute top-20 left-20 w-[24rem] h-[24rem] text-ajr-violet opacity-[0.03]" 
@@ -32,15 +32,17 @@ export const QuoteSlide = () => {
         <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
       </svg>
 
-      {/* Content */}
-      <div className="max-w-6xl mx-auto relative z-10 bg-gradient-to-br from-white to-ajr-violet-soft rounded-3xl p-16 shadow-[0_8px_40px_rgba(0,0,0,0.1)] scale-150">
-        <div className="text-center">
-          <p className="text-foreground text-6xl font-serif leading-tight italic font-normal mb-8">
-            "{quote.text}"
-          </p>
-          <cite className="not-italic text-4xl font-display text-ajr-violet font-semibold">
-            — {quote.author}
-          </cite>
+      {/* Content - redimensionné */}
+      <div className="max-w-5xl max-h-[70vh] mx-auto relative z-10 px-16">
+        <div className="bg-gradient-to-br from-white to-ajr-violet-soft rounded-3xl p-16 shadow-[0_8px_40px_rgba(0,0,0,0.1)]">
+          <div className="text-center">
+            <p className="text-foreground text-5xl font-serif leading-tight italic font-normal mb-8">
+              "{quote.text}"
+            </p>
+            <cite className="not-italic text-3xl font-display text-ajr-violet font-semibold">
+              — {quote.author}
+            </cite>
+          </div>
         </div>
       </div>
     </div>
