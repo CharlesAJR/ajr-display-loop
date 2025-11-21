@@ -29,6 +29,18 @@ import workshop15 from "@/assets/workshop-15.jpg";
 import workshop16 from "@/assets/workshop-16.jpg";
 import workshop17 from "@/assets/workshop-17.jpg";
 import workshop18 from "@/assets/workshop-18.jpg";
+
+// New images
+import new1 from "@/assets/new-1.jpg";
+import new2 from "@/assets/new-2.jpg";
+import new3 from "@/assets/new-3.jpg";
+import new4 from "@/assets/new-4.jpg";
+import new5 from "@/assets/new-5.jpg";
+import new6 from "@/assets/new-6.jpg";
+import new7 from "@/assets/new-7.jpg";
+import new8 from "@/assets/new-8.jpg";
+import new9 from "@/assets/new-9.jpg";
+import new10 from "@/assets/new-10.jpg";
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -36,7 +48,9 @@ const Index = () => {
   const gallery1 = [workshop1, workshop2, workshop3, workshop4, workshop5, workshop6];
   const gallery2 = [workshop7, workshop8, workshop9, workshop10, workshop11, workshop12];
   const gallery3 = [workshop13, workshop14, workshop15, workshop16, workshop17, workshop18];
-  const slides = [<WelcomeSlide key="welcome" />, <BirthdaysSlide key="birthdays" />, <QuoteSlide key="quote" />, <GallerySlide key="gallery1" images={gallery1} />, <SafetySlide key="safety" />, <SafetyCounterSlide key="counter" />, <WeatherSlide key="weather" />, <GallerySlide key="gallery1-copy" images={gallery1} />];
+  const galleryNew1 = [new1, new2, new3, new4, new5, new6];
+  const galleryNew2 = [new7, new8, new9, new10];
+  const slides = [<WelcomeSlide key="welcome" />, <BirthdaysSlide key="birthdays" />, <QuoteSlide key="quote" />, <GallerySlide key="gallery-new1" images={galleryNew1} />, <SafetySlide key="safety" />, <SafetyCounterSlide key="counter" />, <WeatherSlide key="weather" />, <GallerySlide key="gallery-new2" images={galleryNew2} />];
 
   // Auto-rotation des slides
   useEffect(() => {
