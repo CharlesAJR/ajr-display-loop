@@ -54,6 +54,15 @@
   }
 }
 
+@keyframes border-blink {
+  0%, 49% {
+    border-color: rgb(239, 68, 68);
+  }
+  50%, 100% {
+    border-color: rgb(34, 197, 94);
+  }
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
