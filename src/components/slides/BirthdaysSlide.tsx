@@ -117,7 +117,7 @@ export const BirthdaysSlide = () => {
           const hasBirthdays = dayEvents.birthdays.length > 0;
           const hasEvents = dayEvents.events.length > 0;
           const hasAnyEvent = hasBirthdays || hasEvents;
-          return <div key={day} className="bg-[hsl(var(--ajr-beige))] rounded-2xl p-4 min-h-[540px]">
+          return <div key={day} className="bg-[hsl(var(--ajr-beige))] rounded-2xl p-4 min-h-[510px]">
                 <h3 className="text-2xl font-semibold text-foreground mb-4 pb-2 border-b-2 border-gray-200 italic">
                   {day}
                 </h3>
