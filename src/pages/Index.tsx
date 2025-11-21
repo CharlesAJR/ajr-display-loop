@@ -105,27 +105,30 @@ const Index = () => {
       <div className="absolute top-0 left-0 bottom-0 w-1 z-[70]" style={{ background: 'repeating-linear-gradient(to bottom, red 0px, red 100px, green 100px, green 200px)' }} />
       <div className="absolute top-0 right-0 bottom-0 w-1 z-[70]" style={{ background: 'repeating-linear-gradient(to bottom, red 0px, red 100px, green 100px, green 200px)' }} />
       
-      {/* Slides */}
-      <div className="absolute inset-0 pb-32">
-        {slides.map((slide, index) => (
-          <DisplaySlide key={index} isActive={currentSlide === index}>
-            {slide}
-          </DisplaySlide>
-        ))}
+      {/* Conteneur pour centrer et réduire le contenu (protection TV overscan) */}
+      <div className="absolute inset-0 pb-32 flex items-center justify-center">
+        <div className="w-full h-full relative" style={{ transform: 'scale(0.94)' }}>
+          {/* Slides */}
+          {slides.map((slide, index) => (
+            <DisplaySlide key={index} isActive={currentSlide === index}>
+              {slide}
+            </DisplaySlide>
+          ))}
+
+          {/* Barre de progression */}
+          <div className="absolute bottom-0 left-0 right-0 h-2 bg-white/10 backdrop-blur-sm z-[60]">
+            <div 
+              key={currentSlide}
+              className="h-full bg-white/60 backdrop-blur-md origin-left shadow-lg"
+              style={{
+                animation: isPaused ? 'none' : `progress-bar ${SLIDE_DURATION}ms linear`
+              }}
+            />
+          </div>
+        </div>
       </div>
 
-      {/* Barre de progression - juste au-dessus du footer */}
-      <div className="fixed bottom-[140px] left-0 right-0 h-2 bg-white/10 backdrop-blur-sm z-[60]">
-        <div 
-          key={currentSlide}
-          className="h-full bg-white/60 backdrop-blur-md origin-left shadow-lg"
-          style={{
-            animation: isPaused ? 'none' : `progress-bar ${SLIDE_DURATION}ms linear`
-          }}
-        />
-      </div>
-
-      {/* Footer */}
+      {/* Footer - non affecté par le scale */}
       <Footer />
     </div>
   );
