@@ -98,7 +98,7 @@ const Index = () => {
   }, [slides.length]);
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-background">
+    <div className="relative w-screen h-screen overflow-hidden bg-background border-4 border-red-500">
       {/* Slides */}
       <div className="absolute inset-0 pb-32">
         {slides.map((slide, index) => (
