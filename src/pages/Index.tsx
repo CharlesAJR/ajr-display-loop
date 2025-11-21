@@ -106,14 +106,14 @@ const Index = () => {
           {slides.map((slide, index) => <DisplaySlide key={index} isActive={currentSlide === index}>
               {slide}
             </DisplaySlide>)}
-
-          {/* Barre de progression */}
-          <div className="absolute bottom-0 left-0 right-0 h-2 bg-white/10 backdrop-blur-sm z-[60]">
-            <div key={currentSlide} style={{
-            animation: isPaused ? 'none' : `progress-bar ${SLIDE_DURATION}ms linear`
-          }} className="h-full bg-ajr-violet-soft backdrop-blur-md origin-left shadow-lg bg-[#8a62ba]" />
-          </div>
         </div>
+      </div>
+
+      {/* Barre de progression - non affectée par le scale */}
+      <div className="fixed bottom-20 left-0 right-0 h-2 bg-white/10 backdrop-blur-sm z-[60]">
+        <div key={currentSlide} style={{
+        animation: isPaused ? 'none' : `progress-bar ${SLIDE_DURATION}ms linear`
+      }} className="h-full bg-ajr-violet-soft backdrop-blur-md origin-left shadow-lg bg-[#8a62ba]" />
       </div>
 
       {/* Footer - non affecté par le scale */}
