@@ -36,7 +36,7 @@ const Index = () => {
   const gallery1 = [workshop1, workshop2, workshop3, workshop4, workshop5, workshop6];
   const gallery2 = [workshop7, workshop8, workshop9, workshop10, workshop11, workshop12];
   const gallery3 = [workshop13, workshop14, workshop15, workshop16, workshop17, workshop18];
-  const slides = [<WelcomeSlide key="welcome" />, <BirthdaysSlide key="birthdays" />, <QuoteSlide key="quote" />, <GallerySlide key="gallery1" images={gallery1} />, <SafetySlide key="safety" />, <SafetyCounterSlide key="counter" />, <WeatherSlide key="weather" />, <GallerySlide key="gallery2" images={gallery2} />];
+  const slides = [<WelcomeSlide key="welcome" />, <BirthdaysSlide key="birthdays" />, <QuoteSlide key="quote" />, <GallerySlide key="gallery1" images={gallery1} />, <SafetySlide key="safety" />, <SafetyCounterSlide key="counter" />, <WeatherSlide key="weather" />, <GallerySlide key="gallery2" images={gallery2} />, <GallerySlide key="gallery1-copy" images={gallery1} />];
 
   // Auto-rotation des slides
   useEffect(() => {
