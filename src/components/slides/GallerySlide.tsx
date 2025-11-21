@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 
 interface GallerySlideProps {
   images: string[];
@@ -24,10 +25,37 @@ export const GallerySlide = ({
     return `${xMap[position.x]} ${yMap[position.y]}`;
   };
 
-  const updatePosition = (index: number, axis: "x" | "y", value: "left" | "center" | "right" | "top" | "bottom") => {
+  const movePosition = (index: number, direction: "up" | "down" | "left" | "right") => {
     setImagePositions(prev => {
       const updated = [...prev];
-      updated[index] = { ...updated[index], [axis]: value };
+      const current = updated[index];
+      
+      if (direction === "up") {
+        const yOptions: ("top" | "center" | "bottom")[] = ["bottom", "center", "top"];
+        const currentIndex = yOptions.indexOf(current.y);
+        if (currentIndex < yOptions.length - 1) {
+          updated[index] = { ...current, y: yOptions[currentIndex + 1] };
+        }
+      } else if (direction === "down") {
+        const yOptions: ("top" | "center" | "bottom")[] = ["top", "center", "bottom"];
+        const currentIndex = yOptions.indexOf(current.y);
+        if (currentIndex < yOptions.length - 1) {
+          updated[index] = { ...current, y: yOptions[currentIndex + 1] };
+        }
+      } else if (direction === "left") {
+        const xOptions: ("left" | "center" | "right")[] = ["right", "center", "left"];
+        const currentIndex = xOptions.indexOf(current.x);
+        if (currentIndex < xOptions.length - 1) {
+          updated[index] = { ...current, x: xOptions[currentIndex + 1] };
+        }
+      } else if (direction === "right") {
+        const xOptions: ("left" | "center" | "right")[] = ["left", "center", "right"];
+        const currentIndex = xOptions.indexOf(current.x);
+        if (currentIndex < xOptions.length - 1) {
+          updated[index] = { ...current, x: xOptions[currentIndex + 1] };
+        }
+      }
+      
       return updated;
     });
   };
@@ -46,74 +74,47 @@ export const GallerySlide = ({
                 style={{ objectPosition: getObjectPosition(imagePositions[index]) }}
               />
               
-              {/* Outil de cadrage interactif - visible au survol */}
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="flex flex-col gap-2">
-                  {/* Contrôles verticaux */}
-                  <div className="flex gap-1 justify-center">
+              {/* Outil de cadrage interactif avec flèches - visible au survol */}
+              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="grid grid-cols-3 grid-rows-3 gap-1">
+                  {/* Rangée du haut */}
+                  <div className="col-start-2">
                     <button
-                      onClick={() => updatePosition(index, "y", "top")}
-                      className={`px-2 py-1 text-xs rounded transition-colors ${
-                        imagePositions[index].y === "top" 
-                          ? "bg-primary text-primary-foreground" 
-                          : "bg-background/80 text-foreground hover:bg-background"
-                      }`}
+                      onClick={() => movePosition(index, "up")}
+                      className="w-10 h-10 rounded-lg bg-background/90 hover:bg-primary hover:text-primary-foreground text-foreground flex items-center justify-center transition-all duration-200 shadow-lg hover:scale-110"
+                      title="Déplacer vers le haut"
                     >
-                      Haut
-                    </button>
-                    <button
-                      onClick={() => updatePosition(index, "y", "center")}
-                      className={`px-2 py-1 text-xs rounded transition-colors ${
-                        imagePositions[index].y === "center" 
-                          ? "bg-primary text-primary-foreground" 
-                          : "bg-background/80 text-foreground hover:bg-background"
-                      }`}
-                    >
-                      Centre
-                    </button>
-                    <button
-                      onClick={() => updatePosition(index, "y", "bottom")}
-                      className={`px-2 py-1 text-xs rounded transition-colors ${
-                        imagePositions[index].y === "bottom" 
-                          ? "bg-primary text-primary-foreground" 
-                          : "bg-background/80 text-foreground hover:bg-background"
-                      }`}
-                    >
-                      Bas
+                      <ArrowUp size={20} />
                     </button>
                   </div>
                   
-                  {/* Contrôles horizontaux */}
-                  <div className="flex gap-1 justify-center">
+                  {/* Rangée du milieu */}
+                  <button
+                    onClick={() => movePosition(index, "left")}
+                    className="w-10 h-10 rounded-lg bg-background/90 hover:bg-primary hover:text-primary-foreground text-foreground flex items-center justify-center transition-all duration-200 shadow-lg hover:scale-110"
+                    title="Déplacer vers la gauche"
+                  >
+                    <ArrowLeft size={20} />
+                  </button>
+                  <div className="w-10 h-10 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-primary/60"></div>
+                  </div>
+                  <button
+                    onClick={() => movePosition(index, "right")}
+                    className="w-10 h-10 rounded-lg bg-background/90 hover:bg-primary hover:text-primary-foreground text-foreground flex items-center justify-center transition-all duration-200 shadow-lg hover:scale-110"
+                    title="Déplacer vers la droite"
+                  >
+                    <ArrowRight size={20} />
+                  </button>
+                  
+                  {/* Rangée du bas */}
+                  <div className="col-start-2">
                     <button
-                      onClick={() => updatePosition(index, "x", "left")}
-                      className={`px-2 py-1 text-xs rounded transition-colors ${
-                        imagePositions[index].x === "left" 
-                          ? "bg-primary text-primary-foreground" 
-                          : "bg-background/80 text-foreground hover:bg-background"
-                      }`}
+                      onClick={() => movePosition(index, "down")}
+                      className="w-10 h-10 rounded-lg bg-background/90 hover:bg-primary hover:text-primary-foreground text-foreground flex items-center justify-center transition-all duration-200 shadow-lg hover:scale-110"
+                      title="Déplacer vers le bas"
                     >
-                      Gauche
-                    </button>
-                    <button
-                      onClick={() => updatePosition(index, "x", "center")}
-                      className={`px-2 py-1 text-xs rounded transition-colors ${
-                        imagePositions[index].x === "center" 
-                          ? "bg-primary text-primary-foreground" 
-                          : "bg-background/80 text-foreground hover:bg-background"
-                      }`}
-                    >
-                      Centre
-                    </button>
-                    <button
-                      onClick={() => updatePosition(index, "x", "right")}
-                      className={`px-2 py-1 text-xs rounded transition-colors ${
-                        imagePositions[index].x === "right" 
-                          ? "bg-primary text-primary-foreground" 
-                          : "bg-background/80 text-foreground hover:bg-background"
-                      }`}
-                    >
-                      Droite
+                      <ArrowDown size={20} />
                     </button>
                   </div>
                 </div>
