@@ -123,20 +123,5 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    overflow: hidden;
-  }
-
-  /* TV Safe Zone - Protection contre l'overscan */
-  #root {
-    padding: 80px;
-    box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
-  }
-  
-  @media (max-width: 1920px) {
-    #root {
-      padding: clamp(40px, 4vw, 80px);
-    }
   }
 }
