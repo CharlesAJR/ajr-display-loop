@@ -99,12 +99,6 @@ const Index = () => {
 
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-background">
-      {/* Bordures de test - alternance rouge/vert tous les 100px */}
-      <div className="absolute top-0 left-0 right-0 h-1 z-[70]" style={{ background: 'repeating-linear-gradient(to right, red 0px, red 100px, green 100px, green 200px)' }} />
-      <div className="absolute bottom-0 left-0 right-0 h-1 z-[70]" style={{ background: 'repeating-linear-gradient(to right, red 0px, red 100px, green 100px, green 200px)' }} />
-      <div className="absolute top-0 left-0 bottom-0 w-1 z-[70]" style={{ background: 'repeating-linear-gradient(to bottom, red 0px, red 100px, green 100px, green 200px)' }} />
-      <div className="absolute top-0 right-0 bottom-0 w-1 z-[70]" style={{ background: 'repeating-linear-gradient(to bottom, red 0px, red 100px, green 100px, green 200px)' }} />
-      
       {/* Conteneur pour centrer et réduire le contenu (protection TV overscan) */}
       <div className="absolute inset-0 pb-32 flex items-center justify-center">
         <div className="w-full h-full relative" style={{ transform: 'scale(0.94)' }}>
