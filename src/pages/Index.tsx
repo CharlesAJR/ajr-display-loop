@@ -98,7 +98,13 @@ const Index = () => {
   }, [slides.length]);
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-background border-t-4 border-t-red-500 border-r-4 border-r-green-500 border-b-4 border-b-red-500 border-l-4 border-l-green-500">
+    <div className="relative w-screen h-screen overflow-hidden bg-background">
+      {/* Bordures de test - alternance rouge/vert tous les 100px */}
+      <div className="absolute top-0 left-0 right-0 h-1 z-[70]" style={{ background: 'repeating-linear-gradient(to right, red 0px, red 100px, green 100px, green 200px)' }} />
+      <div className="absolute bottom-0 left-0 right-0 h-1 z-[70]" style={{ background: 'repeating-linear-gradient(to right, red 0px, red 100px, green 100px, green 200px)' }} />
+      <div className="absolute top-0 left-0 bottom-0 w-1 z-[70]" style={{ background: 'repeating-linear-gradient(to bottom, red 0px, red 100px, green 100px, green 200px)' }} />
+      <div className="absolute top-0 right-0 bottom-0 w-1 z-[70]" style={{ background: 'repeating-linear-gradient(to bottom, red 0px, red 100px, green 100px, green 200px)' }} />
+      
       {/* Slides */}
       <div className="absolute inset-0 pb-32">
         {slides.map((slide, index) => (
