@@ -406,7 +406,7 @@ export const slidesConfig = {
     items: [
       "Portez toujours vos EPI adaptés à votre poste et selon les risques",
       "A chaque sortie & entrée, n'oubliez pas de vous badger",
-      "Attention route temporairement fermée vers le futur atelier cosmétique"
+      "Attention route temporairement fermée vers le futur atelier"
     ]
   },
 
