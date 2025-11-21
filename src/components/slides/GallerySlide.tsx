@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 
 interface GallerySlideProps {
@@ -11,13 +11,33 @@ type Position = {
   y: number; // pourcentage de 0 à 100
 };
 
+const getStorageKey = (title?: string) => {
+  return `gallery-positions-${title || 'default'}`;
+};
+
 export const GallerySlide = ({
   images,
   title
 }: GallerySlideProps) => {
-  const [imagePositions, setImagePositions] = useState<Position[]>(
-    images.map(() => ({ x: 50, y: 50 })) // 50% = centre
-  );
+  const [imagePositions, setImagePositions] = useState<Position[]>(() => {
+    // Charger les positions depuis localStorage
+    const storageKey = getStorageKey(title);
+    const saved = localStorage.getItem(storageKey);
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch {
+        return images.map(() => ({ x: 50, y: 50 }));
+      }
+    }
+    return images.map(() => ({ x: 50, y: 50 }));
+  });
+
+  // Sauvegarder les positions dans localStorage à chaque changement
+  useEffect(() => {
+    const storageKey = getStorageKey(title);
+    localStorage.setItem(storageKey, JSON.stringify(imagePositions));
+  }, [imagePositions, title]);
 
   const getObjectPosition = (position: Position) => {
     return `${position.x}% ${position.y}%`;
