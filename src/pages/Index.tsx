@@ -109,8 +109,8 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Barre de progression - non affectée par le scale */}
-      <div className="fixed bottom-32 left-0 right-0 h-2 bg-white/10 backdrop-blur-sm z-[60]">
+      {/* Barre de progression - juste au-dessus du footer */}
+      <div className="fixed bottom-[130px] left-0 right-0 h-2 bg-white/10 backdrop-blur-sm z-[60]">
         <div key={currentSlide} style={{
         animation: isPaused ? 'none' : `progress-bar ${SLIDE_DURATION}ms linear`
       }} className="h-full bg-ajr-violet-soft backdrop-blur-md origin-left shadow-lg bg-[#8a62ba]" />
