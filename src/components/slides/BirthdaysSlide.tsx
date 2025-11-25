@@ -108,6 +108,10 @@ export const BirthdaysSlide = () => {
             </h2>
             <p className="text-2xl text-muted-foreground">{getWeekPeriod()}</p>
           </div>
+          <div className="flex items-center gap-3 bg-[hsl(var(--ajr-beige))]/50 px-6 py-3 rounded-xl">
+            <Cake className="w-6 h-6 text-pink-500" strokeWidth={2} />
+            <span className="text-xl text-muted-foreground font-medium">= Anniversaire</span>
+          </div>
         </div>
 
         {/* Calendrier hebdomadaire */}
@@ -126,7 +130,7 @@ export const BirthdaysSlide = () => {
                   {/* Anniversaires */}
                   {dayEvents.birthdays.map((birthday, index) => <div key={`birthday-${index}`} className="animate-fade-in">
                       <div className="flex items-start gap-2 mb-1">
-                        <Cake className="w-4 h-4 text-ajr-green mt-1 flex-shrink-0" strokeWidth={2} />
+                        <Cake className="w-4 h-4 text-pink-500 mt-1 flex-shrink-0" strokeWidth={2} />
                         <p className="text-xl font-bold text-foreground leading-tight">{birthday.name}</p>
                       </div>
                       <p className="text-lg text-muted-foreground ml-6">{birthday.date.replace(/^[^\s]+\s/, '')}</p>
