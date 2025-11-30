@@ -45,7 +45,7 @@ import new11 from "@/assets/new-11.jpg";
 import new12 from "@/assets/new-12.jpg";
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
   const SLIDE_DURATION = slidesConfig.slideDuration * 1000;
   const gallery1 = [workshop1, workshop2, workshop3, workshop4, workshop5, workshop6];
   const gallery2 = [workshop7, workshop8, workshop9, workshop10, workshop11, workshop12];
