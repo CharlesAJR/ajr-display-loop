@@ -59,8 +59,8 @@ const Index = () => {
     <SafetySlide key="safety" />,
     <WeatherSlide key="weather" />,
     <QuoteSlide key="quote" />,
-    <GallerySlide key="gallery-new1" images={galleryNew1} />,
-    <GallerySlide key="gallery-new2" images={galleryNew2} />
+    <GallerySlide key="gallery-new1" images={galleryNew1} title="Photos – vie de l'atelier (1)" />,
+    <GallerySlide key="gallery-new2" images={galleryNew2} title="Photos – vie de l'atelier (2)" />
   ];
 
   // Auto-rotation des slides
