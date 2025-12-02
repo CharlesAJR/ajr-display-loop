@@ -399,6 +399,17 @@ export const slidesConfig = {
   ],
 
   // ====================================================================
+  // ANNONCES SPÉCIALES
+  // ====================================================================
+  announcements: [
+    {
+      text: "L'épouse de Thomas (secteur à préciser) a accouché ce mardi 25/11 d'une petite fille prénommée Léna",
+      highlight: "Félicitations à toute la famille ! 🎀"
+    }
+    // Pour retirer l'annonce, videz ce tableau: announcements: []
+  ],
+
+  // ====================================================================
   // SLIDE 6: MESSAGES DE SÉCURITÉ
   // ====================================================================
   safetyMessages: {
