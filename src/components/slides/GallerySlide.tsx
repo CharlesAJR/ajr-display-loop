@@ -4,6 +4,7 @@ import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
 interface GallerySlideProps {
   images: string[];
   title?: string;
+  showTitle?: boolean;
 }
 
 type Position = {
@@ -17,7 +18,8 @@ const getStorageKey = (title?: string) => {
 
 export const GallerySlide = ({
   images,
-  title
+  title,
+  showTitle = true
 }: GallerySlideProps) => {
   const [imagePositions, setImagePositions] = useState<Position[]>(() => {
     // Charger les positions depuis localStorage
@@ -66,7 +68,7 @@ export const GallerySlide = ({
 
   return <div className="h-full w-full flex items-center justify-center bg-background animate-fade-in">
       <div className="max-w-7xl max-h-[80vh] flex flex-col items-center px-12 py-8 gap-0 shadow-none rounded-none">
-        {title && <h2 className="text-5xl font-display font-bold text-foreground mb-6">
+        {title && showTitle && <h2 className="text-5xl font-display font-bold text-foreground mb-6">
             {title}
           </h2>}
         <div className="grid grid-cols-3 grid-rows-2 gap-3 w-full">
