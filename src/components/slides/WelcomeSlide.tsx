@@ -1,6 +1,6 @@
 import welcomeBg from "@/assets/welcome-background.png";
 export const WelcomeSlide = () => {
-  return <div className="h-full w-full relative animate-fade-in">
+  return <div className="h-full w-full relative animate-fade-in overflow-hidden">
       {/* Background image */}
       <img src={welcomeBg} alt="Atelier Jean-Regniers" className="absolute inset-0 w-full h-full object-cover scale-105" />
       
