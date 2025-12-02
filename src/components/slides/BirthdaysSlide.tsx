@@ -1,4 +1,4 @@
-import { Cake } from "lucide-react";
+import { Cake, Baby } from "lucide-react";
 import { slidesConfig } from "@/config/slidesContent";
 import { startOfWeek, endOfWeek, format, parse, isWithinInterval, getDay } from "date-fns";
 import { fr } from "date-fns/locale";
@@ -6,7 +6,8 @@ import { fr } from "date-fns/locale";
 export const BirthdaysSlide = () => {
   const {
     birthdays,
-    events
+    events,
+    announcements
   } = slidesConfig;
 
   // Organiser les événements par jour de la semaine EN FILTRANT POUR LA SEMAINE ACTUELLE
@@ -121,7 +122,7 @@ export const BirthdaysSlide = () => {
           const hasBirthdays = dayEvents.birthdays.length > 0;
           const hasEvents = dayEvents.events.length > 0;
           const hasAnyEvent = hasBirthdays || hasEvents;
-          return <div key={day} className="bg-[hsl(var(--ajr-beige))] rounded-2xl p-4 min-h-[340px]">
+          return <div key={day} className="bg-[hsl(var(--ajr-beige))] rounded-2xl p-4 min-h-[280px]">
                 <h3 className="text-2xl font-semibold text-foreground mb-4 pb-2 border-b-2 border-gray-200 italic">
                   {day}
                 </h3>
@@ -148,6 +149,23 @@ export const BirthdaysSlide = () => {
               </div>;
         })}
         </div>
+
+        {/* Annonces spéciales */}
+        {announcements && announcements.length > 0 && (
+          <div className="mt-5 bg-pink-50 border-2 border-pink-200 rounded-2xl p-4">
+            <div className="flex items-center gap-4">
+              <Baby className="w-10 h-10 text-pink-500 flex-shrink-0" />
+              <div>
+                <p className="text-xl font-bold text-foreground">
+                  {announcements[0].text}
+                </p>
+                <p className="text-lg text-pink-600 font-medium">
+                  {announcements[0].highlight}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>;
 };
