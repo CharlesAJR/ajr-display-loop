@@ -4,7 +4,7 @@
 
 export const slidesConfig = {
   // Durée d'affichage de chaque slide en secondes
-  slideDuration: 12,
+  slideDuration: 15,
 
   // ====================================================================
   // SLIDE 2: CITATIONS INSPIRANTES
