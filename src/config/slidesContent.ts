@@ -444,41 +444,26 @@ export const slidesConfig = {
   // ====================================================================
   qualityPolicy: {
     title: "Politique Qualité AJR",
-    tagline: "Le choix de la qualité et du sens",
-    pillars: [
-      {
-        icon: "satisfaction",
-        title: "Satisfaction Client",
-        description: "Écoute et réponse aux attentes de nos clients"
-      },
-      {
-        icon: "innovation",
-        title: "Innovation",
-        description: "Développement de solutions créatives et durables"
-      },
-      {
-        icon: "environnement",
-        title: "Environnement",
-        description: "Réduction de notre empreinte écologique"
-      },
-      {
-        icon: "performance",
-        title: "Performance",
-        description: "Amélioration continue de nos processus"
-      },
-      {
-        icon: "amelioration",
-        title: "Amélioration Continue",
-        description: "Engagement vers l'excellence opérationnelle"
-      }
-    ],
     ajrAcrostic: [
       { letter: "A", word: "telier de référence" },
       { letter: "J", word: "amais sans qualité" },
       { letter: "R", word: "esponsable et engagé" }
     ],
-    certifications: ["ISO 9001", "IFS", "Ecolabel"],
-    commitment: "Ensemble, construisons un avenir durable et de qualité"
+    humanValues: {
+      title: "Nos valeurs humaines",
+      items: ["Respect", "Esprit d'équipe", "Engagement", "Bienveillance"]
+    },
+    objectives: {
+      title: "Stratégies & Objectifs",
+      items: [
+        "Management de qualité",
+        "Référence industrielle",
+        "Croissance de l'emploi",
+        "Partenariats durables",
+        "Innovation & visibilité"
+      ]
+    },
+    certifications: ["ISO 9001", "IFS", "Ecolabel"]
   },
 
   // ====================================================================
