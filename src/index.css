@@ -84,6 +84,11 @@ All colors MUST be HSL.
     --ajr-beige: 40 30% 94%;
     --ajr-yellow-pale: 50 55% 96%;
     
+    /* Christmas Colors */
+    --christmas-red: 0 72% 50%;
+    --christmas-green: 140 50% 35%;
+    --christmas-gold: 45 90% 55%;
+    
     /* Base colors */
     --background: 40 25% 98%;
     --foreground: 0 0% 10%;
