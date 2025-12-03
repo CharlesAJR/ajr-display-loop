@@ -3,7 +3,7 @@ export const SafetyCounterSlide = () => {
   const startDate = new Date(slidesConfig.safetyCounter.startDate);
   const today = new Date();
   const daysSince = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
-  return <div className="h-full w-full flex items-center justify-center bg-background animate-fade-in">
+  return <div className="h-full w-full flex items-center justify-center animate-fade-in">
       <div className="max-w-6xl max-h-[70vh] flex flex-col items-center justify-center px-24 py-12">
         {/* Titre principal */}
         <h1 className="text-5xl font-display text-foreground font-medium uppercase tracking-wider mb-12">

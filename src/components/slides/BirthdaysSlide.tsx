@@ -99,7 +99,7 @@ export const BirthdaysSlide = () => {
     };
     return `du ${formatDate(monday)} au ${formatDate(friday)}`;
   };
-  return <div className="relative h-full w-full flex items-center justify-center bg-background animate-fade-in overflow-hidden">
+  return <div className="relative h-full w-full flex items-center justify-center animate-fade-in overflow-hidden">
       <div className="max-w-6xl max-h-[75vh] flex flex-col px-16 py-10">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">

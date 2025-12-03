@@ -17,7 +17,7 @@ export const SafetySlide = () => {
   };
   
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center bg-background animate-fade-in">
+    <div className="h-full w-full flex flex-col items-center justify-center animate-fade-in">
       <div className="max-w-6xl max-h-[75vh] flex flex-col px-16 py-12">
         {/* Header avec badge rouge */}
         <div className="flex justify-center mb-8">
