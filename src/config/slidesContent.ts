@@ -413,7 +413,7 @@ export const slidesConfig = {
   // SLIDE 6: MESSAGES DE SÉCURITÉ
   // ====================================================================
   safetyMessages: {
-    title: "SÉCU & CONSIGNE",
+    title: "SÉCU & CONSIGNES",
     items: [
       "Portez toujours vos EPI adaptés à votre poste et selon les risques",
       "A chaque sortie & entrée, n'oubliez pas de vous badger",
