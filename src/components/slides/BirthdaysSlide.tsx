@@ -99,7 +99,7 @@ export const BirthdaysSlide = () => {
     };
     return `du ${formatDate(monday)} au ${formatDate(friday)}`;
   };
-  return <div className="relative h-full w-full flex items-center justify-center bg-white animate-fade-in overflow-hidden">
+  return <div className="relative h-full w-full flex items-center justify-center bg-background animate-fade-in overflow-hidden">
       <div className="max-w-6xl max-h-[75vh] flex flex-col px-16 py-10">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -122,7 +122,7 @@ export const BirthdaysSlide = () => {
           const hasBirthdays = dayEvents.birthdays.length > 0;
           const hasEvents = dayEvents.events.length > 0;
           const hasAnyEvent = hasBirthdays || hasEvents;
-          return <div key={day} className="bg-[hsl(var(--ajr-beige))] rounded-2xl p-4 min-h-[280px]">
+          return <div key={day} className="bg-white/50 backdrop-blur-sm rounded-2xl p-4 min-h-[280px] border border-foreground/10">
                 <h3 className="text-2xl font-semibold text-foreground mb-4 pb-2 border-b-2 border-gray-200 italic">
                   {day}
                 </h3>
@@ -152,7 +152,7 @@ export const BirthdaysSlide = () => {
 
         {/* Annonces spéciales */}
         {announcements && announcements.length > 0 && (
-          <div className="mt-5 bg-pink-50 border-2 border-pink-200 rounded-2xl p-4">
+          <div className="mt-5 bg-white/50 backdrop-blur-sm rounded-2xl p-4 border border-foreground/10">
             <div className="flex items-center gap-4">
               <Baby className="w-10 h-10 text-pink-500 flex-shrink-0" />
               <div>
