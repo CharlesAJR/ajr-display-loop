@@ -113,7 +113,7 @@ const Index = () => {
       <ChristmasDecorations showSnowflakes={true} showGarland={true} />
       
       {/* Conteneur pour centrer et réduire le contenu (protection TV overscan) */}
-      <div className="absolute inset-0 pb-32 flex items-center justify-center">
+      <div className="absolute inset-0 pb-32 flex items-center justify-center z-10">
         <div className="w-full h-full relative" style={{
         transform: 'scale(0.94)'
       }}>
