@@ -13,58 +13,58 @@ export const QualityPolicySlide = () => {
   const { qualityPolicy } = slidesConfig;
 
   return (
-    <div className="h-full w-full flex items-center justify-center bg-background animate-fade-in">
-      <div className="max-w-6xl w-full px-12 py-8">
+    <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-background via-background to-ajr-pink/5 animate-fade-in">
+      <div className="max-w-5xl w-full px-12">
         {/* Titre principal */}
-        <h1 className="text-5xl font-display font-bold text-center text-ajr-pink mb-10">
+        <h1 className="text-6xl font-display font-bold text-center mb-16 bg-gradient-to-r from-ajr-pink to-ajr-violet bg-clip-text text-transparent">
           {qualityPolicy.title}
         </h1>
 
-        <div className="grid grid-cols-3 gap-8">
-          {/* Colonne 1: Piliers stratégiques */}
-          <div className="col-span-2">
-            <div className="grid grid-cols-2 gap-4">
-              {qualityPolicy.pillars.map((pillar, index) => {
-                const IconComponent = pillarIcons[pillar.icon as keyof typeof pillarIcons] || Target;
-                return (
-                  <div 
-                    key={index}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-muted/50"
-                  >
-                    <div className="p-2 rounded-lg bg-ajr-pink text-white shrink-0">
-                      <IconComponent className="w-5 h-5" />
-                    </div>
-                    <span className="font-medium text-foreground">
-                      {pillar.title}
-                    </span>
+        <div className="flex gap-16 items-start">
+          {/* Colonne gauche: Piliers */}
+          <div className="flex-1 space-y-4">
+            {qualityPolicy.pillars.map((pillar, index) => {
+              const IconComponent = pillarIcons[pillar.icon as keyof typeof pillarIcons] || Target;
+              return (
+                <div 
+                  key={index}
+                  className="flex items-center gap-4 p-5 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-ajr-pink/10 hover:border-ajr-pink/30 transition-all duration-300 hover:shadow-lg hover:shadow-ajr-pink/5"
+                >
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-ajr-pink to-ajr-violet text-white shadow-lg shadow-ajr-pink/20">
+                    <IconComponent className="w-6 h-6" />
                   </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Colonne 2: A-J-R + Certifications */}
-          <div className="space-y-6">
-            {/* Acrostiche A-J-R */}
-            <div className="space-y-2">
-              {qualityPolicy.ajrAcrostic.map((item, index) => (
-                <div key={index} className="flex items-baseline gap-3">
-                  <span className="text-3xl font-display font-bold text-ajr-pink">
-                    {item.letter}
-                  </span>
-                  <span className="text-lg text-foreground">
-                    {item.word}
+                  <span className="text-xl font-medium text-foreground">
+                    {pillar.title}
                   </span>
                 </div>
-              ))}
+              );
+            })}
+          </div>
+
+          {/* Colonne droite: A-J-R + Certifications */}
+          <div className="w-80 space-y-10">
+            {/* Acrostiche A-J-R */}
+            <div className="p-8 rounded-3xl bg-gradient-to-br from-ajr-pink to-ajr-violet text-white shadow-2xl shadow-ajr-pink/20">
+              <div className="space-y-4">
+                {qualityPolicy.ajrAcrostic.map((item, index) => (
+                  <div key={index} className="flex items-baseline gap-4">
+                    <span className="text-5xl font-display font-bold text-white/90">
+                      {item.letter}
+                    </span>
+                    <span className="text-xl text-white/80">
+                      {item.word}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Certifications */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-3 justify-center">
               {qualityPolicy.certifications.map((cert, index) => (
                 <span 
                   key={index}
-                  className="px-3 py-1 rounded-full bg-ajr-pink/15 text-ajr-pink text-sm font-medium"
+                  className="px-5 py-2 rounded-full bg-gradient-to-r from-ajr-pink/10 to-ajr-violet/10 border border-ajr-pink/20 text-foreground font-medium text-sm backdrop-blur-sm"
                 >
                   {cert}
                 </span>
