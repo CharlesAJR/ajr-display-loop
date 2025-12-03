@@ -16,7 +16,7 @@ export const QualityPolicySlide = () => {
     <div className="h-full w-full flex items-center justify-center bg-background animate-fade-in">
       <div className="max-w-6xl w-full px-12 py-8">
         {/* Titre principal */}
-        <h1 className="text-5xl font-display font-bold text-center text-ajr-violet mb-2">
+        <h1 className="text-5xl font-display font-bold text-center text-ajr-orange mb-2">
           {qualityPolicy.title}
         </h1>
         <p className="text-2xl text-center text-foreground/80 mb-8">
@@ -26,7 +26,7 @@ export const QualityPolicySlide = () => {
         <div className="grid grid-cols-2 gap-8">
           {/* Colonne gauche: Piliers stratégiques */}
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold text-ajr-violet mb-4 flex items-center gap-2">
+            <h2 className="text-2xl font-semibold text-ajr-orange mb-4 flex items-center gap-2">
               <Award className="w-6 h-6" />
               Nos 5 Piliers Stratégiques
             </h2>
@@ -36,13 +36,13 @@ export const QualityPolicySlide = () => {
                 return (
                   <div 
                     key={index}
-                    className="flex items-start gap-4 p-4 rounded-xl bg-ajr-violet/10 border border-ajr-violet/30"
+                    className="flex items-start gap-4 p-4 rounded-xl bg-ajr-orange/10 border border-ajr-orange/30"
                   >
-                    <div className="p-2 rounded-lg bg-ajr-violet text-white shrink-0">
+                    <div className="p-2 rounded-lg bg-ajr-orange text-white shrink-0">
                       <IconComponent className="w-6 h-6" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-ajr-violet text-lg">
+                      <h3 className="font-semibold text-ajr-orange text-lg">
                         {pillar.title}
                       </h3>
                       <p className="text-foreground/70 text-sm">
@@ -58,7 +58,7 @@ export const QualityPolicySlide = () => {
           {/* Colonne droite: A-J-R + Certifications */}
           <div className="space-y-6">
             {/* Acrostiche A-J-R */}
-            <div className="p-6 rounded-2xl bg-ajr-violet text-white">
+            <div className="p-6 rounded-2xl bg-ajr-orange text-white">
               <h2 className="text-2xl font-semibold mb-4">
                 Notre Identité
               </h2>
