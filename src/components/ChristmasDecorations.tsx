@@ -1,14 +1,54 @@
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 
 interface ChristmasDecorationsProps {
   showSnowflakes?: boolean;
   showGarland?: boolean;
+  showFlyingSleigh?: boolean;
 }
 
 export const ChristmasDecorations = ({ 
   showSnowflakes = true, 
-  showGarland = true 
+  showGarland = true,
+  showFlyingSleigh = true
 }: ChristmasDecorationsProps) => {
+  const [isSleighVisible, setIsSleighVisible] = useState(false);
+  const [sleighDirection, setSleighDirection] = useState<'left' | 'right'>('right');
+
+  // Flying sleigh effect - random interval between 20-40 seconds
+  useEffect(() => {
+    if (!showFlyingSleigh) return;
+
+    let timeoutId: NodeJS.Timeout;
+
+    const scheduleNextSleigh = () => {
+      // Random delay between 20 and 40 seconds
+      const delay = 20000 + Math.random() * 20000;
+      
+      timeoutId = setTimeout(() => {
+        setSleighDirection(Math.random() > 0.5 ? 'right' : 'left');
+        setIsSleighVisible(true);
+        
+        // Hide sleigh after animation (5s)
+        setTimeout(() => {
+          setIsSleighVisible(false);
+          scheduleNextSleigh();
+        }, 5000);
+      }, delay);
+    };
+
+    // Start first sleigh after a short delay
+    timeoutId = setTimeout(() => {
+      setSleighDirection('right');
+      setIsSleighVisible(true);
+      setTimeout(() => {
+        setIsSleighVisible(false);
+        scheduleNextSleigh();
+      }, 5000);
+    }, 3000);
+
+    return () => clearTimeout(timeoutId);
+  }, [showFlyingSleigh]);
+
   // Generate random snowflakes
   const snowflakes = useMemo(() => {
     return Array.from({ length: 50 }, (_, i) => ({
@@ -60,6 +100,26 @@ export const ChristmasDecorations = ({
               ❄
             </div>
           ))}
+        </div>
+      )}
+
+      {/* Flying Sleigh with Reindeer */}
+      {showFlyingSleigh && isSleighVisible && (
+        <div 
+          className="fixed pointer-events-none z-[100]"
+          style={{
+            top: '15%',
+            left: 0,
+            fontSize: '3.5rem',
+            animation: sleighDirection === 'right' 
+              ? 'sleigh-fly 5s ease-in-out forwards'
+              : 'sleigh-fly-reverse 5s ease-in-out forwards',
+            filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))',
+          }}
+        >
+          <span style={{ letterSpacing: '-0.15em' }}>
+            🦌🦌🛷🎅
+          </span>
         </div>
       )}
 

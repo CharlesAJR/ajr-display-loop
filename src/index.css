@@ -85,6 +85,48 @@
   }
 }
 
+@keyframes sleigh-fly {
+  0% {
+    transform: translateX(-200px) translateY(0);
+  }
+  20% {
+    transform: translateX(20vw) translateY(-15px);
+  }
+  40% {
+    transform: translateX(40vw) translateY(5px);
+  }
+  60% {
+    transform: translateX(60vw) translateY(-10px);
+  }
+  80% {
+    transform: translateX(80vw) translateY(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + 200px)) translateY(-5px);
+  }
+}
+
+@keyframes sleigh-fly-reverse {
+  0% {
+    transform: translateX(calc(100vw + 200px)) translateY(0) scaleX(-1);
+  }
+  20% {
+    transform: translateX(80vw) translateY(-15px) scaleX(-1);
+  }
+  40% {
+    transform: translateX(60vw) translateY(5px) scaleX(-1);
+  }
+  60% {
+    transform: translateX(40vw) translateY(-10px) scaleX(-1);
+  }
+  80% {
+    transform: translateX(20vw) translateY(0) scaleX(-1);
+  }
+  100% {
+    transform: translateX(-200px) translateY(-5px) scaleX(-1);
+  }
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
