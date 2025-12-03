@@ -85,57 +85,12 @@
   }
 }
 
-@keyframes santa-fly-right {
+@keyframes santa-run {
   0% {
-    transform: translateX(-350px) translateY(0);
-  }
-  10% {
-    transform: translateX(5vw) translateY(-15px);
-  }
-  25% {
-    transform: translateX(20vw) translateY(10px);
-  }
-  40% {
-    transform: translateX(38vw) translateY(-10px);
-  }
-  55% {
-    transform: translateX(55vw) translateY(8px);
-  }
-  70% {
-    transform: translateX(72vw) translateY(-8px);
-  }
-  85% {
-    transform: translateX(88vw) translateY(5px);
+    left: -60px;
   }
   100% {
-    transform: translateX(calc(100vw + 350px)) translateY(0);
-  }
-}
-
-@keyframes santa-fly-left {
-  0% {
-    transform: translateX(calc(100vw + 50px)) scaleX(-1) translateY(0);
-  }
-  10% {
-    transform: translateX(88vw) scaleX(-1) translateY(-15px);
-  }
-  25% {
-    transform: translateX(72vw) scaleX(-1) translateY(10px);
-  }
-  40% {
-    transform: translateX(55vw) scaleX(-1) translateY(-10px);
-  }
-  55% {
-    transform: translateX(38vw) scaleX(-1) translateY(8px);
-  }
-  70% {
-    transform: translateX(20vw) scaleX(-1) translateY(-8px);
-  }
-  85% {
-    transform: translateX(5vw) scaleX(-1) translateY(5px);
-  }
-  100% {
-    transform: translateX(-350px) scaleX(-1) translateY(0);
+    left: calc(100% - 30px);
   }
 }
 
