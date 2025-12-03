@@ -66,7 +66,7 @@ export const GallerySlide = ({
     });
   };
 
-  return <div className="h-full w-full flex items-center justify-center bg-background animate-fade-in">
+  return <div className="h-full w-full flex items-center justify-center animate-fade-in">
       <div className="max-w-7xl max-h-[80vh] flex flex-col items-center px-12 py-8 gap-0 shadow-none rounded-none">
         {title && showTitle && <h2 className="text-5xl font-display font-bold text-foreground mb-6">
             {title}

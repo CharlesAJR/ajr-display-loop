@@ -5,7 +5,7 @@ export const QualityPolicySlide = () => {
   const { qualityPolicy } = slidesConfig;
 
   return (
-    <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-background via-background to-ajr-pink/5 animate-fade-in">
+    <div className="h-full w-full flex items-center justify-center animate-fade-in">
       <div className="max-w-6xl w-full px-12">
         {/* Titre principal */}
         <h1 className="text-6xl font-display font-bold text-center mb-14 text-foreground">

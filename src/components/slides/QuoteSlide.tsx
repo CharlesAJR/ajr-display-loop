@@ -15,7 +15,7 @@ export const QuoteSlide = () => {
   const quote = slidesConfig.quotes[quoteIndex];
 
   return (
-    <div className="h-full w-full flex items-center justify-center bg-background animate-fade-in relative overflow-hidden">
+    <div className="h-full w-full flex items-center justify-center animate-fade-in relative overflow-hidden">
       {/* Decorative quote marks background */}
       <svg 
         className="absolute top-20 left-20 w-[24rem] h-[24rem] text-ajr-violet opacity-[0.03]" 
