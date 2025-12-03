@@ -54,6 +54,7 @@ export default {
           violet: "hsl(var(--ajr-violet))",
           orange: "hsl(var(--ajr-orange))",
           fuchsia: "hsl(var(--ajr-fuchsia))",
+          pink: "hsl(var(--ajr-pink))",
           lime: "hsl(var(--ajr-lime))",
           beige: "hsl(var(--ajr-beige))",
           "yellow-pale": "hsl(var(--ajr-yellow-pale))",
