@@ -16,7 +16,7 @@ export const QualityPolicySlide = () => {
     <div className="h-full w-full flex items-center justify-center bg-gradient-to-br from-background via-background to-ajr-pink/5 animate-fade-in">
       <div className="max-w-5xl w-full px-12">
         {/* Titre principal */}
-        <h1 className="text-6xl font-display font-bold text-center mb-16 bg-gradient-to-r from-ajr-pink to-ajr-violet bg-clip-text text-transparent">
+        <h1 className="text-6xl font-display font-bold text-center mb-16 text-foreground">
           {qualityPolicy.title}
         </h1>
 
@@ -28,7 +28,7 @@ export const QualityPolicySlide = () => {
               return (
                 <div 
                   key={index}
-                  className="flex items-center gap-4 p-5 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-ajr-pink/20 hover:border-ajr-pink/40 transition-all duration-300 hover:shadow-lg hover:shadow-ajr-pink/10"
+                  className="flex items-center gap-4 p-5 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-ajr-pink/20"
                 >
                   <div className="p-3 rounded-xl bg-ajr-pink/10 text-ajr-pink">
                     <IconComponent className="w-6 h-6" />
