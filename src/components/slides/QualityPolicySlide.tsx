@@ -28,9 +28,9 @@ export const QualityPolicySlide = () => {
               return (
                 <div 
                   key={index}
-                  className="flex items-center gap-4 p-5 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-ajr-pink/10 hover:border-ajr-pink/30 transition-all duration-300 hover:shadow-lg hover:shadow-ajr-pink/5"
+                  className="flex items-center gap-4 p-5 rounded-2xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-ajr-pink/20 hover:border-ajr-pink/40 transition-all duration-300 hover:shadow-lg hover:shadow-ajr-pink/10"
                 >
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-ajr-pink to-ajr-violet text-white shadow-lg shadow-ajr-pink/20">
+                  <div className="p-3 rounded-xl bg-ajr-pink/10 text-ajr-pink">
                     <IconComponent className="w-6 h-6" />
                   </div>
                   <span className="text-xl font-medium text-foreground">
