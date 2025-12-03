@@ -44,14 +44,14 @@ export const QualityPolicySlide = () => {
           {/* Colonne droite: A-J-R + Certifications */}
           <div className="w-80 space-y-10">
             {/* Acrostiche A-J-R */}
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-ajr-pink to-ajr-violet text-white shadow-2xl shadow-ajr-pink/20">
+            <div className="p-8 rounded-3xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-ajr-pink/20">
               <div className="space-y-4">
                 {qualityPolicy.ajrAcrostic.map((item, index) => (
-                  <div key={index} className="flex items-baseline gap-4">
-                    <span className="text-5xl font-display font-bold text-white/90">
+                  <div key={index} className="flex items-baseline">
+                    <span className="text-5xl font-display font-bold text-ajr-pink">
                       {item.letter}
                     </span>
-                    <span className="text-xl text-white/80">
+                    <span className="text-xl text-foreground">
                       {item.word}
                     </span>
                   </div>
