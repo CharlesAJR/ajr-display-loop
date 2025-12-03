@@ -38,9 +38,9 @@ export const ChristmasDecorations = ({
 
   return (
     <>
-      {/* Snowflakes - separate fixed container */}
+      {/* Snowflakes - separate fixed container (behind content) */}
       {showSnowflakes && (
-        <div className="fixed inset-0 pointer-events-none z-[5] overflow-hidden">
+        <div className="fixed inset-0 pointer-events-none z-[1] overflow-hidden">
           {snowflakes.map((flake) => (
             <div
               key={flake.id}
