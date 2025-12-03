@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { DisplaySlide } from "@/components/DisplaySlide";
 import { Footer } from "@/components/Footer";
+import { ChristmasDecorations } from "@/components/ChristmasDecorations";
 import { WelcomeSlide } from "@/components/slides/WelcomeSlide";
 import { QuoteSlide } from "@/components/slides/QuoteSlide";
 import { WeatherSlide } from "@/components/slides/WeatherSlide";
@@ -108,6 +109,9 @@ const Index = () => {
     return () => window.removeEventListener("keydown", handleKeyPress);
   }, [slides.length]);
   return <div className="relative w-screen h-screen overflow-hidden bg-background">
+      {/* Christmas Decorations */}
+      <ChristmasDecorations showSnowflakes={true} showGarland={true} />
+      
       {/* Conteneur pour centrer et réduire le contenu (protection TV overscan) */}
       <div className="absolute inset-0 pb-32 flex items-center justify-center">
         <div className="w-full h-full relative" style={{

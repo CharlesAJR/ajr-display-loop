@@ -59,6 +59,11 @@ export default {
           beige: "hsl(var(--ajr-beige))",
           "yellow-pale": "hsl(var(--ajr-yellow-pale))",
         },
+        christmas: {
+          red: "hsl(var(--christmas-red))",
+          green: "hsl(var(--christmas-green))",
+          gold: "hsl(var(--christmas-gold))",
+        },
       },
       fontFamily: {
         sans: ["Soleil", "Inter", "system-ui", "sans-serif"],
@@ -97,6 +102,18 @@ export default {
           "0%": { transform: "scale(0.95)", opacity: "0" },
           "100%": { transform: "scale(1)", opacity: "1" },
         },
+        "snowfall": {
+          "0%": { transform: "translateY(-10vh) rotate(0deg)", opacity: "1" },
+          "100%": { transform: "translateY(110vh) rotate(360deg)", opacity: "0.3" },
+        },
+        "twinkle": {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.4", transform: "scale(0.8)" },
+        },
+        "sway": {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
       },
       animation: {
         "fade-in": "fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
@@ -104,6 +121,9 @@ export default {
         "slide-left": "slide-left 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
         "pulse-soft": "pulse-soft 3s ease-in-out infinite",
         "scale-in": "scale-in 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+        "snowfall": "snowfall 10s linear infinite",
+        "twinkle": "twinkle 2s ease-in-out infinite",
+        "sway": "sway 3s ease-in-out infinite",
       },
     },
   },
