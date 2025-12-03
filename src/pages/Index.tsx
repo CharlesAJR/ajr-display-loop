@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { DisplaySlide } from "@/components/DisplaySlide";
 import { Footer } from "@/components/Footer";
 import { ChristmasDecorations } from "@/components/ChristmasDecorations";
-import { RunningSanta } from "@/components/RunningSanta";
 import { WelcomeSlide } from "@/components/slides/WelcomeSlide";
 import { QuoteSlide } from "@/components/slides/QuoteSlide";
 import { WeatherSlide } from "@/components/slides/WeatherSlide";
@@ -126,12 +125,10 @@ const Index = () => {
       </div>
 
       {/* Barre de progression - juste au-dessus du footer */}
-      <div className="fixed bottom-[145px] left-0 right-0 h-2 bg-white/10 backdrop-blur-sm z-[60] overflow-visible">
+      <div className="fixed bottom-[145px] left-0 right-0 h-2 bg-white/10 backdrop-blur-sm z-[60]">
         <div key={currentSlide} style={{
         animation: isPaused ? 'none' : `progress-bar ${SLIDE_DURATION}ms linear`
       }} className="h-full bg-ajr-violet-soft backdrop-blur-md origin-left shadow-lg bg-[#8a62ba]" />
-        {/* Running Santa on progress bar */}
-        <RunningSanta key={`santa-${currentSlide}`} duration={SLIDE_DURATION} isPaused={isPaused} />
       </div>
 
       {/* Footer - non affecté par le scale */}
