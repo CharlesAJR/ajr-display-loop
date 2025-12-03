@@ -38,7 +38,7 @@ export const SafetySlide = () => {
             {items.map((item, index) => (
               <div 
                 key={index}
-                className="flex items-start gap-4 bg-gradient-to-br from-white to-ajr-green-soft rounded-2xl p-5 shadow-[0_4px_20px_rgba(0,0,0,0.06)] border border-ajr-green/15 hover:border-ajr-green/30 hover:shadow-[0_6px_30px_rgba(0,0,0,0.08)] transition-all duration-300 animate-fade-in"
+                className="flex items-start gap-4 bg-white/50 backdrop-blur-sm rounded-2xl p-5 border border-foreground/10 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-ajr-green rounded-full flex items-center justify-center shadow-sm">

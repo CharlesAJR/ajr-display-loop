@@ -14,7 +14,7 @@ export const QualityPolicySlide = () => {
 
         <div className="grid grid-cols-3 gap-10">
           {/* Colonne 1: Acrostiche A-J-R */}
-          <div className="p-7 rounded-xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-ajr-pink/20">
+          <div className="p-7 rounded-2xl bg-white/50 backdrop-blur-sm border border-foreground/10">
             <div className="space-y-4">
               {qualityPolicy.ajrAcrostic.map((item, index) => (
                 <div key={index} className="flex items-baseline">
@@ -30,7 +30,7 @@ export const QualityPolicySlide = () => {
           </div>
 
           {/* Colonne 2: Valeurs humaines */}
-          <div className="p-7 rounded-xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-ajr-pink/20">
+          <div className="p-7 rounded-2xl bg-white/50 backdrop-blur-sm border border-foreground/10">
             <div className="flex items-center gap-2 mb-5">
               <Heart className="w-6 h-6 text-ajr-pink" />
               <h3 className="text-lg font-semibold text-ajr-pink uppercase tracking-wide">
@@ -48,7 +48,7 @@ export const QualityPolicySlide = () => {
           </div>
 
           {/* Colonne 3: Stratégies & Objectifs */}
-          <div className="p-7 rounded-xl bg-white/50 dark:bg-white/5 backdrop-blur-sm border border-ajr-pink/20">
+          <div className="p-7 rounded-2xl bg-white/50 backdrop-blur-sm border border-foreground/10">
             <div className="flex items-center gap-2 mb-5">
               <Target className="w-6 h-6 text-ajr-pink" />
               <h3 className="text-lg font-semibold text-ajr-pink uppercase tracking-wide">
