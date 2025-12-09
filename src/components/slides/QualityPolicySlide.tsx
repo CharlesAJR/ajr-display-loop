@@ -16,8 +16,8 @@ export const QualityPolicySlide = () => {
     <div className="h-full w-full flex items-center justify-center animate-fade-in px-8">
       <div className="max-w-7xl w-full">
         {/* En-tête avec citation principale */}
-        <div className="text-center mb-4">
-          <p className="text-xl italic text-ajr-pink font-medium mb-2">
+        <div className="text-center mb-6">
+          <p className="text-xl italic text-ajr-pink font-medium mb-3">
             "{qualityPolicy.mainQuote}"
           </p>
           <h1 className="text-4xl font-display font-bold text-foreground mb-1">
@@ -29,12 +29,12 @@ export const QualityPolicySlide = () => {
         </div>
 
         {/* Texte d'introduction */}
-        <p className="text-base text-foreground/80 text-center max-w-4xl mx-auto mb-6 leading-relaxed">
+        <p className="text-base text-foreground/80 text-center max-w-4xl mx-auto mb-8 leading-relaxed">
           {qualityPolicy.introText}
         </p>
 
-        {/* Grille des 5 objectifs sur 2 lignes */}
-        <div className="grid grid-cols-5 gap-3 mb-5">
+        {/* Grille des 5 objectifs */}
+        <div className="grid grid-cols-5 gap-4 mb-6">
           {qualityPolicy.objectives.map((objective, index) => {
             const IconComponent = iconMap[objective.icon as keyof typeof iconMap];
             return (
@@ -45,7 +45,7 @@ export const QualityPolicySlide = () => {
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-ajr-pink/20 to-ajr-violet/20 flex items-center justify-center mb-3">
                   <IconComponent className="w-6 h-6 text-ajr-pink" />
                 </div>
-                <h3 className="text-sm font-semibold text-foreground mb-1 leading-tight">
+                <h3 className="text-sm font-semibold text-foreground mb-1.5 leading-tight">
                   {objective.title}
                 </h3>
                 <p className="text-xs text-foreground/70 leading-snug">
@@ -58,7 +58,7 @@ export const QualityPolicySlide = () => {
 
         {/* Certifications et texte de clôture */}
         <div className="text-center">
-          <div className="flex justify-center gap-3 mb-4">
+          <div className="flex justify-center gap-4 mb-4">
             {qualityPolicy.certifications.map((cert, index) => (
               <span
                 key={index}
