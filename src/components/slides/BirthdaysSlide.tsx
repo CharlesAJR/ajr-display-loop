@@ -100,30 +100,30 @@ export const BirthdaysSlide = () => {
     return `du ${formatDate(monday)} au ${formatDate(friday)}`;
   };
   return <div className="relative h-full w-full flex items-center justify-center animate-fade-in overflow-hidden">
-      <div className="max-w-6xl max-h-[75vh] flex flex-col px-16 py-10">
+      <div className="max-w-6xl max-h-[72vh] flex flex-col px-16 py-8">
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-5">
           <div className="flex-1">
-            <h2 className="text-5xl font-display font-bold text-foreground mb-2">
+            <h2 className="text-4xl font-display font-bold text-foreground mb-1">
               Cette semaine
             </h2>
-            <p className="text-2xl text-muted-foreground">{getWeekPeriod()}</p>
+            <p className="text-xl text-muted-foreground">{getWeekPeriod()}</p>
           </div>
-          <div className="flex items-center gap-3 bg-[hsl(var(--ajr-beige))]/50 px-6 py-3 rounded-xl">
-            <Cake className="w-6 h-6 text-pink-500" strokeWidth={2} />
-            <span className="text-xl text-muted-foreground font-medium">= Anniversaire</span>
+          <div className="flex items-center gap-3 bg-[hsl(var(--ajr-beige))]/50 px-5 py-2.5 rounded-xl">
+            <Cake className="w-5 h-5 text-pink-500" strokeWidth={2} />
+            <span className="text-lg text-muted-foreground font-medium">= Anniversaire</span>
           </div>
         </div>
 
         {/* Calendrier hebdomadaire */}
-        <div className="grid grid-cols-5 gap-4 flex-1">
+        <div className="grid grid-cols-5 gap-3 flex-1">
           {weekDays.map(day => {
           const dayEvents = eventsByDay[day];
           const hasBirthdays = dayEvents.birthdays.length > 0;
           const hasEvents = dayEvents.events.length > 0;
           const hasAnyEvent = hasBirthdays || hasEvents;
-          return <div key={day} className="bg-white/50 backdrop-blur-sm rounded-2xl p-4 min-h-[280px] border border-foreground/10">
-                <h3 className="text-2xl font-semibold text-foreground mb-4 pb-2 border-b-2 border-gray-200 italic">
+          return <div key={day} className="bg-white/50 backdrop-blur-sm rounded-2xl p-3 min-h-[260px] border border-foreground/10">
+                <h3 className="text-xl font-semibold text-foreground mb-3 pb-2 border-b-2 border-gray-200 italic">
                   {day}
                 </h3>
                 
