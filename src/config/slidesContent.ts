@@ -443,27 +443,39 @@ export const slidesConfig = {
   // POLITIQUE QUALITÉ
   // ====================================================================
   qualityPolicy: {
-    title: "Politique Qualité AJR",
-    ajrAcrostic: [
-      { letter: "A", word: "telier de référence" },
-      { letter: "J", word: "amais sans qualité" },
-      { letter: "R", word: "esponsable et engagé" }
+    title: "POLITIQUE INTERNE",
+    subtitle: "Tous acteurs de la réussite",
+    mainQuote: "Parce que notre réussite, c'est avant tout celle de nos collaborateurs.",
+    introText: "Au fil des années, l'Atelier Jean Regniers a démontré qu'il est possible d'allier performance industrielle et valeurs humaines fortes. Chaque jour, nos équipes démontrent que la qualité, la solidarité et le savoir-faire peuvent avancer ensemble.",
+    objectives: [
+      {
+        icon: "users",
+        title: "Croissance de l'emploi",
+        description: "Accroître l'emploi en favorisant l'inclusivité"
+      },
+      {
+        icon: "factory",
+        title: "Référence industrielle",
+        description: "Être un acteur reconnu en manufacture, façonnage et services"
+      },
+      {
+        icon: "handshake",
+        title: "Partenariats durables",
+        description: "Développer des partenariats responsables et inclusifs"
+      },
+      {
+        icon: "settings",
+        title: "Management de qualité",
+        description: "Se distinguer par un système qualité rigoureux"
+      },
+      {
+        icon: "rocket",
+        title: "Innovation & visibilité",
+        description: "Renforcer notre communication interne et la cohérence entre tous les secteurs"
+      }
     ],
-    humanValues: {
-      title: "Nos valeurs humaines",
-      items: ["Respect", "Esprit d'équipe", "Engagement", "Bienveillance"]
-    },
-    objectives: {
-      title: "Stratégies & Objectifs",
-      items: [
-        "Management de qualité",
-        "Référence industrielle",
-        "Croissance de l'emploi",
-        "Partenariats durables",
-        "Innovation & visibilité"
-      ]
-    },
-    certifications: ["ISO 9001", "IFS", "Ecolabel"]
+    certifications: ["ISO 9001", "IFS", "Ecolabel"],
+    closingText: "Cette vision, nous la construisons ensemble, chaque jour, à travers nos gestes, nos idées et notre engagement collectif."
   },
 
   // ====================================================================
