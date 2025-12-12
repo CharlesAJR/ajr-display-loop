@@ -11,7 +11,7 @@ export const ChristmasDecorations = ({
 }: ChristmasDecorationsProps) => {
   // Generate random snowflakes
   const snowflakes = useMemo(() => {
-    return Array.from({ length: 50 }, (_, i) => ({
+    return Array.from({ length: 25 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       delay: -Math.random() * 15, // Negative delay so some start mid-animation
@@ -87,24 +87,24 @@ export const ChristmasDecorations = ({
                 key={light.id}
                 className="relative"
                 style={{
-                  animation: `twinkle 1.5s ease-in-out infinite`,
+                  animation: `twinkle 3s ease-in-out infinite`,
                   animationDelay: `${light.delay}s`,
                 }}
               >
-                {/* Bulb glow */}
+              {/* Bulb glow - reduced */}
                 <div
-                  className="absolute -inset-3 rounded-full blur-lg"
+                  className="absolute -inset-2 rounded-full blur-md"
                   style={{
                     backgroundColor: light.color,
-                    opacity: 0.6,
+                    opacity: 0.3,
                   }}
                 />
                 {/* Bulb */}
                 <div
-                  className="relative w-3 h-4 rounded-full"
+                  className="relative w-2.5 h-3.5 rounded-full"
                   style={{
                     backgroundColor: light.color,
-                    boxShadow: `0 0 8px ${light.color}, 0 0 16px ${light.color}`,
+                    boxShadow: `0 0 4px ${light.color}`,
                   }}
                 />
               </div>
