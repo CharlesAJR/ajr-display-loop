@@ -109,8 +109,8 @@ const Index = () => {
     return () => window.removeEventListener("keydown", handleKeyPress);
   }, [slides.length]);
   return <div className="relative w-screen h-screen overflow-hidden bg-background">
-      {/* Christmas Decorations */}
-      <ChristmasDecorations showSnowflakes={true} showGarland={true} />
+      {/* Christmas Decorations - no snowflakes on Welcome (0) and Weather (5) slides */}
+      <ChristmasDecorations showSnowflakes={currentSlide !== 0 && currentSlide !== 5} showGarland={true} />
       
       {/* Conteneur pour centrer et réduire le contenu (protection TV overscan) */}
       <div className="absolute inset-0 pb-32 flex items-center justify-center z-10">
