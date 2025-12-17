@@ -69,6 +69,60 @@ const Index = () => {
     <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} />
   ];
 
+  // Gestion audio robuste
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handleEnded = () => {
+      console.log('[Audio] Ended - restarting...');
+      audio.currentTime = 0;
+      audio.play().catch(e => console.log('[Audio] Play failed:', e));
+    };
+
+    const handlePause = () => {
+      if (!isMuted) {
+        console.log('[Audio] Unexpected pause - restarting in 1s...');
+        setTimeout(() => {
+          if (!isMuted && audio.paused) {
+            audio.play().catch(e => console.log('[Audio] Resume failed:', e));
+          }
+        }, 1000);
+      }
+    };
+
+    const handleError = (e: Event) => {
+      console.error('[Audio] Error:', e);
+    };
+
+    audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('pause', handlePause);
+    audio.addEventListener('error', handleError);
+
+    const checkInterval = setInterval(() => {
+      if (!isMuted && audio.paused) {
+        console.log('[Audio] Periodic check - audio paused, restarting...');
+        audio.play().catch(e => console.log('[Audio] Periodic play failed:', e));
+      }
+    }, 30000);
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible' && !isMuted && audio.paused) {
+        console.log('[Audio] Page visible again - restarting...');
+        audio.play().catch(e => console.log('[Audio] Visibility play failed:', e));
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('pause', handlePause);
+      audio.removeEventListener('error', handleError);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      clearInterval(checkInterval);
+    };
+  }, [isMuted]);
+
   // Auto-rotation des slides
   useEffect(() => {
     if (isPaused) return;
