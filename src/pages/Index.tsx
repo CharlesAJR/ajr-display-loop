@@ -117,8 +117,9 @@ const Index = () => {
         ref={audioRef}
         src="/audio/christmas-background.mp3"
         autoPlay
-        loop
+        loop={true}
         muted={isMuted}
+        preload="auto"
       />
       
       {/* Mute/Unmute Button */}
