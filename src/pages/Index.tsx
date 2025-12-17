@@ -69,53 +69,86 @@ const Index = () => {
     <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} />
   ];
 
-  // Gestion audio robuste
+  // Gestion audio ultra-robuste (sans loop, JavaScript gère tout)
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    const handleEnded = () => {
-      console.log('[Audio] Ended - restarting...');
-      audio.currentTime = 0;
-      audio.play().catch(e => console.log('[Audio] Play failed:', e));
+    // Log la durée quand le fichier est chargé
+    const handleLoadedMetadata = () => {
+      console.log('[Audio] Loaded - duration:', audio.duration, 'seconds');
     };
 
+    // Relancer quand on atteint la fin (événement ended)
+    const handleEnded = () => {
+      console.log('[Audio] Ended event - restarting...');
+      audio.currentTime = 0;
+      audio.play().catch(e => console.log('[Audio] Restart failed:', e));
+    };
+
+    // Détecter proactivement la fin via timeupdate
+    const handleTimeUpdate = () => {
+      if (audio.duration && audio.currentTime >= audio.duration - 0.5) {
+        console.log('[Audio] Near end detected - restarting preemptively...');
+        audio.currentTime = 0;
+        if (!isMuted) {
+          audio.play().catch(e => console.log('[Audio] Preemptive restart failed:', e));
+        }
+      }
+    };
+
+    // Gérer les pauses non-voulues
     const handlePause = () => {
       if (!isMuted) {
-        console.log('[Audio] Unexpected pause - restarting in 1s...');
+        console.log('[Audio] Paused unexpectedly - will restart in 500ms...');
         setTimeout(() => {
           if (!isMuted && audio.paused) {
             audio.play().catch(e => console.log('[Audio] Resume failed:', e));
           }
-        }, 1000);
+        }, 500);
       }
     };
 
     const handleError = (e: Event) => {
       console.error('[Audio] Error:', e);
+      // Tenter de recharger et rejouer
+      setTimeout(() => {
+        console.log('[Audio] Attempting recovery...');
+        audio.load();
+        if (!isMuted) {
+          audio.play().catch(err => console.log('[Audio] Recovery failed:', err));
+        }
+      }, 1000);
     };
 
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
     audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('timeupdate', handleTimeUpdate);
     audio.addEventListener('pause', handlePause);
     audio.addEventListener('error', handleError);
 
+    // Vérification toutes les 5 secondes (au lieu de 30)
     const checkInterval = setInterval(() => {
-      if (!isMuted && audio.paused) {
-        console.log('[Audio] Periodic check - audio paused, restarting...');
+      if (!isMuted && audio.paused && audio.readyState >= 2) {
+        console.log('[Audio] Periodic check - forcing play...');
+        audio.currentTime = 0;
         audio.play().catch(e => console.log('[Audio] Periodic play failed:', e));
       }
-    }, 30000);
+    }, 5000);
 
+    // Visibilité de la page
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible' && !isMuted && audio.paused) {
-        console.log('[Audio] Page visible again - restarting...');
+        console.log('[Audio] Page visible - restarting...');
         audio.play().catch(e => console.log('[Audio] Visibility play failed:', e));
       }
     };
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
       audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('pause', handlePause);
       audio.removeEventListener('error', handleError);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
@@ -171,7 +204,6 @@ const Index = () => {
         ref={audioRef}
         src="/audio/christmas-background.mp3"
         autoPlay
-        loop={true}
         muted={isMuted}
         preload="auto"
       />
