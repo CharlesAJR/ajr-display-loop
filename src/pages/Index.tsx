@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 import { DisplaySlide } from "@/components/DisplaySlide";
 import { Footer } from "@/components/Footer";
 import { ChristmasDecorations } from "@/components/ChristmasDecorations";
@@ -48,6 +49,8 @@ import new12 from "@/assets/new-12.jpg";
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const SLIDE_DURATION = slidesConfig.slideDuration * 1000;
   const gallery1 = [workshop1, workshop2, workshop3, workshop4, workshop5, workshop6];
   const gallery2 = [workshop7, workshop8, workshop9, workshop10, workshop11, workshop12];
@@ -109,6 +112,24 @@ const Index = () => {
     return () => window.removeEventListener("keydown", handleKeyPress);
   }, [slides.length]);
   return <div className="relative w-screen h-screen overflow-hidden bg-background">
+      {/* Background Music */}
+      <audio
+        ref={audioRef}
+        src="/audio/christmas-background.mp3"
+        autoPlay
+        loop
+        muted={isMuted}
+      />
+      
+      {/* Mute/Unmute Button */}
+      <button
+        onClick={() => setIsMuted(!isMuted)}
+        className="fixed bottom-[160px] right-4 z-[70] p-2 rounded-full bg-foreground/10 hover:bg-foreground/20 transition-colors"
+        aria-label={isMuted ? "Activer le son" : "Couper le son"}
+      >
+        {isMuted ? <VolumeX className="w-5 h-5 text-foreground/60" /> : <Volume2 className="w-5 h-5 text-foreground/60" />}
+      </button>
+
       {/* Christmas Decorations - no snowflakes on Welcome (0) and Weather (5) slides */}
       <ChristmasDecorations showSnowflakes={currentSlide !== 0 && currentSlide !== 5} showGarland={true} />
       
