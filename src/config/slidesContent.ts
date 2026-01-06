@@ -224,7 +224,7 @@ export const slidesConfig = {
     { name: "Carole Barbencon", date: "Dimanche 30/11" },
     { name: "Peter Fumiere", date: "Dimanche 13/07" },
     { name: "Hans Denis", date: "Mercredi 10/09" },
-    { name: "Rodolphe Gaussorgues", date: "Lundi 03/02" },
+    
     { name: "Christopher Lackner", date: "Mercredi 10/12" },
     { name: "Michael Marechal", date: "Mardi 14/10" },
     { name: "Thomas Godaux", date: "Mercredi 24/12" },
