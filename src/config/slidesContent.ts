@@ -402,11 +402,7 @@ export const slidesConfig = {
   // ANNONCES SPÉCIALES
   // ====================================================================
   announcements: [
-    {
-      text: "L'épouse de Thomas (secteur paletterie) a accouché ce mardi 25/11 d'une petite fille prénommée Léna",
-      highlight: "Félicitations à toute la famille ! 🎀"
-    }
-    // Pour retirer l'annonce, videz ce tableau: announcements: []
+    // Pour ajouter une annonce, ajoutez un objet: { text: "...", highlight: "..." }
   ],
 
   // ====================================================================
