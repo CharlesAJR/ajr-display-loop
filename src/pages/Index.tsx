@@ -44,10 +44,6 @@ import new9 from "@/assets/new-9.jpg";
 import new10 from "@/assets/new-10.jpg";
 import new11 from "@/assets/new-11.jpg";
 import new12 from "@/assets/new-12.jpg";
-import new13 from "@/assets/new-13.jpg";
-import new14 from "@/assets/new-14.jpg";
-import new15 from "@/assets/new-15.jpg";
-import new16 from "@/assets/new-16.jpg";
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -57,7 +53,6 @@ const Index = () => {
   const gallery3 = [workshop13, workshop14, workshop15, workshop16, workshop17, workshop18];
   const galleryNew1 = [new1, new2, new3, new4, new5, new6];
   const galleryNew2 = [new7, new8, new9, new10, new11, new12];
-  const galleryNew3 = [new13, new14, new15, new16];
   const slides = [
     <WelcomeSlide key="welcome" />,
     <QualityPolicySlide key="quality" />,
@@ -67,8 +62,7 @@ const Index = () => {
     <WeatherSlide key="weather" />,
     <QuoteSlide key="quote" />,
     <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} />,
-    <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} />,
-    <GallerySlide key="gallery-new3" images={galleryNew3} title="gallery3" showTitle={false} />
+    <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} />
   ];
 
 
