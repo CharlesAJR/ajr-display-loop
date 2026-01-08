@@ -56,9 +56,9 @@ const Index = () => {
   
   // Positions par défaut pour galerie 2 (photos verticales, centrer sur le haut pour voir les visages)
   const gallery2DefaultPositions = [
-    { x: 50, y: 30 }, // new-7: ligne de production, centré haut
-    { x: 50, y: 25 }, // new-8: personne avec boîte, voir le visage
-    { x: 50, y: 25 }, // new-9: personne avec bouteille, voir le visage
+    { x: 50, y: 15 }, // new-7: ligne de production
+    { x: 50, y: 15 }, // new-8: personne avec boîte, voir le visage
+    { x: 50, y: 15 }, // new-9: personne avec bouteille, voir le visage
     { x: 50, y: 50 }, // new-10
     { x: 50, y: 50 }, // new-11
     { x: 50, y: 50 }, // new-12

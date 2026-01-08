@@ -31,7 +31,13 @@ export const GallerySlide = ({
   };
 
   const [imagePositions, setImagePositions] = useState<Position[]>(() => {
-    // Charger les positions depuis localStorage
+    // Si des positions par défaut sont fournies, les utiliser directement
+    // (ignore le localStorage pour permettre les mises à jour)
+    if (defaultPositions && defaultPositions.length === images.length) {
+      return defaultPositions;
+    }
+    
+    // Sinon, charger les positions depuis localStorage
     const storageKey = getStorageKey(title);
     const saved = localStorage.getItem(storageKey);
     if (saved) {
