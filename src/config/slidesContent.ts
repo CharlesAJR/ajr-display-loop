@@ -96,7 +96,6 @@ export const slidesConfig = {
   // SLIDE 4: ANNIVERSAIRES & ÉVÉNEMENTS
   // ====================================================================
   birthdays: [
-    { name: "Jean Luc Fichaux", date: "Jeudi 27/03" },
     { name: "Bernadette Verbeke", date: "Lundi 05/08" },
     { name: "Adrien Stachura", date: "Vendredi 16/05" },
     { name: "Alain Toubeau", date: "Vendredi 12/12" },
