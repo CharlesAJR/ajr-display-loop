@@ -53,6 +53,17 @@ const Index = () => {
   const gallery3 = [workshop13, workshop14, workshop15, workshop16, workshop17, workshop18];
   const galleryNew1 = [new1, new2, new3, new4, new5, new6];
   const galleryNew2 = [new7, new8, new9, new10, new11, new12];
+  
+  // Positions par défaut pour galerie 2 (photos verticales, centrer sur le haut pour voir les visages)
+  const gallery2DefaultPositions = [
+    { x: 50, y: 30 }, // new-7: ligne de production, centré haut
+    { x: 50, y: 25 }, // new-8: personne avec boîte, voir le visage
+    { x: 50, y: 25 }, // new-9: personne avec bouteille, voir le visage
+    { x: 50, y: 50 }, // new-10
+    { x: 50, y: 50 }, // new-11
+    { x: 50, y: 50 }, // new-12
+  ];
+
   const slides = [
     <WelcomeSlide key="welcome" />,
     <QualityPolicySlide key="quality" />,
@@ -62,7 +73,7 @@ const Index = () => {
     <WeatherSlide key="weather" />,
     <QuoteSlide key="quote" />,
     <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} />,
-    <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} />
+    <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} defaultPositions={gallery2DefaultPositions} />
   ];
 
 

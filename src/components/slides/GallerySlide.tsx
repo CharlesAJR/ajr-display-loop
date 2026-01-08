@@ -5,6 +5,7 @@ interface GallerySlideProps {
   images: string[];
   title?: string;
   showTitle?: boolean;
+  defaultPositions?: Position[];
 }
 
 type Position = {
@@ -19,8 +20,16 @@ const getStorageKey = (title?: string) => {
 export const GallerySlide = ({
   images,
   title,
-  showTitle = true
+  showTitle = true,
+  defaultPositions
 }: GallerySlideProps) => {
+  const getDefaultPositions = () => {
+    if (defaultPositions && defaultPositions.length === images.length) {
+      return defaultPositions;
+    }
+    return images.map(() => ({ x: 50, y: 50 }));
+  };
+
   const [imagePositions, setImagePositions] = useState<Position[]>(() => {
     // Charger les positions depuis localStorage
     const storageKey = getStorageKey(title);
@@ -29,10 +38,10 @@ export const GallerySlide = ({
       try {
         return JSON.parse(saved);
       } catch {
-        return images.map(() => ({ x: 50, y: 50 }));
+        return getDefaultPositions();
       }
     }
-    return images.map(() => ({ x: 50, y: 50 }));
+    return getDefaultPositions();
   });
 
   // Sauvegarder les positions dans localStorage à chaque changement
