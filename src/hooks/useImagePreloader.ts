@@ -1,39 +1,48 @@
 import { useState, useEffect } from "react";
 
-export const useImagePreloader = (imageSources: string[]) => {
+export const useImagePreloader = (imageSources: string[], preloadCallbacks?: (() => Promise<void>)[]) => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    if (imageSources.length === 0) {
+    const totalItems = imageSources.length + (preloadCallbacks?.length || 0);
+    
+    if (totalItems === 0) {
       setImagesLoaded(true);
       return;
     }
 
     let loadedCount = 0;
-    const totalImages = imageSources.length;
+
+    const updateProgress = () => {
+      loadedCount++;
+      setProgress(Math.round((loadedCount / totalItems) * 100));
+    };
 
     const preloadImage = (src: string): Promise<void> => {
       return new Promise((resolve) => {
         const img = new Image();
         img.onload = () => {
-          loadedCount++;
-          setProgress(Math.round((loadedCount / totalImages) * 100));
+          updateProgress();
           resolve();
         };
         img.onerror = () => {
-          loadedCount++;
-          setProgress(Math.round((loadedCount / totalImages) * 100));
+          updateProgress();
           resolve(); // Continue even if one image fails
         };
         img.src = src;
       });
     };
 
-    Promise.all(imageSources.map(preloadImage)).then(() => {
+    const allPromises = [
+      ...imageSources.map(preloadImage),
+      ...(preloadCallbacks?.map(cb => cb().then(updateProgress).catch(updateProgress)) || [])
+    ];
+
+    Promise.all(allPromises).then(() => {
       setImagesLoaded(true);
     });
-  }, [imageSources]);
+  }, [imageSources, preloadCallbacks]);
 
   return { imagesLoaded, progress };
 };

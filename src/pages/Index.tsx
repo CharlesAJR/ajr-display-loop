@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { WelcomeSlide } from "@/components/slides/WelcomeSlide";
 import { QuoteSlide } from "@/components/slides/QuoteSlide";
-import { WeatherSlide } from "@/components/slides/WeatherSlide";
+import { WeatherSlide, preloadWeatherWidget } from "@/components/slides/WeatherSlide";
 import { BirthdaysSlide } from "@/components/slides/BirthdaysSlide";
 import { GallerySlide } from "@/components/slides/GallerySlide";
 import { SafetySlide } from "@/components/slides/SafetySlide";
@@ -72,7 +72,10 @@ const Index = () => {
     welcomeBg, ajrLogo, safetyWorkers, safetyCounter
   ], []);
 
-  const { imagesLoaded, progress } = useImagePreloader(allImages);
+  // Callbacks to preload widgets
+  const preloadCallbacks = useMemo(() => [preloadWeatherWidget], []);
+
+  const { imagesLoaded, progress } = useImagePreloader(allImages, preloadCallbacks);
 
   const gallery1 = [workshop1, workshop2, workshop3, workshop4, workshop5, workshop6];
   const gallery2 = [workshop7, workshop8, workshop9, workshop10, workshop11, workshop12];
