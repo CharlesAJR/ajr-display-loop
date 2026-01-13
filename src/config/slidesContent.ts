@@ -438,7 +438,7 @@ export const slidesConfig = {
   // POLITIQUE QUALITÉ
   // ====================================================================
   qualityPolicy: {
-    title: "POLITIQUE INTERNE",
+    title: "Politique interne",
     subtitle: "Tous acteurs de la réussite",
     mainQuote: "Parce que notre réussite, c'est avant tout celle de nos collaborateurs.",
     introText: "Au fil des années, l'Atelier Jean Regniers a démontré qu'il est possible d'allier performance industrielle et valeurs humaines fortes. Chaque jour, nos équipes démontrent que la qualité, la solidarité et le savoir-faire peuvent avancer ensemble.",
