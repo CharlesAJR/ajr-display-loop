@@ -6,8 +6,8 @@ export const WelcomeSlide = () => {
       {/* Background image */}
       <img src={welcomeBg} alt="Atelier Jean-Regniers" className="absolute inset-0 w-full h-full object-cover scale-[1.20]" />
       
-      {/* Subtle overlay for better text contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-black/15" />
+      {/* Dark overlay for better contrast */}
+      <div className="absolute inset-0 bg-black/55" />
       
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-16">
         <div className="text-center flex flex-col items-center">
