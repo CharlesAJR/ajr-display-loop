@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { DisplaySlide } from "@/components/DisplaySlide";
 import { Footer } from "@/components/Footer";
+import { LoadingScreen } from "@/components/LoadingScreen";
 import { WelcomeSlide } from "@/components/slides/WelcomeSlide";
 import { QuoteSlide } from "@/components/slides/QuoteSlide";
 import { WeatherSlide } from "@/components/slides/WeatherSlide";
@@ -11,6 +12,7 @@ import { SafetyCounterSlide } from "@/components/slides/SafetyCounterSlide";
 import { QualityPolicySlide } from "@/components/slides/QualityPolicySlide";
 import TeamworkSlide from "@/components/slides/TeamworkSlide";
 import { slidesConfig } from "@/config/slidesContent";
+import { useImagePreloader } from "@/hooks/useImagePreloader";
 
 // Import images
 import workshop1 from "@/assets/workshop-1.jpg";
@@ -45,10 +47,33 @@ import new9 from "@/assets/new-9.jpg";
 import new10 from "@/assets/new-10.jpg";
 import new11 from "@/assets/new-11.jpg";
 import new12 from "@/assets/new-12.jpg";
+
+// Background images
+import welcomeBg from "@/assets/welcome-background.png";
+import ajrLogo from "@/assets/ajr-logo.png";
+import safetyWorkers from "@/assets/safety-workers.png";
+import safetyCounter from "@/assets/safety-counter-reference.png";
+
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const SLIDE_DURATION = slidesConfig.slideDuration * 1000;
+  
+  // All images to preload
+  const allImages = useMemo(() => [
+    // Workshop images
+    workshop1, workshop2, workshop3, workshop4, workshop5, workshop6,
+    workshop7, workshop8, workshop9, workshop10, workshop11, workshop12,
+    workshop13, workshop14, workshop15, workshop16, workshop17, workshop18,
+    // New images
+    new1, new2, new3, new4, new5, new6,
+    new7, new8, new9, new10, new11, new12,
+    // Background and logos
+    welcomeBg, ajrLogo, safetyWorkers, safetyCounter
+  ], []);
+
+  const { imagesLoaded, progress } = useImagePreloader(allImages);
+
   const gallery1 = [workshop1, workshop2, workshop3, workshop4, workshop5, workshop6];
   const gallery2 = [workshop7, workshop8, workshop9, workshop10, workshop11, workshop12];
   const gallery3 = [workshop13, workshop14, workshop15, workshop16, workshop17, workshop18];
@@ -121,13 +146,16 @@ const Index = () => {
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
   }, [slides.length]);
-  return <div className="relative w-screen h-screen overflow-hidden bg-background">
-      
+  // Show loading screen until all images are loaded
+  if (!imagesLoaded) {
+    return <LoadingScreen progress={progress} />;
+  }
+
+  return (
+    <div className="relative w-screen h-screen overflow-hidden bg-background">
       {/* Conteneur pour centrer et réduire le contenu (protection TV overscan) */}
       <div className="absolute inset-0 pb-32 flex items-center justify-center z-10">
-        <div className="w-full h-full relative" style={{
-        transform: 'scale(0.94)'
-      }}>
+        <div className="w-full h-full relative" style={{ transform: 'scale(0.94)' }}>
           {/* Only render active slide for performance */}
           <DisplaySlide isActive={true}>
             {slides[currentSlide]}
@@ -137,13 +165,17 @@ const Index = () => {
 
       {/* Barre de progression - juste au-dessus du footer */}
       <div className="fixed bottom-[145px] left-0 right-0 h-2 bg-foreground/10 z-[60]">
-        <div key={currentSlide} style={{
-        animation: isPaused ? 'none' : `progress-bar ${SLIDE_DURATION}ms linear`
-      }} className="h-full bg-ajr-violet-soft backdrop-blur-md origin-left shadow-lg bg-[#8a62ba]" />
+        <div
+          key={currentSlide}
+          style={{ animation: isPaused ? 'none' : `progress-bar ${SLIDE_DURATION}ms linear` }}
+          className="h-full bg-ajr-violet-soft backdrop-blur-md origin-left shadow-lg bg-[#8a62ba]"
+        />
       </div>
 
       {/* Footer - non affecté par le scale */}
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
