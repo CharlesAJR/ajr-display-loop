@@ -23,17 +23,17 @@ const TeamworkSlide = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    <div className="h-full w-full flex items-center justify-center px-8 bg-background relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-full opacity-5">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(15)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute rounded-full bg-accent"
               style={{
-                width: Math.random() * 100 + 50,
-                height: Math.random() * 100 + 50,
+                width: Math.random() * 80 + 40,
+                height: Math.random() * 80 + 40,
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
               }}
@@ -51,7 +51,7 @@ const TeamworkSlide = () => {
         </div>
       </div>
 
-      <div className="relative z-10 min-h-screen flex flex-col justify-center px-8 py-2">
+      <div className="relative z-10 max-w-6xl w-full">
         {/* Hero Title */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
