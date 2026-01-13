@@ -1,0 +1,182 @@
+import { Users, Zap, Lightbulb, MessageCircle, Heart, Shield, HandHelping, Target } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const TeamworkSlide = () => {
+  const coreValues = [
+    { icon: MessageCircle, label: 'Communication' },
+    { icon: Heart, label: 'Confiance' },
+    { icon: Shield, label: 'Respect' },
+    { icon: HandHelping, label: 'Entraide' },
+    { icon: Target, label: 'Réussir ensemble' },
+  ];
+
+  const terrainPoints = [
+    'Des gestes coordonnés',
+    'Des infos qui circulent vite',
+    'Une solidarité qui fait tourner la production',
+  ];
+
+  const bureauPoints = [
+    'Des idées qui se croisent',
+    'Des compétences qui se complètent',
+    'Des solutions qui émergent plus vite',
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-primary via-primary/90 to-accent relative overflow-hidden">
+      {/* Background patterns */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute rounded-full bg-white"
+              style={{
+                width: Math.random() * 100 + 50,
+                height: Math.random() * 100 + 50,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.1, 0.2, 0.1],
+              }}
+              transition={{
+                duration: Math.random() * 3 + 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className="relative z-10 min-h-screen flex flex-col justify-center px-12 py-8">
+        {/* Hero Title */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-8"
+        >
+          <div className="inline-flex items-center gap-4 mb-4">
+            <Users className="w-16 h-16 text-white" strokeWidth={1.5} />
+          </div>
+          <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-4 leading-tight">
+            Le travail en équipe
+          </h1>
+          <p className="text-2xl md:text-3xl text-white/90 font-light">
+            Le vrai <span className="font-bold text-accent-foreground bg-white/20 px-3 py-1 rounded-full">super-pouvoir</span> de l'entreprise
+          </p>
+        </motion.div>
+
+        {/* Quote */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="text-center text-xl text-white/80 italic mb-10 max-w-3xl mx-auto"
+        >
+          "Seul on va vite, ensemble on va loin"
+        </motion.p>
+
+        {/* Two columns: Terrain & Bureau */}
+        <div className="grid md:grid-cols-2 gap-8 mb-10 max-w-6xl mx-auto w-full">
+          {/* Terrain */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="bg-white/15 backdrop-blur-md rounded-3xl p-8 border border-white/20"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center">
+                <Zap className="w-8 h-8 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-white">Sur le terrain</h2>
+            </div>
+            <ul className="space-y-4">
+              {terrainPoints.map((point, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
+                  className="flex items-center gap-3 text-white/90 text-lg"
+                >
+                  <span className="w-2 h-2 bg-orange-400 rounded-full" />
+                  {point}
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Bureau */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="bg-white/15 backdrop-blur-md rounded-3xl p-8 border border-white/20"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-14 h-14 bg-blue-500 rounded-2xl flex items-center justify-center">
+                <Lightbulb className="w-8 h-8 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-white">Dans les bureaux</h2>
+            </div>
+            <ul className="space-y-4">
+              {bureauPoints.map((point, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
+                  className="flex items-center gap-3 text-white/90 text-lg"
+                >
+                  <span className="w-2 h-2 bg-blue-400 rounded-full" />
+                  {point}
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* Core Values */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.8 }}
+          className="max-w-5xl mx-auto w-full"
+        >
+          <h3 className="text-center text-xl text-white/80 mb-6">Au cœur de tout ça, les mêmes qualités</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            {coreValues.map((value, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.8 + index * 0.1, duration: 0.4 }}
+                className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-5 py-3 rounded-full border border-white/30"
+              >
+                <value.icon className="w-5 h-5 text-yellow-300" />
+                <span className="text-white font-medium">{value.label}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Bottom quote */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="text-center text-lg text-white/70 mt-10 max-w-4xl mx-auto"
+        >
+          Le travail en équipe, ce n'est pas un concept. <span className="text-white font-semibold">C'est un moteur.</span>
+        </motion.p>
+      </div>
+    </div>
+  );
+};
+
+export default TeamworkSlide;
