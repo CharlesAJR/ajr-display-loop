@@ -18,16 +18,10 @@ export const WelcomeSlide = () => {
             className="h-44 w-auto mb-8 drop-shadow-xl"
           />
           
-          <p className="text-4xl font-display font-bold tracking-[0.4em] mb-4 text-white/90" style={{
-            textShadow: '0 2px 8px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.3)'
-          }}>
-            BIENVENUE À L'ATELIER
-          </p>
-          
-          <h1 className="text-[10rem] font-campton font-bold leading-[0.9] tracking-wider text-white" style={{
+          <h1 className="text-[12rem] font-campton font-bold tracking-wider text-white" style={{
             textShadow: '0 4px 12px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.2)'
           }}>
-            JEAN<br/>REGNIERS
+            BIENVENUE
           </h1>
         </div>
       </div>
