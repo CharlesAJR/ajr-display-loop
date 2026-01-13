@@ -1,8 +1,10 @@
 import welcomeBg from "@/assets/welcome-background.png";
 import ajrLogoColor from "@/assets/ajr-logo.png";
+import { motion } from "framer-motion";
 
 export const WelcomeSlide = () => {
-  return <div className="h-full w-full relative animate-fade-in overflow-hidden" style={{ margin: '-3.2%', width: '106.4%', height: '106.4%' }}>
+  return (
+    <div className="h-full w-full relative overflow-hidden" style={{ margin: '-3.2%', width: '106.4%', height: '106.4%' }}>
       {/* Background image */}
       <img src={welcomeBg} alt="Atelier Jean-Regniers" className="absolute inset-0 w-full h-full object-cover scale-[1.20]" />
       
@@ -11,19 +13,29 @@ export const WelcomeSlide = () => {
       
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-16">
         <div className="text-center flex flex-col items-center">
-          {/* Colored logo prominently displayed */}
-          <img 
+          {/* Colored logo with animation */}
+          <motion.img 
             src={ajrLogoColor} 
             alt="AJR Logo" 
             className="h-44 w-auto mb-8 drop-shadow-xl"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           />
           
-          <h1 className="text-[12rem] font-campton font-bold tracking-wider text-white" style={{
-            textShadow: '0 4px 12px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.2)'
-          }}>
+          <motion.h1 
+            className="text-[12rem] font-campton font-bold tracking-wider text-white"
+            style={{
+              textShadow: '0 4px 12px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.2)'
+            }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          >
             BIENVENUE
-          </h1>
+          </motion.h1>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
