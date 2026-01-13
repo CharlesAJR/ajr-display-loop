@@ -9,6 +9,7 @@ import { GallerySlide } from "@/components/slides/GallerySlide";
 import { SafetySlide } from "@/components/slides/SafetySlide";
 import { SafetyCounterSlide } from "@/components/slides/SafetyCounterSlide";
 import { QualityPolicySlide } from "@/components/slides/QualityPolicySlide";
+import TeamworkSlide from "@/components/slides/TeamworkSlide";
 import { slidesConfig } from "@/config/slidesContent";
 
 // Import images
@@ -67,6 +68,7 @@ const Index = () => {
   const slides = [
     <WelcomeSlide key="welcome" />,
     <QualityPolicySlide key="quality" />,
+    <TeamworkSlide key="teamwork" />,
     <SafetyCounterSlide key="counter" />,
     <BirthdaysSlide key="birthdays" />,
     <SafetySlide key="safety" />,
