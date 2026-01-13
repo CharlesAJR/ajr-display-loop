@@ -30,7 +30,7 @@ const TeamworkSlide = () => {
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute rounded-full bg-primary"
+              className="absolute rounded-full bg-accent"
               style={{
                 width: Math.random() * 100 + 50,
                 height: Math.random() * 100 + 50,
@@ -60,13 +60,13 @@ const TeamworkSlide = () => {
           className="text-center mb-8"
         >
           <div className="inline-flex items-center gap-4 mb-4">
-            <Users className="w-16 h-16 text-primary" strokeWidth={1.5} />
+            <Users className="w-16 h-16 text-accent" strokeWidth={1.5} />
           </div>
           <h1 className="text-5xl md:text-6xl font-display font-bold text-foreground mb-4 leading-tight">
             Le travail en équipe
           </h1>
           <p className="text-2xl md:text-3xl text-foreground/80 font-light">
-            Le vrai <span className="font-bold text-primary-foreground bg-primary px-3 py-1 rounded-full">super-pouvoir</span> de l'entreprise
+            Le vrai <span className="font-bold text-accent-foreground bg-accent px-3 py-1 rounded-full">super-pouvoir</span> de l'entreprise
           </p>
         </motion.div>
 
@@ -156,9 +156,9 @@ const TeamworkSlide = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8 + index * 0.1, duration: 0.4 }}
-                className="flex items-center gap-2 bg-primary/10 backdrop-blur-sm px-5 py-3 rounded-full border border-primary/20"
+                className="flex items-center gap-2 bg-accent/10 backdrop-blur-sm px-5 py-3 rounded-full border border-accent/20"
               >
-                <value.icon className="w-5 h-5 text-primary" />
+                <value.icon className="w-5 h-5 text-accent" />
                 <span className="text-foreground font-medium">{value.label}</span>
               </motion.div>
             ))}
