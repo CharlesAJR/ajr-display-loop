@@ -51,21 +51,21 @@ const TeamworkSlide = () => {
         </div>
       </div>
 
-      <div className="relative z-10 min-h-screen flex flex-col justify-center px-12 py-8">
+      <div className="relative z-10 min-h-screen flex flex-col justify-center px-12 py-4">
         {/* Hero Title */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-8"
+          className="text-center mb-4"
         >
-          <div className="inline-flex items-center gap-4 mb-4">
-            <Users className="w-16 h-16 text-accent" strokeWidth={1.5} />
+          <div className="inline-flex items-center gap-4 mb-2">
+            <Users className="w-12 h-12 text-accent" strokeWidth={1.5} />
           </div>
-          <h1 className="text-5xl md:text-6xl font-display font-bold text-foreground mb-4 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-2 leading-tight">
             Le travail en équipe
           </h1>
-          <p className="text-2xl md:text-3xl text-foreground/80 font-light">
+          <p className="text-xl md:text-2xl text-foreground/80 font-light">
             Le vrai <span className="font-bold text-accent-foreground bg-accent px-3 py-1 rounded-full">super-pouvoir</span> de l'entreprise
           </p>
         </motion.div>
@@ -75,34 +75,34 @@ const TeamworkSlide = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-center text-xl text-foreground/60 italic mb-10 max-w-3xl mx-auto"
+          className="text-center text-lg text-foreground/60 italic mb-6 max-w-3xl mx-auto"
         >
           "Seul on va vite, ensemble on va loin"
         </motion.p>
 
         {/* Two columns: Terrain & Bureau */}
-        <div className="grid md:grid-cols-2 gap-8 mb-10 max-w-6xl mx-auto w-full">
+        <div className="grid md:grid-cols-2 gap-6 mb-6 max-w-6xl mx-auto w-full">
           {/* Terrain */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-foreground/10"
+            className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-foreground/10"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center">
-                <Zap className="w-8 h-8 text-white" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center">
+                <Zap className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-foreground">Sur le terrain</h2>
+              <h2 className="text-xl font-bold text-foreground">Sur le terrain</h2>
             </div>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {terrainPoints.map((point, index) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
-                  className="flex items-center gap-3 text-foreground/80 text-lg"
+                  className="flex items-center gap-3 text-foreground/80 text-base"
                 >
                   <span className="w-2 h-2 bg-orange-500 rounded-full" />
                   {point}
@@ -116,22 +116,22 @@ const TeamworkSlide = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-foreground/10"
+            className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-foreground/10"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 bg-blue-500 rounded-2xl flex items-center justify-center">
-                <Lightbulb className="w-8 h-8 text-white" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                <Lightbulb className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-foreground">Dans les bureaux</h2>
+              <h2 className="text-xl font-bold text-foreground">Dans les bureaux</h2>
             </div>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {bureauPoints.map((point, index) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 + index * 0.1, duration: 0.5 }}
-                  className="flex items-center gap-3 text-foreground/80 text-lg"
+                  className="flex items-center gap-3 text-foreground/80 text-base"
                 >
                   <span className="w-2 h-2 bg-blue-500 rounded-full" />
                   {point}
@@ -148,18 +148,18 @@ const TeamworkSlide = () => {
           transition={{ delay: 0.7, duration: 0.8 }}
           className="max-w-5xl mx-auto w-full"
         >
-          <h3 className="text-center text-xl text-foreground/60 mb-6">Au cœur de tout ça, les mêmes qualités</h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <h3 className="text-center text-lg text-foreground/60 mb-4">Au cœur de tout ça, les mêmes qualités</h3>
+          <div className="flex flex-wrap justify-center gap-3">
             {coreValues.map((value, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8 + index * 0.1, duration: 0.4 }}
-                className="flex items-center gap-2 bg-accent/10 backdrop-blur-sm px-5 py-3 rounded-full border border-accent/20"
+                className="flex items-center gap-2 bg-accent/10 backdrop-blur-sm px-4 py-2 rounded-full border border-accent/20"
               >
-                <value.icon className="w-5 h-5 text-accent" />
-                <span className="text-foreground font-medium">{value.label}</span>
+                <value.icon className="w-4 h-4 text-accent" />
+                <span className="text-foreground font-medium text-sm">{value.label}</span>
               </motion.div>
             ))}
           </div>
@@ -170,7 +170,7 @@ const TeamworkSlide = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="text-center text-lg text-foreground/60 mt-10 max-w-4xl mx-auto"
+          className="text-center text-base text-foreground/60 mt-6 max-w-4xl mx-auto"
         >
           Le travail en équipe, ce n'est pas un concept. <span className="text-foreground font-semibold">C'est un moteur.</span>
         </motion.p>
