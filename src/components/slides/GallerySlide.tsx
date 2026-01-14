@@ -89,7 +89,7 @@ export const GallerySlide = ({
             {title}
           </h2>}
         <div className="grid grid-cols-3 grid-rows-2 gap-3" style={{ width: '1100px' }}>
-          {images.map((image, index) => <div key={index} className="relative overflow-hidden rounded-xl shadow-[0_4px_25px_rgba(0,0,0,0.1)] group aspect-video">
+          {images.map((image, index) => <div key={index} className="relative overflow-hidden rounded-xl shadow-[0_4px_25px_rgba(0,0,0,0.1)] group aspect-video border-4 border-white">
               <img 
                 src={image} 
                 alt={`Photo ${index + 1}`} 
