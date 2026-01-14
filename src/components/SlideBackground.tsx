@@ -7,7 +7,7 @@ interface SlideBackgroundProps {
 
 export const SlideBackground = ({ children, className = "" }: SlideBackgroundProps) => {
   return (
-    <div className={`h-full w-full relative overflow-hidden ${className}`}>
+    <div className={`h-full w-full relative ${className}`}>
       {/* Fond agrandi de 10% pour couvrir les bords */}
       <div 
         className="absolute inset-0" 
