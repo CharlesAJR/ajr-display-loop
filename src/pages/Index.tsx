@@ -159,10 +159,21 @@ const Index = () => {
       {/* Conteneur pour centrer et réduire le contenu (protection TV overscan) */}
       <div className="absolute inset-0 pb-32 flex items-center justify-center z-10">
         <div className="w-full h-full relative" style={{ transform: 'scale(0.94)' }}>
-          {/* Only render active slide for performance */}
-          <DisplaySlide isActive={true}>
-            {slides[currentSlide]}
-          </DisplaySlide>
+          {/* Keep all slides mounted but only show active one */}
+          {slides.map((slide, index) => (
+            <div 
+              key={index}
+              style={{ 
+                display: index === currentSlide ? 'block' : 'none',
+                position: 'absolute',
+                inset: 0
+              }}
+            >
+              <DisplaySlide isActive={index === currentSlide}>
+                {slide}
+              </DisplaySlide>
+            </div>
+          ))}
         </div>
       </div>
 
