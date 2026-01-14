@@ -7,7 +7,16 @@ interface SlideBackgroundProps {
 
 export const SlideBackground = ({ children, className = "" }: SlideBackgroundProps) => {
   return (
-    <div className={`h-full w-full relative overflow-hidden ${className}`} style={{ background: 'linear-gradient(135deg, #007baf 0%, #005a82 50%, #004466 100%)' }}>
+    <div className={`h-full w-full relative overflow-hidden ${className}`}>
+      {/* Fond agrandi de 10% pour couvrir les bords */}
+      <div 
+        className="absolute inset-0" 
+        style={{ 
+          background: 'linear-gradient(135deg, #007baf 0%, #005a82 50%, #004466 100%)',
+          transform: 'scale(1.1)',
+          transformOrigin: 'center center'
+        }}
+      />
       {/* Formes géométriques semi-transparentes */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Grande forme triangulaire en haut à droite */}
