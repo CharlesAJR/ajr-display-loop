@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from "lucide-react";
+import { SlideBackground } from "@/components/SlideBackground";
 
 interface GallerySlideProps {
   images: string[];
@@ -81,9 +82,10 @@ export const GallerySlide = ({
     });
   };
 
-  return <div className="h-full w-full flex items-center justify-center animate-fade-in">
+  return <SlideBackground>
+    <div className="h-full w-full flex items-center justify-center animate-fade-in">
       <div className="max-w-7xl max-h-[80vh] flex flex-col items-center px-12 py-8 gap-0 shadow-none rounded-none">
-        {title && showTitle && <h2 className="text-5xl font-display font-bold text-foreground mb-6">
+        {title && showTitle && <h2 className="text-5xl font-display font-bold text-white mb-6">
             {title}
           </h2>}
         <div className="grid grid-cols-3 grid-rows-2 gap-3" style={{ width: '1100px' }}>
@@ -143,5 +145,6 @@ export const GallerySlide = ({
             </div>)}
         </div>
       </div>
-    </div>;
+    </div>
+  </SlideBackground>;
 };
