@@ -290,7 +290,7 @@ export const slidesConfig = {
     { name: "Xavier Decarniere", date: "Mercredi 14/05" },
     { name: "Kevin Mathurin", date: "Mardi 03/06" },
     { name: "Pascal Gallez", date: "Mardi 07/10" },
-    { name: "Cathy Rummens", date: "Dimanche 16/03" },
+    
     { name: "Michael Meurée", date: "Mardi 17/06" },
     { name: "Fabian Leclercq", date: "Dimanche 24/08" },
     { name: "Thierry Sene", date: "Mercredi 22/01" },
@@ -392,6 +392,7 @@ export const slidesConfig = {
   ],
 
   events: [
+    { name: "Visite du groupe Vandeputte", date: "Mercredi 22/01", time: "" },
     { name: "Formation Sécurité", date: "Mercredi 29/10", time: "14h00" },
     { name: "Réunion d'équipe", date: "Vendredi 31/10", time: "10h30" },
     // Ajoutez d'autres événements ici...
