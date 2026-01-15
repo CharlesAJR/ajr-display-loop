@@ -178,7 +178,7 @@ export const slidesConfig = {
     { name: "Marc Lasseron", date: "Jeudi 21/08" },
     { name: "Stephane Malengreaux", date: "Vendredi 21/02" },
     { name: "Caroline Boudrez", date: "Mardi 04/03" },
-    { name: "Caroline Martinis", date: "Vendredi 31/10" },
+    
     { name: "Sebastien Sterlin", date: "Jeudi 20/02" },
     { name: "Georges Hombert", date: "Mercredi 15/10" },
     { name: "Mohamed Djemai", date: "Dimanche 12/01" },
