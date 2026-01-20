@@ -45,11 +45,13 @@ export const KurarayWelcomeSlide = () => {
             <span className="text-4xl text-white/90 font-soleil tracking-wide">
               à nos visiteurs de
             </span>
-            <img 
-              src={chemvironLogo} 
-              alt="Chemviron - A Kuraray Company" 
-              className="h-32 w-auto mt-4 drop-shadow-xl"
-            />
+            <div className="bg-white rounded-2xl px-12 py-6 mt-4 shadow-2xl">
+              <img 
+                src={chemvironLogo} 
+                alt="Chemviron - A Kuraray Company" 
+                className="h-28 w-auto"
+              />
+            </div>
           </motion.div>
 
           <motion.p
