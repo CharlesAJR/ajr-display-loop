@@ -1,5 +1,6 @@
 import welcomeBg from "@/assets/welcome-background.png";
 import ajrLogoColor from "@/assets/ajr-logo.png";
+import chemvironLogo from "@/assets/chemviron-logo.png";
 import { motion } from "framer-motion";
 
 export const KurarayWelcomeSlide = () => {
@@ -44,17 +45,11 @@ export const KurarayWelcomeSlide = () => {
             <span className="text-4xl text-white/90 font-soleil tracking-wide">
               à nos visiteurs de
             </span>
-            <div 
-              className="text-[6rem] font-campton font-bold tracking-wider text-ajr-pink"
-              style={{
-                textShadow: '0 4px 12px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 182, 193, 0.3)'
-              }}
-            >
-              CHEMVIRON
-            </div>
-            <span className="text-2xl text-white/70 font-soleil tracking-wide mt-2">
-              Groupe Kuraray
-            </span>
+            <img 
+              src={chemvironLogo} 
+              alt="Chemviron - A Kuraray Company" 
+              className="h-32 w-auto mt-4 drop-shadow-xl"
+            />
           </motion.div>
 
           <motion.p
