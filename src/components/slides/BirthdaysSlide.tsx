@@ -140,11 +140,16 @@ export const BirthdaysSlide = () => {
                     </div>)}
 
                   {/* Événements */}
-                  {dayEvents.events.map((event, index) => <div key={`event-${index}`} className="animate-fade-in">
-                      <p className="text-lg font-bold text-white leading-tight mb-0.5">{event.name}</p>
-                      <p className="text-base text-white/70">{event.date.replace(/^[^\s]+\s/, '')}</p>
-                      {event.time && <p className="text-sm text-amber-300 font-medium">{event.time}</p>}
-                    </div>)}
+                  {dayEvents.events.map((event, index) => {
+                    const isKuraray = event.name.toLowerCase().includes('kuraray');
+                    return (
+                      <div key={`event-${index}`} className={`animate-fade-in ${isKuraray ? 'bg-amber-400/20 rounded-xl p-2 border border-amber-400/40' : ''}`}>
+                        <p className={`text-lg font-bold leading-tight mb-0.5 ${isKuraray ? 'text-amber-300' : 'text-white'}`}>{event.name}</p>
+                        <p className="text-base text-white/70">{event.date.replace(/^[^\s]+\s/, '')}</p>
+                        {event.time && <p className={`text-sm font-medium ${isKuraray ? 'text-amber-200' : 'text-amber-300'}`}>{event.time}</p>}
+                      </div>
+                    );
+                  })}
 
                   {!hasAnyEvent && <p className="text-base text-white/40 italic text-center py-2">—</p>}
                 </div>
