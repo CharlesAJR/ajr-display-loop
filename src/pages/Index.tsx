@@ -3,6 +3,7 @@ import { DisplaySlide } from "@/components/DisplaySlide";
 import { Footer } from "@/components/Footer";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { WelcomeSlide } from "@/components/slides/WelcomeSlide";
+import { KurarayWelcomeSlide } from "@/components/slides/KurarayWelcomeSlide";
 import { QuoteSlide } from "@/components/slides/QuoteSlide";
 import { WeatherSlide, preloadWeatherWidget } from "@/components/slides/WeatherSlide";
 import { BirthdaysSlide } from "@/components/slides/BirthdaysSlide";
@@ -93,18 +94,29 @@ const Index = () => {
     { x: 50, y: 50 }, // new-12
   ];
 
-  const slides = [
-    <WelcomeSlide key="welcome" />,
-    <QualityPolicySlide key="quality" />,
-    <TeamworkSlide key="teamwork" />,
-    <SafetyCounterSlide key="counter" />,
-    <BirthdaysSlide key="birthdays" />,
-    <SafetySlide key="safety" />,
-    <WeatherSlide key="weather" />,
-    <QuoteSlide key="quote" />,
-    <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} />,
-    <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} defaultPositions={gallery2DefaultPositions} />
-  ];
+  // Check if today is January 23rd (Kuraray visit day)
+  const isKurarayDay = useMemo(() => {
+    const today = new Date();
+    return today.getMonth() === 0 && today.getDate() === 23; // January = 0
+  }, []);
+
+  const slides = useMemo(() => {
+    const baseSlides = [
+      <WelcomeSlide key="welcome" />,
+      // Add Kuraray welcome slide only on January 23rd
+      ...(isKurarayDay ? [<KurarayWelcomeSlide key="kuraray" />] : []),
+      <QualityPolicySlide key="quality" />,
+      <TeamworkSlide key="teamwork" />,
+      <SafetyCounterSlide key="counter" />,
+      <BirthdaysSlide key="birthdays" />,
+      <SafetySlide key="safety" />,
+      <WeatherSlide key="weather" />,
+      <QuoteSlide key="quote" />,
+      <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} />,
+      <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} defaultPositions={gallery2DefaultPositions} />
+    ];
+    return baseSlides;
+  }, [isKurarayDay, galleryNew1, galleryNew2, gallery2DefaultPositions]);
 
 
   // Auto-rotation des slides
