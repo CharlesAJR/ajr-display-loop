@@ -50,8 +50,11 @@ export const KurarayWelcomeSlide = () => {
                 textShadow: '0 4px 12px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 182, 193, 0.3)'
               }}
             >
-              KURARAY
+              CHEMVIRON
             </div>
+            <span className="text-2xl text-white/70 font-soleil tracking-wide mt-2">
+              Groupe Kuraray
+            </span>
           </motion.div>
 
           <motion.p
@@ -60,7 +63,7 @@ export const KurarayWelcomeSlide = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            Jeudi 23 janvier 2025 • 10h00
+            Vendredi 23 janvier 2026 • 10h00
           </motion.p>
         </div>
       </div>
