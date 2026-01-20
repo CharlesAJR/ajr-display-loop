@@ -95,10 +95,9 @@ const Index = () => {
   ];
 
   // Check if today is January 23rd (Kuraray visit day)
-  // TODO: Remove "|| true" after testing - this forces the slide to show
   const isKurarayDay = useMemo(() => {
     const today = new Date();
-    return today.getMonth() === 0 && today.getDate() === 23 || true; // January = 0
+    return today.getMonth() === 0 && today.getDate() === 23; // January = 0
   }, []);
 
   const slides = useMemo(() => {
