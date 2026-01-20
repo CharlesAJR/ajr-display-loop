@@ -60,7 +60,7 @@ export const KurarayWelcomeSlide = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            Vendredi 23 janvier 2026 • 10h00
+            <span className="text-amber-400 font-bold">Vendredi</span> 23 janvier 2026 • 10h00
           </motion.p>
         </div>
       </div>
