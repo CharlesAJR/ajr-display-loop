@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
-import { slidesConfig } from "@/config/slidesContent";
 import ajrLogoWhite from "@/assets/ajr-logo-white.png";
-export const Footer = () => {
+
+interface FooterProps {
+  currentSlide?: number;
+  totalSlides?: number;
+}
+
+export const Footer = ({ currentSlide, totalSlides }: FooterProps) => {
   const [currentTime, setCurrentTime] = useState(new Date());
   useEffect(() => {
     const timer = setInterval(() => {
@@ -29,6 +34,13 @@ export const Footer = () => {
         <div className="flex items-center gap-10">
           <img src={ajrLogoWhite} alt="Atelier Jean Regniers" className="h-28 w-auto" />
         </div>
+        
+        {/* Indicateur de slide */}
+        {currentSlide !== undefined && totalSlides !== undefined && (
+          <div className="text-3xl text-white/80 font-light">
+            {currentSlide} / {totalSlides}
+          </div>
+        )}
         
         <div className="flex flex-col items-end gap-1">
           <p className="text-7xl font-display font-bold tabular-nums leading-none">

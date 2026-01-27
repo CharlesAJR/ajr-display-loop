@@ -199,7 +199,7 @@ const Index = () => {
       </div>
 
       {/* Footer - non affecté par le scale */}
-      <Footer />
+      <Footer currentSlide={currentSlide + 1} totalSlides={slides.length} />
     </div>
   );
 };
