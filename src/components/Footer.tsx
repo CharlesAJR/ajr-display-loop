@@ -37,12 +37,12 @@ export const Footer = ({ currentSlide, totalSlides }: FooterProps) => {
         
         {/* Indicateur de slide */}
         {currentSlide !== undefined && totalSlides !== undefined && (
-          <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-8 py-3 rounded-full border border-white/20">
-            <span className="text-5xl font-display font-bold text-white tabular-nums">
+          <div className="flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full border border-white/20">
+            <span className="text-3xl font-display font-bold text-white tabular-nums">
               {currentSlide}
             </span>
-            <span className="text-3xl text-white/60 font-light">/</span>
-            <span className="text-5xl font-display font-bold text-white/70 tabular-nums">
+            <span className="text-xl text-white/60 font-light">/</span>
+            <span className="text-3xl font-display font-bold text-white/70 tabular-nums">
               {totalSlides}
             </span>
           </div>
