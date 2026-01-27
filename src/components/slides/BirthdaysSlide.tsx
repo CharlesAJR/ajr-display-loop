@@ -20,7 +20,7 @@ export const BirthdaysSlide = () => {
     
     // Calculer le lundi et vendredi de la semaine actuelle
     const monday = startOfWeek(today, { weekStartsOn: 1 });
-    const friday = endOfWeek(today, { weekStartsOn: 1 });
+    const friday = new Date(monday);
     friday.setDate(monday.getDate() + 4); // Limiter au vendredi
     
     const eventsByDay: {
