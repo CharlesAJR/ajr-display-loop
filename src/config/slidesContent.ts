@@ -237,7 +237,7 @@ export const slidesConfig = {
     { name: "Milena La Marca", date: "Samedi 22/03" },
     { name: "David Capitte", date: "Jeudi 13/03" },
     { name: "Marco Calabrese", date: "Mercredi 27/08" },
-    { name: "Carine Steenhaut", date: "Dimanche 08/06" },
+    
     { name: "Mike Huart", date: "Lundi 08/12" },
     { name: "Jerome Maghue", date: "Mardi 23/12" },
     { name: "Michael Dehon", date: "Jeudi 20/02" },
