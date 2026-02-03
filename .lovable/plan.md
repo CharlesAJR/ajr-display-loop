@@ -1,38 +1,47 @@
 
-## Ajout d'un indicateur de slide (X sur Y)
+# Masquer les anniversaires de la slide "Cette semaine"
 
-### Objectif
-Afficher le numero de la slide actuelle et le total, par exemple "3 / 10", pour que les spectateurs sachent ou ils en sont dans la presentation.
+## Objectif
+Retirer l'affichage des anniversaires tout en conservant :
+- Les événements de la semaine
+- Les annonces spéciales (naissances, etc.)
+- Les données des anniversaires dans `slidesContent.ts` (non supprimées)
 
-### Emplacement propose
+## Modifications à effectuer
 
-**Option recommandee : Dans le footer, au centre**
+### Fichier : `src/components/slides/BirthdaysSlide.tsx`
 
-L'indicateur sera place entre le logo AJR (a gauche) et l'heure (a droite), bien visible mais discret.
+**1. Retirer l'import de l'icône Cake** (ligne 1)
+- Supprimer `Cake` de l'import lucide-react
 
-```text
-+------------------------------------------------------------------+
-|  [LOGO AJR]          3 / 10            14:32:05                  |
-|                                    lundi 27 janvier 2025          |
-+------------------------------------------------------------------+
-```
+**2. Supprimer la légende anniversaire** (lignes 114-117)
+- Retirer le bloc qui affiche "🎂 = Anniversaire" dans le header
 
-### Style visuel
+**3. Simplifier la structure de données** (lignes 26-37)
+- Retirer `birthdays` de l'objet `eventsByDay`
+- Garder uniquement `events`
 
-- Texte blanc semi-transparent (text-white/80)
-- Taille moyenne (text-2xl ou text-3xl)
-- Police legere pour ne pas dominer l'affichage
-- Format : `3 / 10` (numero actuel / total)
+**4. Supprimer le traitement des anniversaires** (lignes 40-61)
+- Retirer tout le bloc `birthdays.forEach(...)` qui filtre les anniversaires
 
-### Modifications techniques
+**5. Supprimer l'affichage des anniversaires** (lignes 133-140)
+- Retirer le rendu des anniversaires dans chaque jour
 
-**Fichier : `src/components/Footer.tsx`**
-- Ajouter des props `currentSlide` et `totalSlides`
-- Ajouter un element central dans le flex container
+**6. Simplifier la logique d'affichage vide** (ligne 124-126 et 154)
+- Adapter `hasAnyEvent` pour ne vérifier que les événements
 
-**Fichier : `src/pages/Index.tsx`**
-- Passer `currentSlide + 1` et `slides.length` au composant Footer
+---
 
-### Resultat attendu
+## Résumé visuel
 
-Les spectateurs verront en permanence "Slide 3 / 10" (ou simplement "3 / 10") dans le footer, leur permettant de savoir ou ils en sont dans le cycle de presentation.
+| Avant | Après |
+|-------|-------|
+| Anniversaires + Événements + Annonces | Événements + Annonces uniquement |
+| Légende "🎂 = Anniversaire" | Pas de légende |
+| Icône Cake rose | Supprimée |
+
+---
+
+## Détails techniques
+
+Le fichier `slidesContent.ts` reste intact - les anniversaires y sont toujours stockés mais simplement ignorés par le composant.
