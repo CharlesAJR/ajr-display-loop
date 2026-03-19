@@ -394,6 +394,7 @@ export const slidesConfig = {
   events: [
     { name: "Visite de Kuraray", date: "Jeudi 23/01", time: "10h00" },
     { name: "Visite de Vandeputte", date: "Jeudi 19/03" },
+    { name: "Visite de Arelane", date: "Jeudi 19/03" },
     { name: "Formation Sécurité", date: "Mercredi 29/10", time: "14h00" },
     { name: "Réunion d'équipe", date: "Vendredi 31/10", time: "10h30" },
     // Ajoutez d'autres événements ici...
