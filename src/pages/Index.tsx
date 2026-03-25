@@ -111,6 +111,7 @@ const Index = () => {
       <SafetyCounterSlide key="counter" />,
       <BirthdaysSlide key="birthdays" />,
       <SafetySlide key="safety" />,
+      <AlcoholSafetySlide key="alcohol-safety" />,
       <WeatherSlide key="weather" />,
       <QuoteSlide key="quote" />,
       <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} />,
