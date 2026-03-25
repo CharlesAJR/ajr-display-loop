@@ -9,6 +9,7 @@ import { WeatherSlide, preloadWeatherWidget } from "@/components/slides/WeatherS
 import { BirthdaysSlide } from "@/components/slides/BirthdaysSlide";
 import { GallerySlide } from "@/components/slides/GallerySlide";
 import { SafetySlide } from "@/components/slides/SafetySlide";
+import { AlcoholSafetySlide } from "@/components/slides/AlcoholSafetySlide";
 import { SafetyCounterSlide } from "@/components/slides/SafetyCounterSlide";
 import { QualityPolicySlide } from "@/components/slides/QualityPolicySlide";
 import TeamworkSlide from "@/components/slides/TeamworkSlide";
@@ -110,6 +111,7 @@ const Index = () => {
       <SafetyCounterSlide key="counter" />,
       <BirthdaysSlide key="birthdays" />,
       <SafetySlide key="safety" />,
+      <AlcoholSafetySlide key="alcohol-safety" />,
       <WeatherSlide key="weather" />,
       <QuoteSlide key="quote" />,
       <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} />,
