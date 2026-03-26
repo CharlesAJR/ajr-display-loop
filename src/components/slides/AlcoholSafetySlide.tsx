@@ -5,71 +5,51 @@ import accidentRiskIcon from "@/assets/accident-risk-icon.png";
 import noDrinkWorkIcon from "@/assets/no-drink-work-icon.png";
 import helpIcon from "@/assets/help-icon.png";
 
+const cards = [
+  { img: noAlcoholIcon, alt: "Zéro alcool", text: "Zéro alcool", bold: true },
+  { img: accidentRiskIcon, alt: "Risque d'accident", text: "Risque d'accident", bold: false },
+  { img: noDrinkWorkIcon, alt: "Pas d'alcool au travail", text: "Ni avant, ni pendant", bold: false },
+  { img: helpIcon, alt: "Besoin d'aide", text: "Besoin d'aide ? Parlez-nous !", bold: false },
+];
+
 export const AlcoholSafetySlide = () => {
   return (
     <SlideBackground>
       <div className="h-full w-full flex flex-col items-center justify-center animate-fade-in">
-        <div className="max-w-6xl max-h-[80vh] flex flex-col px-16 py-8 w-full">
+        <div className="w-full max-w-[1100px] flex flex-col px-8 py-6">
 
           {/* Header */}
           <div className="flex justify-center mb-5">
-            <div className="bg-white/20 backdrop-blur-sm rounded-full px-10 py-5 shadow-[0_6px_30px_rgba(0,0,0,0.15)] flex items-center gap-3 border border-white/30">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm">
-                <AlertTriangle className="w-8 h-8 text-amber-500" strokeWidth={2.5} />
+            <div className="bg-white/20 backdrop-blur-sm rounded-full px-10 py-4 shadow-[0_6px_30px_rgba(0,0,0,0.15)] flex items-center gap-3 border border-white/30">
+              <div className="w-11 h-11 bg-white rounded-full flex items-center justify-center shadow-sm">
+                <AlertTriangle className="w-7 h-7 text-amber-500" strokeWidth={2.5} />
               </div>
-              <h2 className="text-5xl font-display text-white font-bold uppercase tracking-wide">
+              <h2 className="text-4xl font-display text-white font-bold uppercase tracking-wide">
                 Alcool & Travail
               </h2>
             </div>
           </div>
 
-          {/* Content - vertical list with large images */}
-          <div className="flex-1 flex flex-col justify-center gap-3">
-
-            {/* Zéro Alcool */}
-            <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-4 border border-white/20 animate-fade-in flex items-center gap-5">
-              <div className="flex-shrink-0 w-28 h-28 bg-white rounded-2xl flex items-center justify-center shadow-lg p-2">
-                <img src={noAlcoholIcon} alt="Zéro alcool" className="w-full h-full object-contain" />
+          {/* 2x2 Grid — images are the hero */}
+          <div className="grid grid-cols-2 grid-rows-2 gap-4 flex-1">
+            {cards.map((card, i) => (
+              <div
+                key={i}
+                className="bg-white/15 backdrop-blur-sm rounded-2xl border border-white/20 animate-fade-in flex flex-col items-center justify-center p-5 gap-2"
+                style={{ animationDelay: `${i * 100}ms` }}
+              >
+                <div className="w-40 h-40 bg-white rounded-2xl flex items-center justify-center shadow-xl p-3">
+                  <img src={card.img} alt={card.alt} className="w-full h-full object-contain drop-shadow-md" />
+                </div>
+                <p className={`text-2xl font-display text-white text-center leading-tight mt-1 ${card.bold ? 'font-bold' : 'font-medium'}`}>
+                  {card.text}
+                </p>
               </div>
-              <p className="text-3xl font-display text-white leading-snug font-bold">
-                Zéro alcool — sécurité avant tout !
-              </p>
-            </div>
-
-            {/* Risques */}
-            <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-4 border border-white/20 animate-fade-in flex items-center gap-5" style={{ animationDelay: '100ms' }}>
-              <div className="flex-shrink-0 w-28 h-28 bg-white rounded-2xl flex items-center justify-center shadow-lg p-2">
-                <img src={accidentRiskIcon} alt="Risque d'accident" className="w-full h-full object-contain" />
-              </div>
-              <p className="text-3xl font-display text-white leading-snug font-medium">
-                Moins vigilant, risque d'accident
-              </p>
-            </div>
-
-            {/* Pas d'alcool avant/pendant */}
-            <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-4 border border-white/20 animate-fade-in flex items-center gap-5" style={{ animationDelay: '200ms' }}>
-              <div className="flex-shrink-0 w-28 h-28 bg-white rounded-2xl flex items-center justify-center shadow-lg p-2">
-                <img src={noDrinkWorkIcon} alt="Pas d'alcool au travail" className="w-full h-full object-contain" />
-              </div>
-              <p className="text-3xl font-display text-white leading-snug font-medium">
-                Ni <span className="font-bold">avant</span>, ni <span className="font-bold">pendant</span> le travail
-              </p>
-            </div>
-
-            {/* Besoin d'aide */}
-            <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-4 border border-white/20 animate-fade-in flex items-center gap-5" style={{ animationDelay: '300ms' }}>
-              <div className="flex-shrink-0 w-28 h-28 bg-white rounded-2xl flex items-center justify-center shadow-lg p-2">
-                <img src={helpIcon} alt="Besoin d'aide" className="w-full h-full object-contain" />
-              </div>
-              <p className="text-3xl font-display text-white leading-snug font-medium">
-                Besoin d'aide ? <span className="font-bold">Parlez-nous !</span>
-              </p>
-            </div>
-
+            ))}
           </div>
 
-          {/* Footer message */}
-          <p className="text-center text-xl text-white/60 font-medium mt-3 tracking-wide">
+          {/* Footer */}
+          <p className="text-center text-lg text-white/60 font-medium mt-3 tracking-wide">
             Restons prudents, restons ensemble !
           </p>
         </div>
