@@ -21,49 +21,43 @@ export const AlcoholSafetySlide = () => {
             </div>
           </div>
 
-          {/* Two image cards + text messages */}
-          <div className="flex gap-6 w-full justify-center items-stretch flex-1">
-            {/* Zéro alcool */}
-            <div className="bg-white/15 backdrop-blur-sm rounded-2xl border border-white/20 animate-fade-in flex flex-col items-center justify-center p-6 gap-3 flex-1 max-w-[320px]">
-              <div className="w-48 h-48 bg-white rounded-2xl flex items-center justify-center shadow-xl p-4">
-                <img src={noAlcoholIcon} alt="Zéro alcool" className="w-full h-full object-contain drop-shadow-md" />
-              </div>
-              <p className="text-2xl font-display text-white text-center font-bold leading-tight">
-                Zéro alcool
-              </p>
-            </div>
-
-            {/* Text messages au centre */}
-            <div className="flex flex-col justify-center gap-5 flex-1 max-w-[320px]">
-              <div className="bg-white/15 backdrop-blur-sm rounded-2xl border border-white/20 p-6 animate-fade-in" style={{ animationDelay: '100ms' }}>
+          {/* Two columns */}
+          <div className="flex gap-8 w-full justify-center items-start flex-1">
+            {/* Colonne gauche : Zéro alcool + textes */}
+            <div className="flex flex-col items-center gap-4 flex-1 max-w-[420px]">
+              <div className="bg-white/15 backdrop-blur-sm rounded-2xl border border-white/20 animate-fade-in flex flex-col items-center justify-center p-6 gap-3 w-full">
+                <div className="w-48 h-48 bg-white rounded-2xl flex items-center justify-center shadow-xl p-4">
+                  <img src={noAlcoholIcon} alt="Zéro alcool" className="w-full h-full object-contain drop-shadow-md" />
+                </div>
                 <p className="text-2xl font-display text-white text-center font-bold leading-tight">
+                  Zéro alcool
+                </p>
+              </div>
+              <div className="bg-white/15 backdrop-blur-sm rounded-2xl border border-white/20 p-5 w-full animate-fade-in" style={{ animationDelay: '100ms' }}>
+                <p className="text-xl font-display text-white text-center font-bold leading-tight">
                   ⚠️ Risque d'accident
                 </p>
-                <p className="text-base text-white/70 text-center font-medium mt-2">
-                  L'alcool multiplie les dangers
-                </p>
               </div>
-              <div className="bg-white/15 backdrop-blur-sm rounded-2xl border border-white/20 p-6 animate-fade-in" style={{ animationDelay: '200ms' }}>
-                <p className="text-2xl font-display text-white text-center font-bold leading-tight">
+              <div className="bg-white/15 backdrop-blur-sm rounded-2xl border border-white/20 p-5 w-full animate-fade-in" style={{ animationDelay: '200ms' }}>
+                <p className="text-xl font-display text-white text-center font-bold leading-tight">
                   🚫 Ni avant, ni pendant
-                </p>
-                <p className="text-base text-white/70 text-center font-medium mt-2">
-                  Tolérance zéro sur le lieu de travail
                 </p>
               </div>
             </div>
 
-            {/* Besoin d'aide */}
-            <div className="bg-white/15 backdrop-blur-sm rounded-2xl border border-white/20 animate-fade-in flex flex-col items-center justify-center p-6 gap-3 flex-1 max-w-[320px]" style={{ animationDelay: '300ms' }}>
-              <div className="w-48 h-48 bg-white rounded-2xl flex items-center justify-center shadow-xl p-4">
-                <img src={helpIcon} alt="Besoin d'aide" className="w-full h-full object-contain drop-shadow-md" />
+            {/* Colonne droite : Besoin d'aide */}
+            <div className="flex flex-col items-center gap-4 flex-1 max-w-[420px]">
+              <div className="bg-white/15 backdrop-blur-sm rounded-2xl border border-white/20 animate-fade-in flex flex-col items-center justify-center p-6 gap-3 w-full" style={{ animationDelay: '300ms' }}>
+                <div className="w-48 h-48 bg-white rounded-2xl flex items-center justify-center shadow-xl p-4">
+                  <img src={helpIcon} alt="Besoin d'aide" className="w-full h-full object-contain drop-shadow-md" />
+                </div>
+                <p className="text-2xl font-display text-white text-center font-bold leading-tight">
+                  Besoin d'aide ?
+                </p>
+                <p className="text-base text-white/70 text-center font-medium">
+                  Parlez-nous, on est là pour vous !
+                </p>
               </div>
-              <p className="text-2xl font-display text-white text-center font-bold leading-tight">
-                Besoin d'aide ?
-              </p>
-              <p className="text-base text-white/70 text-center font-medium">
-                Parlez-nous !
-              </p>
             </div>
           </div>
 
