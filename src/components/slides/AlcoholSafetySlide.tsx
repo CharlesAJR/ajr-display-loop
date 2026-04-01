@@ -19,7 +19,7 @@ export const AlcoholSafetySlide = () => {
         <div className="w-full max-w-[1100px] flex flex-col px-8 py-6">
 
           {/* Header */}
-          <div className="flex justify-center mb-5">
+          <div className="flex justify-center mb-5 mt-2">
             <div className="bg-white/20 backdrop-blur-sm rounded-full px-10 py-4 shadow-[0_6px_30px_rgba(0,0,0,0.15)] flex items-center gap-3 border border-white/30">
               <div className="w-11 h-11 bg-white rounded-full flex items-center justify-center shadow-sm">
                 <AlertTriangle className="w-7 h-7 text-amber-500" strokeWidth={2.5} />
