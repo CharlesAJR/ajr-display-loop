@@ -87,12 +87,12 @@ const Index = () => {
   
   // Positions par défaut pour galerie 2 (photos verticales, centrer sur le haut pour voir les visages)
   const gallery2DefaultPositions = [
-    { x: 50, y: 25 }, // new-7: couture, visage en haut
-    { x: 50, y: 25 }, // new-8: couture, visage en haut
-    { x: 50, y: 40 }, // new-9: mains, atelier
-    { x: 50, y: 30 }, // new-10: accueil, visage
-    { x: 50, y: 40 }, // new-11: paysage, visage centré
-    { x: 50, y: 50 }, // new-12: mains, gros plan
+    { x: 50, y: 15 }, // new-7: ligne de production
+    { x: 50, y: 15 }, // new-8: personne avec boîte, voir le visage
+    { x: 50, y: 15 }, // new-9: personne avec bouteille, voir le visage
+    { x: 50, y: 50 }, // new-10
+    { x: 50, y: 50 }, // new-11
+    { x: 50, y: 50 }, // new-12
   ];
 
   // Check if today is January 23rd (Kuraray visit day)
