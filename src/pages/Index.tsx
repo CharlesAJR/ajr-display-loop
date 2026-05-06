@@ -85,6 +85,16 @@ const Index = () => {
   const galleryNew1 = [new1, new2, new3, new4, new5, new6];
   const galleryNew2 = [new7, new8, new9, new10, new11, new12];
   
+  // Positions par défaut pour galerie 1 (photos verticales, centrer sur les visages/sujet)
+  const gallery1DefaultPositions = [
+    { x: 50, y: 25 }, // new-1: dame couture
+    { x: 50, y: 25 }, // new-2: dame machine
+    { x: 50, y: 40 }, // new-3: atelier
+    { x: 50, y: 30 }, // new-4: homme accueil
+    { x: 50, y: 30 }, // new-5: jeune homme sourire
+    { x: 50, y: 50 }, // new-6: cordes
+  ];
+
   // Positions par défaut pour galerie 2 (photos verticales, centrer sur le haut pour voir les visages)
   const gallery2DefaultPositions = [
     { x: 50, y: 15 }, // new-7: ligne de production
@@ -114,11 +124,11 @@ const Index = () => {
       <AlcoholSafetySlide key="alcohol-safety" />,
       <WeatherSlide key="weather" />,
       <QuoteSlide key="quote" />,
-      <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} />,
+      <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} defaultPositions={gallery1DefaultPositions} />,
       <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} defaultPositions={gallery2DefaultPositions} />
     ];
     return baseSlides;
-  }, [isKurarayDay, galleryNew1, galleryNew2, gallery2DefaultPositions]);
+  }, [isKurarayDay, galleryNew1, galleryNew2, gallery1DefaultPositions, gallery2DefaultPositions]);
 
 
   // Auto-rotation des slides
