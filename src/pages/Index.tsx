@@ -124,7 +124,7 @@ const Index = () => {
       <AlcoholSafetySlide key="alcohol-safety" />,
       <WeatherSlide key="weather" />,
       <QuoteSlide key="quote" />,
-      <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} />,
+      <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} defaultPositions={gallery1DefaultPositions} />,
       <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} defaultPositions={gallery2DefaultPositions} />
     ];
     return baseSlides;
