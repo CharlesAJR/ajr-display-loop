@@ -85,6 +85,16 @@ const Index = () => {
   const galleryNew1 = [new1, new2, new3, new4, new5, new6];
   const galleryNew2 = [new7, new8, new9, new10, new11, new12];
   
+  // Positions par défaut pour galerie 1 (photos verticales, centrer sur les visages/sujet)
+  const gallery1DefaultPositions = [
+    { x: 50, y: 25 }, // new-1: dame couture
+    { x: 50, y: 25 }, // new-2: dame machine
+    { x: 50, y: 40 }, // new-3: atelier
+    { x: 50, y: 30 }, // new-4: homme accueil
+    { x: 50, y: 30 }, // new-5: jeune homme sourire
+    { x: 50, y: 50 }, // new-6: cordes
+  ];
+
   // Positions par défaut pour galerie 2 (photos verticales, centrer sur le haut pour voir les visages)
   const gallery2DefaultPositions = [
     { x: 50, y: 15 }, // new-7: ligne de production
