@@ -128,7 +128,7 @@ const Index = () => {
       <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} defaultPositions={gallery2DefaultPositions} />
     ];
     return baseSlides;
-  }, [isKurarayDay, galleryNew1, galleryNew2, gallery2DefaultPositions]);
+  }, [isKurarayDay, galleryNew1, galleryNew2, gallery1DefaultPositions, gallery2DefaultPositions]);
 
 
   // Auto-rotation des slides
