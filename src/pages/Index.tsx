@@ -63,7 +63,6 @@ const Index = () => {
     workshop13, workshop14, workshop15, workshop16, workshop17, workshop18,
     // New images
     new1, new2, new3, new4, new5, new6,
-    new7, new8, new9, new10, new11, new12,
     // Background and logos
     welcomeBg, ajrLogo, safetyWorkers, safetyCounter
   ], []);
