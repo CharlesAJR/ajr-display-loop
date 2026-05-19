@@ -43,12 +43,6 @@ import new3 from "@/assets/new-3.jpg";
 import new4 from "@/assets/new-4.jpg";
 import new5 from "@/assets/new-5.jpg";
 import new6 from "@/assets/new-6.jpg";
-import new7 from "@/assets/new-7.jpg";
-import new8 from "@/assets/new-8.jpg";
-import new9 from "@/assets/new-9.jpg";
-import new10 from "@/assets/new-10.jpg";
-import new11 from "@/assets/new-11.jpg";
-import new12 from "@/assets/new-12.jpg";
 
 // Background images
 import welcomeBg from "@/assets/welcome-background.png";
