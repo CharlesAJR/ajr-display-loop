@@ -118,17 +118,17 @@ const Index = () => {
       ...(isKurarayDay ? [<KurarayWelcomeSlide key="kuraray" />] : []),
       <QualityPolicySlide key="quality" />,
       <TeamworkSlide key="teamwork" />,
-      // <SafetyCounterSlide key="counter" />,
+      <SafetyCounterSlide key="counter" />,
       <BirthdaysSlide key="birthdays" />,
       <SafetySlide key="safety" />,
       <AlcoholSafetySlide key="alcohol-safety" />,
       <WeatherSlide key="weather" />,
       <QuoteSlide key="quote" />,
-      // <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} defaultPositions={gallery1DefaultPositions} />,
+      <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} defaultPositions={gallery1DefaultPositions} />,
       <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} defaultPositions={gallery2DefaultPositions} />
     ];
     return baseSlides;
-  }, [isKurarayDay, galleryNew2, gallery2DefaultPositions]);
+  }, [isKurarayDay, galleryNew1, galleryNew2, gallery1DefaultPositions, gallery2DefaultPositions]);
 
 
   // Auto-rotation des slides
