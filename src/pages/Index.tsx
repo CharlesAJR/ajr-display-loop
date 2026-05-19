@@ -119,16 +119,14 @@ const Index = () => {
       <QualityPolicySlide key="quality" />,
       <TeamworkSlide key="teamwork" />,
       <SafetyCounterSlide key="counter" />,
-      <BirthdaysSlide key="birthdays" />,
       <SafetySlide key="safety" />,
       <AlcoholSafetySlide key="alcohol-safety" />,
       <WeatherSlide key="weather" />,
       <QuoteSlide key="quote" />,
-      <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} defaultPositions={gallery1DefaultPositions} />,
-      <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} defaultPositions={gallery2DefaultPositions} />
+      <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} defaultPositions={gallery1DefaultPositions} />
     ];
     return baseSlides;
-  }, [isKurarayDay, galleryNew1, galleryNew2, gallery1DefaultPositions, gallery2DefaultPositions]);
+  }, [isKurarayDay, galleryNew1, gallery1DefaultPositions]);
 
 
   // Auto-rotation des slides
