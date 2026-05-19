@@ -96,6 +96,7 @@ const Index = () => {
       // Add Kuraray welcome slide only on January 23rd
       ...(isKurarayDay ? [<KurarayWelcomeSlide key="kuraray" />] : []),
       <QualityPolicySlide key="quality" />,
+      <RecruitmentSlide key="recruitment" />,
       <SafetyCounterSlide key="counter" />,
       <SafetySlide key="safety" />,
       <AlcoholSafetySlide key="alcohol-safety" />,
