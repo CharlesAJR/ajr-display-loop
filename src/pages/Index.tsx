@@ -6,7 +6,7 @@ import { WelcomeSlide } from "@/components/slides/WelcomeSlide";
 import { KurarayWelcomeSlide } from "@/components/slides/KurarayWelcomeSlide";
 import { QuoteSlide } from "@/components/slides/QuoteSlide";
 import { WeatherSlide, preloadWeatherWidget } from "@/components/slides/WeatherSlide";
-import { BirthdaysSlide } from "@/components/slides/BirthdaysSlide";
+
 import { GallerySlide } from "@/components/slides/GallerySlide";
 import { SafetySlide } from "@/components/slides/SafetySlide";
 import { AlcoholSafetySlide } from "@/components/slides/AlcoholSafetySlide";
@@ -43,12 +43,6 @@ import new3 from "@/assets/new-3.jpg";
 import new4 from "@/assets/new-4.jpg";
 import new5 from "@/assets/new-5.jpg";
 import new6 from "@/assets/new-6.jpg";
-import new7 from "@/assets/new-7.jpg";
-import new8 from "@/assets/new-8.jpg";
-import new9 from "@/assets/new-9.jpg";
-import new10 from "@/assets/new-10.jpg";
-import new11 from "@/assets/new-11.jpg";
-import new12 from "@/assets/new-12.jpg";
 
 // Background images
 import welcomeBg from "@/assets/welcome-background.png";
@@ -69,7 +63,6 @@ const Index = () => {
     workshop13, workshop14, workshop15, workshop16, workshop17, workshop18,
     // New images
     new1, new2, new3, new4, new5, new6,
-    new7, new8, new9, new10, new11, new12,
     // Background and logos
     welcomeBg, ajrLogo, safetyWorkers, safetyCounter
   ], []);
@@ -79,11 +72,7 @@ const Index = () => {
 
   const { imagesLoaded, progress } = useImagePreloader(allImages, preloadCallbacks);
 
-  const gallery1 = [workshop1, workshop2, workshop3, workshop4, workshop5, workshop6];
-  const gallery2 = [workshop7, workshop8, workshop9, workshop10, workshop11, workshop12];
-  const gallery3 = [workshop13, workshop14, workshop15, workshop16, workshop17, workshop18];
   const galleryNew1 = [new1, new2, new3, new4, new5, new6];
-  const galleryNew2 = [new7, new8, new9, new10, new11, new12];
   
   // Positions par défaut pour galerie 1 (photos verticales, centrer sur les visages/sujet)
   const gallery1DefaultPositions = [
@@ -93,16 +82,6 @@ const Index = () => {
     { x: 50, y: 30 }, // new-4: homme accueil
     { x: 50, y: 30 }, // new-5: jeune homme sourire
     { x: 50, y: 50 }, // new-6: cordes
-  ];
-
-  // Positions par défaut pour galerie 2 (photos verticales, centrer sur le haut pour voir les visages)
-  const gallery2DefaultPositions = [
-    { x: 50, y: 15 }, // new-7: ligne de production
-    { x: 50, y: 15 }, // new-8: personne avec boîte, voir le visage
-    { x: 50, y: 15 }, // new-9: personne avec bouteille, voir le visage
-    { x: 50, y: 50 }, // new-10
-    { x: 50, y: 50 }, // new-11
-    { x: 50, y: 50 }, // new-12
   ];
 
   // Check if today is January 23rd (Kuraray visit day)
@@ -119,16 +98,14 @@ const Index = () => {
       <QualityPolicySlide key="quality" />,
       <TeamworkSlide key="teamwork" />,
       <SafetyCounterSlide key="counter" />,
-      <BirthdaysSlide key="birthdays" />,
       <SafetySlide key="safety" />,
       <AlcoholSafetySlide key="alcohol-safety" />,
       <WeatherSlide key="weather" />,
       <QuoteSlide key="quote" />,
-      <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} defaultPositions={gallery1DefaultPositions} />,
-      <GallerySlide key="gallery-new2" images={galleryNew2} title="gallery2" showTitle={false} defaultPositions={gallery2DefaultPositions} />
+      <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} defaultPositions={gallery1DefaultPositions} />
     ];
     return baseSlides;
-  }, [isKurarayDay, galleryNew1, galleryNew2, gallery1DefaultPositions, gallery2DefaultPositions]);
+  }, [isKurarayDay, galleryNew1, gallery1DefaultPositions]);
 
 
   // Auto-rotation des slides
