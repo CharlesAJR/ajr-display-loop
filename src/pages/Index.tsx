@@ -12,6 +12,7 @@ import { SafetySlide } from "@/components/slides/SafetySlide";
 import { AlcoholSafetySlide } from "@/components/slides/AlcoholSafetySlide";
 import { SafetyCounterSlide } from "@/components/slides/SafetyCounterSlide";
 import { QualityPolicySlide } from "@/components/slides/QualityPolicySlide";
+import { RecruitmentSlide } from "@/components/slides/RecruitmentSlide";
 import { slidesConfig } from "@/config/slidesContent";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
 
