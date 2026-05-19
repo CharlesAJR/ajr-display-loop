@@ -72,11 +72,7 @@ const Index = () => {
 
   const { imagesLoaded, progress } = useImagePreloader(allImages, preloadCallbacks);
 
-  const gallery1 = [workshop1, workshop2, workshop3, workshop4, workshop5, workshop6];
-  const gallery2 = [workshop7, workshop8, workshop9, workshop10, workshop11, workshop12];
-  const gallery3 = [workshop13, workshop14, workshop15, workshop16, workshop17, workshop18];
   const galleryNew1 = [new1, new2, new3, new4, new5, new6];
-  const galleryNew2 = [new7, new8, new9, new10, new11, new12];
   
   // Positions par défaut pour galerie 1 (photos verticales, centrer sur les visages/sujet)
   const gallery1DefaultPositions = [
@@ -86,16 +82,6 @@ const Index = () => {
     { x: 50, y: 30 }, // new-4: homme accueil
     { x: 50, y: 30 }, // new-5: jeune homme sourire
     { x: 50, y: 50 }, // new-6: cordes
-  ];
-
-  // Positions par défaut pour galerie 2 (photos verticales, centrer sur le haut pour voir les visages)
-  const gallery2DefaultPositions = [
-    { x: 50, y: 15 }, // new-7: ligne de production
-    { x: 50, y: 15 }, // new-8: personne avec boîte, voir le visage
-    { x: 50, y: 15 }, // new-9: personne avec bouteille, voir le visage
-    { x: 50, y: 50 }, // new-10
-    { x: 50, y: 50 }, // new-11
-    { x: 50, y: 50 }, // new-12
   ];
 
   // Check if today is January 23rd (Kuraray visit day)
