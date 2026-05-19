@@ -6,7 +6,7 @@ import { WelcomeSlide } from "@/components/slides/WelcomeSlide";
 import { KurarayWelcomeSlide } from "@/components/slides/KurarayWelcomeSlide";
 import { QuoteSlide } from "@/components/slides/QuoteSlide";
 import { WeatherSlide, preloadWeatherWidget } from "@/components/slides/WeatherSlide";
-import { BirthdaysSlide } from "@/components/slides/BirthdaysSlide";
+
 import { GallerySlide } from "@/components/slides/GallerySlide";
 import { SafetySlide } from "@/components/slides/SafetySlide";
 import { AlcoholSafetySlide } from "@/components/slides/AlcoholSafetySlide";
