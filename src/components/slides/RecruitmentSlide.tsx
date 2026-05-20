@@ -112,16 +112,16 @@ export const RecruitmentSlide = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.5 }}
-            className="bg-white/5 border border-white/15 rounded-xl px-6 py-4 mb-5 flex items-center justify-center gap-6 flex-wrap"
+            className="bg-white/5 border border-white/15 rounded-xl px-5 py-3 mb-4 flex items-center justify-center gap-5 flex-wrap"
           >
             <div className="flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-emerald-200" />
-              <span className="text-base uppercase tracking-wider text-white/70 font-medium">
+              <Sparkles className="w-4 h-4 text-emerald-200" />
+              <span className="text-sm uppercase tracking-wider text-white/70 font-medium">
                 Nous proposons
               </span>
             </div>
             {propositions.map((item, index) => (
-              <div key={index} className="flex items-center gap-2 text-lg text-white/90">
+              <div key={index} className="flex items-center gap-2 text-base text-white/90">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-300" />
                 {item}
               </div>
@@ -133,20 +133,20 @@ export const RecruitmentSlide = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.85, duration: 0.6 }}
-            className="flex justify-center gap-6 flex-wrap"
+            className="flex justify-center gap-5 flex-wrap"
           >
-            <div className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/15 border border-white/30 backdrop-blur-sm">
-              <CalendarDays className="w-8 h-8 text-cyan-200" />
+            <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/15 border border-white/30 backdrop-blur-sm">
+              <CalendarDays className="w-7 h-7 text-cyan-200" />
               <div>
-                <p className="text-sm text-white/70 uppercase tracking-wide font-medium">Date limite</p>
-                <p className="text-2xl font-display font-bold text-white">Candidatures avant le 30/05/26</p>
+                <p className="text-xs text-white/70 uppercase tracking-wide font-medium">Date limite</p>
+                <p className="text-xl font-display font-bold text-white">Candidatures avant le 30/05/26</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-white/15 border border-white/30 backdrop-blur-sm">
-              <MessageCircle className="w-8 h-8 text-rose-200" />
+            <div className="flex items-center gap-3 px-5 py-3 rounded-2xl bg-white/15 border border-white/30 backdrop-blur-sm">
+              <MessageCircle className="w-7 h-7 text-rose-200" />
               <div>
-                <p className="text-sm text-white/70 uppercase tracking-wide font-medium">Contact</p>
-                <p className="text-2xl font-display font-bold text-white">Votre responsable ou le service RH</p>
+                <p className="text-xs text-white/70 uppercase tracking-wide font-medium">Contact</p>
+                <p className="text-xl font-display font-bold text-white">Votre responsable ou le service RH</p>
               </div>
             </div>
           </motion.div>
