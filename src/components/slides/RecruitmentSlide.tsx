@@ -43,32 +43,32 @@ export const RecruitmentSlide = () => {
           </motion.div>
 
           {/* Deux colonnes principales */}
-          <div className="grid grid-cols-2 gap-6 mb-6">
+          <div className="grid grid-cols-2 gap-5 mb-4">
             {/* Missions principales */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-7"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5"
             >
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-300/30 to-cyan-400/20 flex items-center justify-center">
-                  <Briefcase className="w-7 h-7 text-cyan-200" />
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-300/30 to-cyan-400/20 flex items-center justify-center">
+                  <Briefcase className="w-6 h-6 text-cyan-200" />
                 </div>
-                <h2 className="text-3xl font-display font-bold text-white">
+                <h2 className="text-2xl font-display font-bold text-white">
                   Missions principales
                 </h2>
               </div>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {missions.map((item, index) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.4 + index * 0.07, duration: 0.4 }}
-                    className="flex items-center gap-3 text-xl text-white/90"
+                    className="flex items-center gap-3 text-lg text-white/90"
                   >
-                    <span className="w-2.5 h-2.5 rounded-full bg-cyan-300 flex-shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-cyan-300 flex-shrink-0" />
                     {item}
                   </motion.li>
                 ))}
@@ -80,26 +80,26 @@ export const RecruitmentSlide = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-7"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5"
             >
-              <div className="flex items-center gap-3 mb-5">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-300/30 to-amber-400/20 flex items-center justify-center">
-                  <UserCheck className="w-7 h-7 text-amber-200" />
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-300/30 to-amber-400/20 flex items-center justify-center">
+                  <UserCheck className="w-6 h-6 text-amber-200" />
                 </div>
-                <h2 className="text-3xl font-display font-bold text-white">
+                <h2 className="text-2xl font-display font-bold text-white">
                   Compétences attendues
                 </h2>
               </div>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {competences.map((item, index) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, x: 10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 + index * 0.07, duration: 0.4 }}
-                    className="flex items-center gap-3 text-xl text-white/90"
+                    className="flex items-center gap-3 text-lg text-white/90"
                   >
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-300 flex-shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-amber-300 flex-shrink-0" />
                     {item}
                   </motion.li>
                 ))}
