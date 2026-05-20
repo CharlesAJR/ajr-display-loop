@@ -23,20 +23,20 @@ export const RecruitmentSlide = () => {
 
   return (
     <SlideBackground>
-      <div className="h-full w-full flex items-center justify-center px-12 py-8">
+      <div className="h-full w-full flex items-center justify-center px-12 py-4">
         <div className="max-w-7xl w-full">
           {/* En-tête */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-8"
+            className="text-center mb-5"
           >
-            <h1 className="text-6xl font-display font-bold text-white uppercase tracking-wider mb-4">
+            <h1 className="text-5xl font-display font-bold text-white uppercase tracking-wider mb-3">
               Recrutement interne
             </h1>
-            <div className="inline-block px-6 py-3 rounded-full bg-white/15 border border-white/30 backdrop-blur-sm">
-              <p className="text-2xl font-display text-white/95">
+            <div className="inline-block px-5 py-2 rounded-full bg-white/15 border border-white/30 backdrop-blur-sm">
+              <p className="text-xl font-display text-white/95">
                 Tronçonneur / Opérateur de tronçonnage plastique
               </p>
             </div>
