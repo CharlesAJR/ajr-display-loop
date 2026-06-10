@@ -424,7 +424,7 @@ export const slidesConfig = {
   // ====================================================================
   safetyCounter: {
     // Date de début du compteur (format: YYYY-MM-DD)
-    startDate: "2026-02-10",
+    startDate: "2026-06-02",
     message: "Continuons ainsi ! 🎯"
   },
 
