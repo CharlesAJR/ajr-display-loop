@@ -98,6 +98,7 @@ const Index = () => {
       ...(isKurarayDay ? [<KurarayWelcomeSlide key="kuraray" />] : []),
       <QualityPolicySlide key="quality" />,
       <RecruitmentSlide key="recruitment" />,
+      <C32ASlide key="c32a" />,
       <SafetyCounterSlide key="counter" />,
       <SafetySlide key="safety" />,
       <AlcoholSafetySlide key="alcohol-safety" />,
