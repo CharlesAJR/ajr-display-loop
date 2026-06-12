@@ -16,6 +16,8 @@ export const WeatherSlide = () => {
       
       <iframe
         src={WEATHER_URL}
+        sandbox="allow-scripts allow-same-origin allow-popups"
+        referrerPolicy="no-referrer"
         className={`w-full h-full border-0 transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
         title="Météo Bienne-lez-Happart"
         onLoad={() => setIsLoaded(true)}

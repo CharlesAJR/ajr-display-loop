@@ -2,20 +2,26 @@ import { AlertCircle, CheckCircle } from "lucide-react";
 import { slidesConfig } from "@/config/slidesContent";
 import { SlideBackground } from "@/components/SlideBackground";
 
+const KEYWORDS = ['EPI', 'badger', 'route fermée', 'atelier cosmétique'];
+
+const escapeRegex = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const HighlightedText = ({ text }: { text: string }) => {
+  const pattern = new RegExp(`(${KEYWORDS.map(escapeRegex).join('|')})`, 'gi');
+  const parts = text.split(pattern);
+  return (
+    <>
+      {parts.map((part, i) =>
+        KEYWORDS.some(k => k.toLowerCase() === part.toLowerCase())
+          ? <span key={i} className="font-extrabold text-white">{part}</span>
+          : <span key={i}>{part}</span>
+      )}
+    </>
+  );
+};
+
 export const SafetySlide = () => {
   const { title, items } = slidesConfig.safetyMessages;
-  
-  const highlightKeywords = (text: string) => {
-    const keywords = ['EPI', 'badger', 'route fermée', 'atelier cosmétique'];
-    let result = text;
-    
-    keywords.forEach(keyword => {
-      const regex = new RegExp(`(${keyword})`, 'gi');
-      result = result.replace(regex, '<span class="font-extrabold text-white">$1</span>');
-    });
-    
-    return result;
-  };
   
   return (
     <SlideBackground>
@@ -46,10 +52,10 @@ export const SafetySlide = () => {
                 <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shadow-sm border border-white/30">
                   <CheckCircle className="w-7 h-7 text-white" strokeWidth={2.5} />
                 </div>
-                <p 
-                  className="text-3xl font-display text-white leading-relaxed pt-1 font-medium"
-                  dangerouslySetInnerHTML={{ __html: highlightKeywords(item) }}
-                />
+                <p className="text-3xl font-display text-white leading-relaxed pt-1 font-medium">
+                  <HighlightedText text={item} />
+                </p>
+
               </div>
             ))}
           </div>
