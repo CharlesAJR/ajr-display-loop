@@ -13,6 +13,7 @@ import { AlcoholSafetySlide } from "@/components/slides/AlcoholSafetySlide";
 import { SafetyCounterSlide } from "@/components/slides/SafetyCounterSlide";
 import { QualityPolicySlide } from "@/components/slides/QualityPolicySlide";
 import { RecruitmentSlide } from "@/components/slides/RecruitmentSlide";
+import { C32ASlide } from "@/components/slides/C32ASlide";
 import { slidesConfig } from "@/config/slidesContent";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
 
@@ -97,6 +98,7 @@ const Index = () => {
       ...(isKurarayDay ? [<KurarayWelcomeSlide key="kuraray" />] : []),
       <QualityPolicySlide key="quality" />,
       <RecruitmentSlide key="recruitment" />,
+      <C32ASlide key="c32a" />,
       <SafetyCounterSlide key="counter" />,
       <SafetySlide key="safety" />,
       <AlcoholSafetySlide key="alcohol-safety" />,
