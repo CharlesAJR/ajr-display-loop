@@ -2,20 +2,26 @@ import { AlertCircle, CheckCircle } from "lucide-react";
 import { slidesConfig } from "@/config/slidesContent";
 import { SlideBackground } from "@/components/SlideBackground";
 
+const KEYWORDS = ['EPI', 'badger', 'route fermée', 'atelier cosmétique'];
+
+const escapeRegex = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const HighlightedText = ({ text }: { text: string }) => {
+  const pattern = new RegExp(`(${KEYWORDS.map(escapeRegex).join('|')})`, 'gi');
+  const parts = text.split(pattern);
+  return (
+    <>
+      {parts.map((part, i) =>
+        KEYWORDS.some(k => k.toLowerCase() === part.toLowerCase())
+          ? <span key={i} className="font-extrabold text-white">{part}</span>
+          : <span key={i}>{part}</span>
+      )}
+    </>
+  );
+};
+
 export const SafetySlide = () => {
   const { title, items } = slidesConfig.safetyMessages;
-  
-  const highlightKeywords = (text: string) => {
-    const keywords = ['EPI', 'badger', 'route fermée', 'atelier cosmétique'];
-    let result = text;
-    
-    keywords.forEach(keyword => {
-      const regex = new RegExp(`(${keyword})`, 'gi');
-      result = result.replace(regex, '<span class="font-extrabold text-white">$1</span>');
-    });
-    
-    return result;
-  };
   
   return (
     <SlideBackground>
