@@ -13,6 +13,7 @@ import { AlcoholSafetySlide } from "@/components/slides/AlcoholSafetySlide";
 import { SafetyCounterSlide } from "@/components/slides/SafetyCounterSlide";
 import { QualityPolicySlide } from "@/components/slides/QualityPolicySlide";
 import { RecruitmentSlide } from "@/components/slides/RecruitmentSlide";
+import { C32ASlide } from "@/components/slides/C32ASlide";
 import { slidesConfig } from "@/config/slidesContent";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
 
