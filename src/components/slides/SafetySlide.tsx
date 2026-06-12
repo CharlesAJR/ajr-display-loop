@@ -52,10 +52,10 @@ export const SafetySlide = () => {
                 <div className="flex-shrink-0 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shadow-sm border border-white/30">
                   <CheckCircle className="w-7 h-7 text-white" strokeWidth={2.5} />
                 </div>
-                <p 
-                  className="text-3xl font-display text-white leading-relaxed pt-1 font-medium"
-                  dangerouslySetInnerHTML={{ __html: highlightKeywords(item) }}
-                />
+                <p className="text-3xl font-display text-white leading-relaxed pt-1 font-medium">
+                  <HighlightedText text={item} />
+                </p>
+
               </div>
             ))}
           </div>
