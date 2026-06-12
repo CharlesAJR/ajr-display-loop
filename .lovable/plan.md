@@ -1,47 +1,26 @@
+## Refonte slide C32A
 
-# Masquer les anniversaires de la slide "Cette semaine"
+Remplacer le schéma actuel (3 cartes Document → Photo → Payé) par une illustration centrale dessinée représentant le document C32A égal à de l'argent, avec signature Anne-Sophie et message "Ne pas perdre".
 
-## Objectif
-Retirer l'affichage des anniversaires tout en conservant :
-- Les événements de la semaine
-- Les annonces spéciales (naissances, etc.)
-- Les données des anniversaires dans `slidesContent.ts` (non supprimées)
+### Étapes
 
-## Modifications à effectuer
+1. **Générer une illustration** (style dessin/croquis, fond transparent, palette AJR) :
+   - À gauche : reproduction stylisée du document C32A (feuille blanche avec en-tête, lignes)
+   - Au milieu : un grand signe "="
+   - À droite : un billet / pile de billets
+   - Style : line-art clean, coloré, ressemblant à une affiche pédagogique
+   - Sauvegarde : `src/assets/c32a-equals-money.png`
 
-### Fichier : `src/components/slides/BirthdaysSlide.tsx`
+2. **Réécrire `C32ASlide.tsx`** :
+   - Titre "C32A" en haut (conservé, plus compact)
+   - Illustration centrale grande taille
+   - Bandeau rouge "Ne pas perdre !" avec icône `ShieldAlert` (conservé)
+   - Signature manuscrite "— Anne-Sophie" en bas à droite (font italique/cursive)
+   - Animations framer-motion conservées
 
-**1. Retirer l'import de l'icône Cake** (ligne 1)
-- Supprimer `Cake` de l'import lucide-react
+### Détails techniques
 
-**2. Supprimer la légende anniversaire** (lignes 114-117)
-- Retirer le bloc qui affiche "🎂 = Anniversaire" dans le header
-
-**3. Simplifier la structure de données** (lignes 26-37)
-- Retirer `birthdays` de l'objet `eventsByDay`
-- Garder uniquement `events`
-
-**4. Supprimer le traitement des anniversaires** (lignes 40-61)
-- Retirer tout le bloc `birthdays.forEach(...)` qui filtre les anniversaires
-
-**5. Supprimer l'affichage des anniversaires** (lignes 133-140)
-- Retirer le rendu des anniversaires dans chaque jour
-
-**6. Simplifier la logique d'affichage vide** (ligne 124-126 et 154)
-- Adapter `hasAnyEvent` pour ne vérifier que les événements
-
----
-
-## Résumé visuel
-
-| Avant | Après |
-|-------|-------|
-| Anniversaires + Événements + Annonces | Événements + Annonces uniquement |
-| Légende "🎂 = Anniversaire" | Pas de légende |
-| Icône Cake rose | Supprimée |
-
----
-
-## Détails techniques
-
-Le fichier `slidesContent.ts` reste intact - les anniversaires y sont toujours stockés mais simplement ignorés par le composant.
+- Nouvelle image générée via `imagegen--generate_image` (premium pour la qualité du dessin), fond transparent
+- Import ES6 standard de l'image dans le composant
+- Pas de changement à `Index.tsx` ni aux autres fichiers
+- Pas de modification logique métier
