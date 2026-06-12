@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { SlideBackground } from "@/components/SlideBackground";
-import { FileText, Camera, Banknote, ShieldAlert, ArrowRight } from "lucide-react";
+import { ShieldAlert } from "lucide-react";
+import c32aEqualsMoney from "@/assets/c32a-equals-money.png";
 
 export const C32ASlide = () => {
   return (
@@ -12,72 +13,53 @@ export const C32ASlide = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-10"
+            className="text-center mb-6"
           >
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <FileText className="w-14 h-14 text-amber-200" />
-              <h1 className="text-7xl font-display font-bold text-white uppercase tracking-wider">
-                C32A
-              </h1>
-            </div>
+            <h1 className="text-6xl font-display font-bold text-white uppercase tracking-wider">
+              Document C32A
+            </h1>
           </motion.div>
 
-          {/* Schéma visuel en 3 étapes */}
+          {/* Illustration centrale */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="flex items-center justify-center gap-4 mb-10"
+            className="bg-white/90 backdrop-blur-sm rounded-3xl p-6 mb-6 max-w-4xl mx-auto"
           >
-            {/* Étape 1 : Document */}
-            <div className="flex flex-col items-center gap-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 w-64">
-              <div className="w-24 h-24 rounded-2xl bg-amber-400/20 flex items-center justify-center">
-                <FileText className="w-12 h-12 text-amber-200" />
-              </div>
-              <p className="text-2xl font-display font-bold text-white text-center">
-                Document
-              </p>
-            </div>
-
-            {/* Flèche */}
-            <ArrowRight className="w-10 h-10 text-white/50" />
-
-            {/* Étape 2 : Photo */}
-            <div className="flex flex-col items-center gap-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 w-64">
-              <div className="w-24 h-24 rounded-2xl bg-cyan-400/20 flex items-center justify-center">
-                <Camera className="w-12 h-12 text-cyan-200" />
-              </div>
-              <p className="text-2xl font-display font-bold text-white text-center">
-                Photo
-              </p>
-            </div>
-
-            {/* Flèche */}
-            <ArrowRight className="w-10 h-10 text-white/50" />
-
-            {/* Étape 3 : Payé */}
-            <div className="flex flex-col items-center gap-4 bg-emerald-400/10 backdrop-blur-sm border-2 border-emerald-300/40 rounded-2xl p-8 w-64">
-              <div className="w-24 h-24 rounded-2xl bg-emerald-400/20 flex items-center justify-center">
-                <Banknote className="w-12 h-12 text-emerald-200" />
-              </div>
-              <p className="text-2xl font-display font-bold text-white text-center">
-                Payé
-              </p>
-            </div>
+            <img
+              src={c32aEqualsMoney}
+              alt="Document C32A égal à de l'argent"
+              width={1536}
+              height={768}
+              loading="lazy"
+              className="w-full h-auto"
+            />
           </motion.div>
 
-          {/* Avertissement visuel */}
+          {/* Avertissement */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="flex items-center justify-center gap-6 bg-rose-500/20 border-2 border-rose-300/50 rounded-2xl p-8 max-w-2xl mx-auto"
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="flex items-center justify-center gap-6 bg-rose-500/20 border-2 border-rose-300/50 rounded-2xl p-6 max-w-2xl mx-auto mb-4"
           >
-            <ShieldAlert className="w-16 h-16 text-rose-200 flex-shrink-0" />
+            <ShieldAlert className="w-14 h-14 text-rose-200 flex-shrink-0" />
             <p className="text-4xl font-display font-bold text-white">
               Ne pas perdre !
             </p>
           </motion.div>
+
+          {/* Signature */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
+            className="text-right text-2xl italic text-white/90 pr-8"
+            style={{ fontFamily: "'Brush Script MT', cursive" }}
+          >
+            — Anne-Sophie
+          </motion.p>
         </div>
       </div>
     </SlideBackground>
