@@ -1,26 +1,19 @@
-## Refonte slide C32A
+## Mise à jour illustration C32A
 
-Remplacer le schéma actuel (3 cartes Document → Photo → Payé) par une illustration centrale dessinée représentant le document C32A égal à de l'argent, avec signature Anne-Sophie et message "Ne pas perdre".
+Tu m'as partagé une photo du vrai document C32A (formulaire de contrôle "TRAVAUX SPÉCIAUX", entête bleu foncé, numéro rouge en haut à droite, sections numérotées, petits tableaux à droite). Je vais régénérer l'illustration centrale pour qu'elle ressemble vraiment au document, plutôt qu'à une feuille générique.
 
 ### Étapes
 
-1. **Générer une illustration** (style dessin/croquis, fond transparent, palette AJR) :
-   - À gauche : reproduction stylisée du document C32A (feuille blanche avec en-tête, lignes)
-   - Au milieu : un grand signe "="
-   - À droite : un billet / pile de billets
-   - Style : line-art clean, coloré, ressemblant à une affiche pédagogique
-   - Sauvegarde : `src/assets/c32a-equals-money.png`
+1. **Régénérer `src/assets/c32a-equals-money.png`** via `imagegen--edit_image` en utilisant l'image que tu viens d'envoyer comme référence visuelle :
+   - À gauche : dessin stylisé (line-art coloré, style affiche pédagogique) du document C32A reproduisant fidèlement les éléments reconnaissables — bandeau d'entête bleu foncé, gros numéro en rouge en haut à droite, sections numérotées avec cases à cocher, petits tableaux quadrillés à droite
+   - Au milieu : grand signe "=" blanc
+   - À droite : pile de billets euros stylisée
+   - Fond transparent, format paysage 16:9
 
-2. **Réécrire `C32ASlide.tsx`** :
-   - Titre "C32A" en haut (conservé, plus compact)
-   - Illustration centrale grande taille
-   - Bandeau rouge "Ne pas perdre !" avec icône `ShieldAlert` (conservé)
-   - Signature manuscrite "— Anne-Sophie" en bas à droite (font italique/cursive)
-   - Animations framer-motion conservées
+2. **Aucun changement au composant** `C32ASlide.tsx` : il importe déjà `c32a-equals-money.png` et la signature Anne-Sophie + bandeau "Ne pas perdre !" sont déjà en place.
 
 ### Détails techniques
 
-- Nouvelle image générée via `imagegen--generate_image` (premium pour la qualité du dessin), fond transparent
-- Import ES6 standard de l'image dans le composant
-- Pas de changement à `Index.tsx` ni aux autres fichiers
-- Pas de modification logique métier
+- Outil : `imagegen--edit_image` (premium) avec `image_paths: ["user-uploads://Sans_titre.png"]`, `transparent_background: true`, `aspect_ratio: "16:9"`
+- Cible : `src/assets/c32a-equals-money.png` (overwrite)
+- Pas de modification de code, juste régénération d'asset
