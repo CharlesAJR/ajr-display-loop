@@ -11,7 +11,7 @@ import { GallerySlide } from "@/components/slides/GallerySlide";
 import { SafetySlide } from "@/components/slides/SafetySlide";
 import { AlcoholSafetySlide } from "@/components/slides/AlcoholSafetySlide";
 import { SafetyCounterSlide } from "@/components/slides/SafetyCounterSlide";
-
+import { QualityPolicySlide } from "@/components/slides/QualityPolicySlide";
 import { RecruitmentSlide } from "@/components/slides/RecruitmentSlide";
 import { C32ASlide } from "@/components/slides/C32ASlide";
 import { slidesConfig } from "@/config/slidesContent";
@@ -96,7 +96,7 @@ const Index = () => {
       <WelcomeSlide key="welcome" />,
       // Add Kuraray welcome slide only on January 23rd
       ...(isKurarayDay ? [<KurarayWelcomeSlide key="kuraray" />] : []),
-      
+      <QualityPolicySlide key="quality" />,
       <RecruitmentSlide key="recruitment" />,
       <C32ASlide key="c32a" />,
       <SafetyCounterSlide key="counter" />,
