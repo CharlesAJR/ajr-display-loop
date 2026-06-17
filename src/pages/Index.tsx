@@ -91,20 +91,16 @@ const Index = () => {
   const slides = useMemo(() => {
     const baseSlides = [
       <WelcomeSlide key="welcome" />,
-      // Add Kuraray welcome slide only on January 23rd
-      ...(isKurarayDay ? [<KurarayWelcomeSlide key="kuraray" />] : []),
       <QualityPolicySlide key="quality" />,
-      <RecruitmentSlide key="recruitment" />,
       <C32ASlide key="c32a" />,
       <SafetyCounterSlide key="counter" />,
       <SafetySlide key="safety" />,
       <AlcoholSafetySlide key="alcohol-safety" />,
       <WeatherSlide key="weather" />,
-      <QuoteSlide key="quote" />,
       <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} defaultPositions={gallery1DefaultPositions} />
     ];
     return baseSlides;
-  }, [isKurarayDay, galleryNew1, gallery1DefaultPositions]);
+  }, [galleryNew1, gallery1DefaultPositions]);
 
 
   // Auto-rotation des slides
