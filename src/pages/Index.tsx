@@ -82,11 +82,8 @@ const Index = () => {
     { x: 50, y: 50 }, // new-6: cordes
   ];
 
-  // Check if today is January 23rd (Kuraray visit day)
-  const isKurarayDay = useMemo(() => {
-    const today = new Date();
-    return today.getMonth() === 0 && today.getDate() === 23; // January = 0
-  }, []);
+
+
 
   const slides = useMemo(() => {
     const baseSlides = [
