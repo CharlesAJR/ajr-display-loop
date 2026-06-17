@@ -3,8 +3,6 @@ import { DisplaySlide } from "@/components/DisplaySlide";
 import { Footer } from "@/components/Footer";
 import { LoadingScreen } from "@/components/LoadingScreen";
 import { WelcomeSlide } from "@/components/slides/WelcomeSlide";
-import { KurarayWelcomeSlide } from "@/components/slides/KurarayWelcomeSlide";
-import { QuoteSlide } from "@/components/slides/QuoteSlide";
 import { WeatherSlide, preloadWeatherWidget } from "@/components/slides/WeatherSlide";
 
 import { GallerySlide } from "@/components/slides/GallerySlide";
@@ -12,7 +10,6 @@ import { SafetySlide } from "@/components/slides/SafetySlide";
 import { AlcoholSafetySlide } from "@/components/slides/AlcoholSafetySlide";
 import { SafetyCounterSlide } from "@/components/slides/SafetyCounterSlide";
 import { QualityPolicySlide } from "@/components/slides/QualityPolicySlide";
-import { RecruitmentSlide } from "@/components/slides/RecruitmentSlide";
 import { C32ASlide } from "@/components/slides/C32ASlide";
 import { slidesConfig } from "@/config/slidesContent";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
@@ -85,29 +82,22 @@ const Index = () => {
     { x: 50, y: 50 }, // new-6: cordes
   ];
 
-  // Check if today is January 23rd (Kuraray visit day)
-  const isKurarayDay = useMemo(() => {
-    const today = new Date();
-    return today.getMonth() === 0 && today.getDate() === 23; // January = 0
-  }, []);
+
+
 
   const slides = useMemo(() => {
     const baseSlides = [
       <WelcomeSlide key="welcome" />,
-      // Add Kuraray welcome slide only on January 23rd
-      ...(isKurarayDay ? [<KurarayWelcomeSlide key="kuraray" />] : []),
       <QualityPolicySlide key="quality" />,
-      <RecruitmentSlide key="recruitment" />,
       <C32ASlide key="c32a" />,
       <SafetyCounterSlide key="counter" />,
       <SafetySlide key="safety" />,
       <AlcoholSafetySlide key="alcohol-safety" />,
       <WeatherSlide key="weather" />,
-      <QuoteSlide key="quote" />,
       <GallerySlide key="gallery-new1" images={galleryNew1} title="gallery1" showTitle={false} defaultPositions={gallery1DefaultPositions} />
     ];
     return baseSlides;
-  }, [isKurarayDay, galleryNew1, gallery1DefaultPositions]);
+  }, [galleryNew1, gallery1DefaultPositions]);
 
 
   // Auto-rotation des slides
