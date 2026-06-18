@@ -43,20 +43,20 @@ export const HydrationSlide = () => {
                 border: "border-cyan-300/40",
               },
               {
+                icon: Sun,
+                title: "Protégez-vous du soleil",
+                text: "Portez un chapeau et des vêtements légers en extérieur",
+                color: "from-orange-300/30 to-orange-500/20",
+                iconColor: "text-orange-200",
+                border: "border-orange-300/40",
+              },
+              {
                 icon: Timer,
-                title: "Faites des pauses",
-                text: "Alternez travail et repos à l'ombre ou au frais",
+                title: "Respectez les pauses",
+                text: "Respectez vos horaires de pause et restez à l'ombre ou au frais",
                 color: "from-emerald-300/30 to-emerald-500/20",
                 iconColor: "text-emerald-200",
                 border: "border-emerald-300/40",
-              },
-              {
-                icon: AlertTriangle,
-                title: "Surveillez les signes",
-                text: "Maux de tête, vertiges ou fatigue = STOP immédiat",
-                color: "from-amber-300/30 to-amber-500/20",
-                iconColor: "text-amber-200",
-                border: "border-amber-300/40",
               },
             ].map((item, index) => (
               <motion.div
