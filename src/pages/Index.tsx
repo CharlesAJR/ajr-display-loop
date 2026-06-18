@@ -89,6 +89,7 @@ const Index = () => {
   const slides = useMemo(() => {
     const baseSlides = [
       <WelcomeSlide key="welcome" />,
+      <HydrationSlide key="hydration" />,
       <QualityPolicySlide key="quality" />,
       <C32ASlide key="c32a" />,
       <SafetyCounterSlide key="counter" />,
