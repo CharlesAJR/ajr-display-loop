@@ -10,6 +10,7 @@ import { SafetySlide } from "@/components/slides/SafetySlide";
 import { AlcoholSafetySlide } from "@/components/slides/AlcoholSafetySlide";
 import { SafetyCounterSlide } from "@/components/slides/SafetyCounterSlide";
 import { QualityPolicySlide } from "@/components/slides/QualityPolicySlide";
+import { HydrationSlide } from "@/components/slides/HydrationSlide";
 import { C32ASlide } from "@/components/slides/C32ASlide";
 import { slidesConfig } from "@/config/slidesContent";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
