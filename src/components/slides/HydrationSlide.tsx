@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Droplets, GlassWater, ThermometerSun, Timer, AlertTriangle } from "lucide-react";
+import { Droplets, GlassWater, ThermometerSun, Timer, AlertTriangle, Sun } from "lucide-react";
 import { SlideBackground } from "@/components/SlideBackground";
 
 export const HydrationSlide = () => {
